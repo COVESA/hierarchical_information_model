@@ -1,0 +1,61 @@
+# The vehicle branch for highlevel vehicle signals and attributes.
+#
+Vehicle:
+  type: branch
+  description: High-level vehicle data.
+
+Vehicle.Version:
+  type: branch
+  description: Supported Version.
+
+Vehicle.Version.Major:
+  datatype: uint32
+  type: attribute
+  default: 4
+  description: Supported Version - Major version.
+
+Vehicle.Version.Minor:
+  datatype: uint32
+  type: attribute
+  default: 1
+  description: Supported Version - Minor version.
+
+Vehicle.Version.Patch:
+  datatype: uint32
+  type: attribute
+  default: 0
+  description: Supported Version - Patch version.
+
+#
+# Vehicle identification attributes.
+#
+
+Vehicle.VehicleIdentification:
+  type: branch
+  description: Attributes that identify a vehicle.
+
+Vehicle.VehicleIdentification.VIN:
+  datatype: string
+  type: attribute
+  description: 17-character Vehicle Identification Number (VIN) as defined by ISO 3779.
+
+Vehicle.VehicleIdentification.WMI:
+  datatype: string
+  type: attribute
+  description: 3-character World Manufacturer Identification (WMI) as defined by ISO 3780.
+
+Vehicle.VehicleIdentification.Brand:
+  datatype: string
+  type: attribute
+  description: Vehicle brand or manufacturer.
+
+Vehicle.VehicleIdentification.Model:
+  datatype: string
+  type: attribute
+  description: Vehicle model.
+
+Vehicle.VehicleIdentification.Year:
+  datatype: uint16
+  type: attribute
+  description: Model year of the vehicle.
+
