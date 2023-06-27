@@ -1,0 +1,26 @@
+VehicleService:
+  type: branch
+  description: Vehicle services.
+
+VehicleService.ExternalLightning:
+  type: branch
+  description: External lightning services.
+
+VehicleService.ExternalLightning.HeadLampsOnOff:
+  type: service
+  description: Service name: HeadLampsOnOff, Input: Switch, Output: None.
+
+VehicleService.ExternalLightning.HeadLampsOnOff.Input:
+  type: struct
+  description: A struct type containing the input parameter(s).
+
+VehicleService.ExternalLightning.HeadLampsOnOff.Input.Switch:
+  datatype: boolean
+  type: property
+  description: true = headlamps on, false = headlamps off
+
+VehicleService.Version:
+  type: branch
+  description: Supported Version.
+
+# Here follows the mandatory Major, Minor, and Patch nodes

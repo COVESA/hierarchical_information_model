@@ -1,6 +1,5 @@
 ---
 title: "HIM Configuration Rules"
-date: 2019-08-04T13:05:11+02:00
 weight: 1
 ---
 ## Configuration Overview
@@ -22,6 +21,15 @@ The configuration tree root node shall have a name starting with "HIM_config", w
 such as a descriptive domain name, version, etc. 
 
 A server may share the information of this file with a client that wants to discover what information the server manages.
+
+A HIM compliant server shall be able to read a HIM configuration file and from that access the forest of trees it defines.
+
+A HIM compliant tree must follow the HIM rule set.
+The project specifying this tree must also define the `domain` metadata for this tree,
+and it may provide a `public` URL to a file containing the complete tree,
+possible also multiple `public` URLs to renditions of the tree in different formats such as YAML, JSON, etc.
+
+The creation of a HIM configuration file is the responsibility of the HIM server implementor.
 
 ## Configuration node types
 
