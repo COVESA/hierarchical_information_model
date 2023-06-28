@@ -2,6 +2,8 @@
 
 [![License](https://img.shields.io/badge/License-MPL%202.0-blue.svg)](https://opensource.org/licenses/MPL-2.0)
 
+Please find the official documentation generated from this repository at: [HIM Documentation](https://covesa.github.io/hierarchical_information_model/)
+
 ## Governance
 
 <!-- Give a short rationale for the repository -->
