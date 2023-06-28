@@ -7,7 +7,7 @@
 <!-- Give a short rationale for the repository -->
 
 This repository contains the COVESA Hierarchical Information Model (HIM) - an initiative from COVESA to create a model
-that can be used to define information (see below) representing any domain. 
+that can be used to define information (see below) representing any domain.
 [VSS](https://github.com/COVESA/vehicle_signal_specification) is an example of one domain that is planned to be possible to model in HIM.
 
 <!-- Give a short description of which group/project in COVESA that manages this repository and link to their wiki -->
@@ -48,12 +48,12 @@ the alternative in order to get an easy-to-read rendering of the markup formatte
 
 ## HIM origin
 
-The HIM model traces its roots to the COVESA 
+The HIM model traces its roots to the COVESA
 [Vehicle Signal Specification (VSS)](https://github.com/COVESA/vehicle_signal_specification) project.
 
-When the adoption of the VSS data model started to take off, 
-also requests for additional data and other functionality started to be asked for. 
-Instead of trying to accomodate all of these requests in the single tree that defined the VSS domain, 
+When the adoption of the VSS data model started to take off,
+also requests for additional data and other functionality started to be asked for.
+Instead of trying to accomodate all of these requests in the single tree that defined the VSS domain,
 it was decided that an extended model was to be developed, the Hierarchical Information Model.
 
 
@@ -61,4 +61,13 @@ it was decided that an extended model was to be developed, the Hierarchical Info
 
 *(There should for each COVESA repository be a page on COVESA wiki giving information on roadmaps, meetings, maintainers and so on...)*
 
+## Pre-commit checks
+The repository has [configuration file](.pre-commit-config.yaml) with pre-commits hooks.
+It executes a number of checks that typically must pass for a new Pull Request to be accepted and merged.
+You must manually configure pre-commit to use the provided hooks by running `pre-commit install` from the
+respository top folder.
 
+```bash
+~/vehicle_signal_specification$: pip install pre-commit
+~/vehicle_signal_specification$: pre-commit install
+```
