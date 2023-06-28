@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HIM Service Data Rule Set on Hierarchical Information Model</title>
+    <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/</link>
+    <description>Recent content in HIM Service Data Rule Set on Hierarchical Information Model</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Aug 2019 13:05:11 +0200</lastBuildDate><atom:link href="https://covesa.github.io/hierarchical_information_model/service_data_rule_set/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Service Data Model</title>
+      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/basics/</link>
+      <pubDate>Sun, 04 Aug 2019 13:05:11 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/basics/</guid>
+      <description>HIM Service Data A service is in HIM defined by a procedure signature as shown below:
+(output1,..outputN) serviceName(input1,..inputM)
+where
+serviceName is the name of the procedure. input1,..,inputM denotes the input parameters of the procedure, which may be zero or more. output1,..,outputN denotes the output parameters of the procedure, which may be zero or more. HIM only specifies the data defining the above procedure signature, it does not specify details of how a call is made, such as how it is serialized, etc.</description>
+    </item>
+    
+    <item>
+      <title>Service node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/service/</link>
+      <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/service/</guid>
+      <description>Nodes of the type service must have the following mandatory metadata:
+Name Type Description For more information, see the Common Rule Set: Mandatory Metadata.
+Besides the mandatory metadata mentioned above, the following optional metadata may be used
+Comment For more information, please see the Common Rule Set: Optional Metadata.
+A parent must be of the node type branch. Children, if any, must be of the node type struct. An example of the specification of a service node is given below.</description>
+    </item>
+    
+  </channel>
+</rss>

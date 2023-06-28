@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Entry on Hierarchical Information Model</title>
+    <link>https://covesa.github.io/hierarchical_information_model/common_rule_set/data_entry/</link>
+    <description>Recent content in Data Entry on Hierarchical Information Model</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Aug 2019 11:11:30 +0200</lastBuildDate><atom:link href="https://covesa.github.io/hierarchical_information_model/common_rule_set/data_entry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Datatypes</title>
+      <link>https://covesa.github.io/hierarchical_information_model/common_rule_set/data_entry/datatypes/</link>
+      <pubDate>Sun, 04 Aug 2019 11:11:48 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/common_rule_set/data_entry/datatypes/</guid>
+      <description>HIM supports the datatype concepts:
+primitive datatypes, composite datatypes, arrays. This chapter also mentions the related concepts of Timestamps, and Data streams.
+Primitive datatypes The list below shows the primitive datatypes that are supported.
+Name Description Min Max uint8 unsigned 8-bit integer 0 255 int8 signed 8-bit integer -128 127 uint16 unsigned 16-bit integer 0 65535 int16 signed 16-bit integer -32768 32767 uint32 unsigned 32-bit integer 0 4294967295 int32 signed 32-bit integer -2147483648 2147483647 uint64 unsigned 64-bit integer 0 2^64 - 1 int64 signed 64-bit integer -2^63 2^63 - 1 boolean boolean value 0/false 1/true float floating point number -3.</description>
+    </item>
+    
+    <item>
+      <title>Structs Explained</title>
+      <link>https://covesa.github.io/hierarchical_information_model/common_rule_set/data_entry/structs/</link>
+      <pubDate>Sun, 04 Aug 2019 11:11:48 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/common_rule_set/data_entry/structs/</guid>
+      <description>As mentioned in the chapter Composite datatypes a struct is defined using the node types &amp;lsquo;struct&amp;rsquo; and &amp;lsquo;property&amp;rsquo; in trees having the information type TypeDefinition, and it is referred to by using its path.
+The struct node type can also be used in trees having the information type Service, which is described in HIM Services Rule Set.
+A struct definition in a Typedefinition tree can contain a member that has a different struct as its datatype.</description>
+    </item>
+    
+    <item>
+      <title>Units</title>
+      <link>https://covesa.github.io/hierarchical_information_model/common_rule_set/data_entry/units/</link>
+      <pubDate>Sun, 04 Aug 2019 12:36:12 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/common_rule_set/data_entry/units/</guid>
+      <description>Introduction to Units HIM keeps a list of the units of measurements that can be used as the value of the unit metadata, see the example below.
+Vehicle.Speed: datatype: float type: sensor unit: km/h description: Vehicle speed. Data that has an associated unit from the list shall declare it using the unit metadata. It is allowed for a domain to specify an additional list with domain specific units that complement the common units list.</description>
+    </item>
+    
+    <item>
+      <title>Value Restrictions</title>
+      <link>https://covesa.github.io/hierarchical_information_model/common_rule_set/data_entry/value_restrictions/</link>
+      <pubDate>Sun, 04 Aug 2019 12:37:12 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/common_rule_set/data_entry/value_restrictions/</guid>
+      <description>HIM supports the following metadata for restricting the valid values of data.
+min max allowed Min The minimum value, within the interval of the given datatype, that the data entry can be assigned. If omitted, the minimum value will be the “Min” value for the given datatype. The min restrictions can only be used data having a &amp;ldquo;number&amp;quot;datatype (intx, uintx, float, double). Must not be specified if allowed is defined in the same node.</description>
+    </item>
+    
+  </channel>
+</rss>

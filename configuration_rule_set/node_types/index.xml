@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configuration File Node types on Hierarchical Information Model</title>
+    <link>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/node_types/</link>
+    <description>Recent content in Configuration File Node types on Hierarchical Information Model</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://covesa.github.io/hierarchical_information_model/configuration_rule_set/node_types/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Proxy node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/node_types/proxy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/node_types/proxy/</guid>
+      <description>A proxy node in a HIM configuration file defines a tree that the server managing this forest does not have a local copy of. It however knows how to forward requests to the server that managaes the tree and has a local copy of it. An example could be a home automation scenario, where a server deployed in a car knows the Local Area Network access point address bearer type, so that when in proximity of the LAN, and after the vehicle has connected to it, requests received by the HIM server in he vehicle can then be routed to the server deployed on the LAN.</description>
+    </item>
+    
+    <item>
+      <title>Taxonomy node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/node_types/taxonomy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/node_types/taxonomy/</guid>
+      <description>A taxonomy node in a HIM configuration file defines a tree that the server managing this forest have a local and complete copy of. This means that the server can efficiently parse the tree to e. g. verify that a client request for information points to an existing node in the tree.
+Nodes of the type taxonomy must have the following mandatory metadata:
+Name Type Domain Version Local Description For more information, see the Common Rule Set: Mandatory Metadata.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Common Node types on Hierarchical Information Model</title>
+    <link>https://covesa.github.io/hierarchical_information_model/common_rule_set/node_types/</link>
+    <description>Recent content in Common Node types on Hierarchical Information Model</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Aug 2019 12:37:03 +0200</lastBuildDate><atom:link href="https://covesa.github.io/hierarchical_information_model/common_rule_set/node_types/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Branch node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/common_rule_set/node_types/branch/</link>
+      <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/common_rule_set/node_types/branch/</guid>
+      <description>The interior of a HIM tree is built up of nodes that have the node type branch.
+Nodes of the type branch must have the following mandatory metadata:
+Name Type Description For more information, see the Common Rule Set: Mandatory Metadata.
+Besides the mandatory metadata mentioned above, the following optional metadata may be used
+Comment Instances Aggregate For more information, please see the Common Rule Set: Optional Metadata.
+The root node of a HIM tre must be of the node type branch.</description>
+    </item>
+    
+    <item>
+      <title>Property node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/common_rule_set/node_types/property/</link>
+      <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/common_rule_set/node_types/property/</guid>
+      <description>Sensors are signals to read values of properties in a vehicle. Values of sensors typically change over time. Reading a sensor shall return the current actual value of the related property, e.g. the current speed or the current position of the seat.
+Nodes of the type property must have the following mandatory metadata:
+Name Type Datatype Description For more information, see the Common Rule Set: Mandatory Metadata.
+Besides the mandatory metadata mentioned above, the following optional metadata may be used</description>
+    </item>
+    
+    <item>
+      <title>Struct node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/common_rule_set/node_types/struct/</link>
+      <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/common_rule_set/node_types/struct/</guid>
+      <description>The node type struct is only allowed in trees of the information types typedefinition or service. For more information, please see respective parts of this document.
+Nodes of the type struct must have the following mandatory metadata:
+Name Type Description For more information, see the Common Rule Set: Mandatory Metadata.
+Besides the mandatory metadata mentioned above, the following optional metadata may be used
+Comment For more information, please see the Common Rule Set: Optional Metadata.</description>
+    </item>
+    
+  </channel>
+</rss>

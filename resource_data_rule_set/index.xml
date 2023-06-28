@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HIM Resource Data Rule Set on Hierarchical Information Model</title>
+    <link>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/</link>
+    <description>Recent content in HIM Resource Data Rule Set on Hierarchical Information Model</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Aug 2019 13:05:11 +0200</lastBuildDate><atom:link href="https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data</title>
+      <link>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/basics/</link>
+      <pubDate>Sun, 04 Aug 2019 13:05:11 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/basics/</guid>
+      <description>It is the leaf nodes of a tree that represents and defines the actual data. The definition is expressed by metadata describing the data associated to the node.
+Node Types The node types for representing data entries are:
+Sensor Actuator Attribute Please see the respective chapters for more information about these node types.</description>
+    </item>
+    
+    <item>
+      <title>Actuator node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/actuator/</link>
+      <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/actuator/</guid>
+      <description>Actuators are used to control the desired value of a property. Some properties in a vehicle cannot change instantly. A typical example is position of a seat or a window. Reading a value of an actuator shall return the current actual value, e.g. the current position of the seat, rather than the wanted/desired position. A typical example could be if someone wants to change the position of a seat from 0 to 100.</description>
+    </item>
+    
+    <item>
+      <title>Sensor node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/sensor/</link>
+      <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/sensor/</guid>
+      <description>Sensors are signals to read values of properties in a vehicle. Values of sensors typically change over time. Reading a sensor shall return the current actual value of the related property, e.g. the current speed or the current position of the seat.
+Nodes of the type sensor must have the following mandatory metadata:
+Name Type Datatype Description For more information, see the Common Rule Set: Mandatory Metadata.
+Besides the mandatory metadata mentioned above, the following optional metadata may be used</description>
+    </item>
+    
+    <item>
+      <title>Attribute node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/attribute/</link>
+      <pubDate>Sun, 04 Aug 2019 12:37:31 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/attribute/</guid>
+      <description>Nodes of the types attribute must have the following mandatory metadata:
+Name Type Datatype Default Description For more information, see the Common Rule Set: Mandatory Metadata.
+Besides the mandatory metadata mentioned above, the following optional metadata may be used
+Unit Comment For more information, please see the Common Rule Set: Optional Metadata.
+This node type must have a node of type branch as parent, and must not have any children.</description>
+    </item>
+    
+  </channel>
+</rss>

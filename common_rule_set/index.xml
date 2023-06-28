@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HIM Common Rule Set on Hierarchical Information Model</title>
+    <link>https://covesa.github.io/hierarchical_information_model/common_rule_set/</link>
+    <description>Recent content in HIM Common Rule Set on Hierarchical Information Model</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Aug 2019 13:05:11 +0200</lastBuildDate><atom:link href="https://covesa.github.io/hierarchical_information_model/common_rule_set/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basic Rules</title>
+      <link>https://covesa.github.io/hierarchical_information_model/common_rule_set/basics/</link>
+      <pubDate>Sun, 04 Aug 2019 13:05:11 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/common_rule_set/basics/</guid>
+      <description>Specification format The syntax used to define the content of a HIM taxonomy is based on YAML and must comply to the YAML specification.
+A HIM taxonomy may contain subtrees that are identical copies of each other, for example descriptions of doors in a vehicle. In order not to have to repeat the content of the subtree multiple times, the subtree can be defined in a separate file, which can then be included into the main tree by the directive</description>
+    </item>
+    
+    <item>
+      <title>Instances</title>
+      <link>https://covesa.github.io/hierarchical_information_model/common_rule_set/instances/</link>
+      <pubDate>Wed, 31 Jul 2019 15:27:36 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/common_rule_set/instances/</guid>
+      <description>It is not uncommon that when defining HIM taxonomies there is a need to repeat branches and data entries when multiple instances of the same object occurs. One mechanism to handle that is the include directive, but that does not solve how to compactly describe a branch structure that uniquely enumerates multiple includes. To avoid hard-coded repetitions of branches and data entries in the specification an instance-concept is supported. Instances remove the need of repeating definitions, by defining at the node itself how often it occurs in the resulting tree.</description>
+    </item>
+    
+    <item>
+      <title>Includes</title>
+      <link>https://covesa.github.io/hierarchical_information_model/common_rule_set/includes/</link>
+      <pubDate>Sun, 04 Aug 2019 12:59:44 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/common_rule_set/includes/</guid>
+      <description>An include directive in a HIM file will read the file it refers to and the contents of that file will be inserted into the current buffer in place of the include directive. The included file will, in its turn, be scanned for include directives to be replaced, effectively allowing formation of a tree of includedfiles.
+See the figurefor an example of such a tree.
+Figure: Include directives
+The include directive has the following format:</description>
+    </item>
+    
+  </channel>
+</rss>

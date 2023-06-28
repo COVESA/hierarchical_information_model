@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.103.1" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/hierarchical_information_model/images/fav.png" type="image/x-icon" />
+
+    <title>Service Data Model :: Hierarchical Information Model</title>
+
+    
+    <link href="/hierarchical_information_model/css/nucleus.css?1687940261" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1687940261" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hybrid.css?1687940261" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/featherlight.min.css?1687940261" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1687940261" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/auto-complete.css?1687940261" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1687940261" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme.css?1687940261" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hugo-theme.css?1687940261" rel="stylesheet">
+    
+    <link href="/hierarchical_information_model/css/theme-blue.css?1687940261" rel="stylesheet">
+    
+    
+
+    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1687940261"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/hierarchical_information_model/service_data_rule_set/basics/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://covesa.github.io/hierarchical_information_model/">
+  <img src="/hierarchical_information_model/images/him.png">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1687940261"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1687940261"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/covesa.github.io\/hierarchical_information_model\/";
+    
+</script>
+<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1687940261"></script>
+
+    
+  </div>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/hierarchical_information_model/common_rule_set/" title="HIM Common Rule Set" class="dd-item
+        
+        
+        
+        ">
+      <a href="/hierarchical_information_model/common_rule_set/">
+          HIM Common Rule Set
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/common_rule_set/basics/" title="Basic Rules" class="dd-item ">
+        <a href="/hierarchical_information_model/common_rule_set/basics/">
+        Basic Rules
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/hierarchical_information_model/common_rule_set/data_entry/" title="Data Entry" class="dd-item
+        
+        
+        
+        ">
+      <a href="/hierarchical_information_model/common_rule_set/data_entry/">
+          Data Entry
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/common_rule_set/data_entry/datatypes/" title="Datatypes" class="dd-item ">
+        <a href="/hierarchical_information_model/common_rule_set/data_entry/datatypes/">
+        Datatypes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/common_rule_set/data_entry/structs/" title="Structs Explained" class="dd-item ">
+        <a href="/hierarchical_information_model/common_rule_set/data_entry/structs/">
+        Structs Explained
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/common_rule_set/data_entry/units/" title="Units" class="dd-item ">
+        <a href="/hierarchical_information_model/common_rule_set/data_entry/units/">
+        Units
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/common_rule_set/data_entry/value_restrictions/" title="Value Restrictions" class="dd-item ">
+        <a href="/hierarchical_information_model/common_rule_set/data_entry/value_restrictions/">
+        Value Restrictions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/common_rule_set/instances/" title="Instances" class="dd-item ">
+        <a href="/hierarchical_information_model/common_rule_set/instances/">
+        Instances
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/common_rule_set/includes/" title="Includes" class="dd-item ">
+        <a href="/hierarchical_information_model/common_rule_set/includes/">
+        Includes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/hierarchical_information_model/common_rule_set/node_types/" title="Common Node types" class="dd-item
+        
+        
+        
+        ">
+      <a href="/hierarchical_information_model/common_rule_set/node_types/">
+          Common Node types
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/common_rule_set/node_types/branch/" title="Branch node" class="dd-item ">
+        <a href="/hierarchical_information_model/common_rule_set/node_types/branch/">
+        Branch node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/common_rule_set/node_types/property/" title="Property node" class="dd-item ">
+        <a href="/hierarchical_information_model/common_rule_set/node_types/property/">
+        Property node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/common_rule_set/node_types/struct/" title="Struct node" class="dd-item ">
+        <a href="/hierarchical_information_model/common_rule_set/node_types/struct/">
+        Struct node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/hierarchical_information_model/resource_data_rule_set/" title="HIM Resource Data Rule Set" class="dd-item
+        
+        
+        
+        ">
+      <a href="/hierarchical_information_model/resource_data_rule_set/">
+          HIM Resource Data Rule Set
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/resource_data_rule_set/basics/" title="Data" class="dd-item ">
+        <a href="/hierarchical_information_model/resource_data_rule_set/basics/">
+        Data
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/resource_data_rule_set/actuator/" title="Actuator node" class="dd-item ">
+        <a href="/hierarchical_information_model/resource_data_rule_set/actuator/">
+        Actuator node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/resource_data_rule_set/sensor/" title="Sensor node" class="dd-item ">
+        <a href="/hierarchical_information_model/resource_data_rule_set/sensor/">
+        Sensor node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/resource_data_rule_set/attribute/" title="Attribute node" class="dd-item ">
+        <a href="/hierarchical_information_model/resource_data_rule_set/attribute/">
+        Attribute node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/hierarchical_information_model/service_data_rule_set/" title="HIM Service Data Rule Set" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/hierarchical_information_model/service_data_rule_set/">
+          HIM Service Data Rule Set
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/service_data_rule_set/basics/" title="Service Data Model" class="dd-item active">
+        <a href="/hierarchical_information_model/service_data_rule_set/basics/">
+        Service Data Model
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/service_data_rule_set/service/" title="Service node" class="dd-item ">
+        <a href="/hierarchical_information_model/service_data_rule_set/service/">
+        Service node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/hierarchical_information_model/configuration_rule_set/" title="HIM Configuration Rule Set" class="dd-item
+        
+        
+        
+        ">
+      <a href="/hierarchical_information_model/configuration_rule_set/">
+          HIM Configuration Rule Set
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/configuration_rule_set/basics/" title="HIM Configuration Rules" class="dd-item ">
+        <a href="/hierarchical_information_model/configuration_rule_set/basics/">
+        HIM Configuration Rules
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/hierarchical_information_model/configuration_rule_set/node_types/" title="Configuration File Node types" class="dd-item
+        
+        
+        
+        ">
+      <a href="/hierarchical_information_model/configuration_rule_set/node_types/">
+          Configuration File Node types
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/configuration_rule_set/node_types/proxy/" title="Proxy node" class="dd-item ">
+        <a href="/hierarchical_information_model/configuration_rule_set/node_types/proxy/">
+        Proxy node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/configuration_rule_set/node_types/taxonomy/" title="Taxonomy node" class="dd-item ">
+        <a href="/hierarchical_information_model/configuration_rule_set/node_types/taxonomy/">
+        Taxonomy node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/hierarchical_information_model/type_definition_rule_set/" title="HIM Type Definition Rule Set" class="dd-item
+        
+        
+        
+        ">
+      <a href="/hierarchical_information_model/type_definition_rule_set/">
+          HIM Type Definition Rule Set
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hierarchical_information_model/type_definition_rule_set/basics/" title="Type Definition Model" class="dd-item ">
+        <a href="/hierarchical_information_model/type_definition_rule_set/basics/">
+        Type Definition Model
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/covesa/hierarchical_information_model"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/covesa/hierarchical_information_model/edit/master/docs-gen/content/service_data_rule_set/basics.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/hierarchical_information_model/'>Hierarchical Information Model</a> > <a href='/hierarchical_information_model/service_data_rule_set/'>HIM Service Data Rule Set</a> > Service Data Model
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#him-service-data">HIM Service Data</a></li>
+    <li><a href="#service-data-tree-structure">Service data tree structure</a></li>
+    <li><a href="#service-state">Service state</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Service Data Model
+            </h1>
+          
+
+        
+
+
+<h2 id="him-service-data">HIM Service Data</h2>
+<p>A service is in HIM defined by a procedure signature as shown below:</p>
+<p><strong>(output1,..outputN) serviceName(input1,..inputM)</strong></p>
+<p>where</p>
+<ul>
+<li>serviceName is the name of the procedure.</li>
+<li>input1,..,inputM denotes the input parameters of the procedure, which may be zero or more.</li>
+<li>output1,..,outputN denotes the output parameters of the procedure, which may be zero or more.</li>
+</ul>
+<p>HIM only specifies the data defining the above procedure signature, it does not specify details of how a call is made, such as how it is serialized, etc.</p>
+<h2 id="service-data-tree-structure">Service data tree structure</h2>
+<p>The general structure of how service data is represented in a HIM tree is shown in the figure below.</p>
+<p><img src="/hierarchical_information_model/images/service_graph_representation.png?width=50pc" alt="HIM service data graph structure">
+*Figure x. HIM service data graph representation</p>
+<ul>
+<li>The name of the procedure is the name of the node of <code>service</code> type.</li>
+<li>The input and output parameters are respectively represented by a  node of type <code>struct</code> that must have the names &lsquo;Input&rsquo; and &lsquo;Output&rsquo;, respectively.</li>
+<li>An input/output parameter is represented by a node of type <code>property</code>.</li>
+</ul>
+<p>Any Input/Output nodes, and their associated children, are only present if the procedure has at least one parameter of the respective Input/Output.</p>
+<h2 id="service-state">Service state</h2>
+<p>A service may have a temporal duration from it is started and until it completes.
+It is therefore desireable that the state of the service can be observed,
+as it may be the case that an ongoing service execution does not allow new service actuations to be started.
+The state of a HIM service is represented by a uint8 datatype value that all <code>service</code> nodes have as a mandatory metadata.</p>
+<p>The allowed values of the service state are:</p>
+<ul>
+<li>0-99 : ongoing</li>
+<li>100 : ready</li>
+<li>101 : unavailable</li>
+<li>102 : broken</li>
+</ul>
+<p>The rules for how a service shall update the state value follows below:</p>
+<ul>
+<li>A fully functioning that is not ongoing shall have the value 100.</li>
+<li>When a valid service request is received the state shall be set to zero (0).</li>
+<li>The service may update the state value as the service execution proceeds.</li>
+<li>When the service execution successfully terminates the state value mus be set to 100.</li>
+<li>If a service is functional but temporarily unavailable it shall be set to 101.</li>
+<li>If a service requires repair or other type of critical maintenance to become functioning it shall be set to 102.</li>
+</ul>
+<p>The service state does not represent the error code that is typically part of a transport protocol.</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/hierarchical_information_model/service_data_rule_set/" title="HIM Service Data Rule Set"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/hierarchical_information_model/service_data_rule_set/service/" title="Service node" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/hierarchical_information_model/js/clipboard.min.js?1687940261"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1687940261"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1687940261"></script>
+    <script src="/hierarchical_information_model/js/jquery.sticky.js?1687940261"></script>
+    <script src="/hierarchical_information_model/js/featherlight.min.js?1687940261"></script>
+    <script src="/hierarchical_information_model/js/highlight.pack.js?1687940261"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1687940261"></script>
+    <script src="/hierarchical_information_model/js/learn.js?1687940261"></script>
+    <script src="/hierarchical_information_model/js/hugo-learn.js?1687940261"></script>
+    
+        
+            <script src="/hierarchical_information_model/mermaid/mermaid.js?1687940261"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+

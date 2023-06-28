@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HIM Configuration Rule Set on Hierarchical Information Model</title>
+    <link>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/</link>
+    <description>Recent content in HIM Configuration Rule Set on Hierarchical Information Model</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://covesa.github.io/hierarchical_information_model/configuration_rule_set/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HIM Configuration Rules</title>
+      <link>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/basics/</guid>
+      <description>Configuration Overview HIM supports structuring information into different trees instead of bundling it all into one tree. This is likely to lead to that e. g. a server that manages a super domain of somewhat heterogeneous information will have that information represented by multiple trees. HIM enables this &amp;ldquo;forest of trees&amp;rdquo; to be accessed in a homogeneous manner by using the paths of the nodes of the trees to address theinformation contained in the trees.</description>
+    </item>
+    
+  </channel>
+</rss>
