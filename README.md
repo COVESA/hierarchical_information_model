@@ -37,17 +37,6 @@ HIM currently supports the following "information types":
 What is not an ambition of HIM is to define how the information is transported between agents,
 which is left to projects defining transport protocols, interfaces, and the like.
 
-## HIM documentation
-
-The HIM rule sets documentation will be found on [this link](TBD).
-As a site that can host the documentation is not yet available,
-the alternative in order to get an easy-to-read rendering of the markup formatted text is:
-1. Clone the repo
-2. Install [HUGO](https://gohugo.io/getting-started/).
-3. In a terminal window, go to the hierarchical_information_model/docs-gen/ diretory
-4. Start the HUGO server: $ hugo server
-5. Copy the link that the HUGO server presents in the terminal window, and paste it into a browser tab.
-
 ## HIM origin
 
 The HIM model traces its roots to the COVESA
