@@ -4,7 +4,11 @@ date: 2019-08-04T12:37:03+02:00
 weight: 30
 ---
 
-The node type `struct` is only allowed in trees of the information types `typedefinition` or `service`.
+A `struct` node type may be used to represent multiple data points that have the relationship that they are always sampled in an "atomic" operation,
+i. e. the set of samples have the same timestamp.
+An example of such a set of data points are the GPS dta points latitude, longitude, height.
+
+This node type is only allowed in trees of the information types `typedefinition` or `service`.
 For more information, please see respective parts of this document.
 
 Nodes of the type `struct` must have the following mandatory metadata:
