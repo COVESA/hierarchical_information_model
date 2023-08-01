@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/hierarchical_information_model/images/fav.png" type="image/x-icon" />
 
-    <title>Units :: Hierarchical Information Model</title>
+    <title>Property node :: Hierarchical Information Model</title>
 
     
     <link href="/hierarchical_information_model/css/nucleus.css?1690896656" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/hierarchical_information_model/common_rule_set/data_entry/units/">
+  <body class="" data-url="/hierarchical_information_model/service_data_rule_set/property/">
     <nav id="sidebar" class="">
 
 
@@ -86,7 +86,7 @@
   
     
     <li data-nav-id="/hierarchical_information_model/common_rule_set/" title="HIM Common Rule Set" class="dd-item
-        parent
+        
         
         
         ">
@@ -136,7 +136,7 @@
   
     
     <li data-nav-id="/hierarchical_information_model/common_rule_set/data_entry/" title="Data Entry" class="dd-item
-        parent
+        
         
         
         ">
@@ -204,7 +204,7 @@
  
   
     
-      <li data-nav-id="/hierarchical_information_model/common_rule_set/data_entry/units/" title="Units" class="dd-item active">
+      <li data-nav-id="/hierarchical_information_model/common_rule_set/data_entry/units/" title="Units" class="dd-item ">
         <a href="/hierarchical_information_model/common_rule_set/data_entry/units/">
         Units
         
@@ -501,7 +501,7 @@
   
     
     <li data-nav-id="/hierarchical_information_model/service_data_rule_set/" title="HIM Service Data Rule Set" class="dd-item
-        
+        parent
         
         
         ">
@@ -569,7 +569,7 @@
  
   
     
-      <li data-nav-id="/hierarchical_information_model/service_data_rule_set/property/" title="Property node" class="dd-item ">
+      <li data-nav-id="/hierarchical_information_model/service_data_rule_set/property/" title="Property node" class="dd-item active">
         <a href="/hierarchical_information_model/service_data_rule_set/property/">
         Property node
         
@@ -902,7 +902,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/covesa/hierarchical_information_model/edit/master/docs-gen/content/common_rule_set/data_entry/units.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/covesa/hierarchical_information_model/edit/master/docs-gen/content/service_data_rule_set/property.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -933,13 +933,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/hierarchical_information_model/'>Hierarchical Information Model</a> > <a href='/hierarchical_information_model/common_rule_set/'>HIM Common Rule Set</a> > <a href='/hierarchical_information_model/common_rule_set/data_entry/'>Data Entry</a> > Units
-          
-        
+            <a href='/hierarchical_information_model/'>Hierarchical Information Model</a> > <a href='/hierarchical_information_model/service_data_rule_set/'>HIM Service Data Rule Set</a> > Property node
           
         
           
@@ -952,12 +946,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#introduction-to-units">Introduction to Units</a></li>
-    <li><a href="#list-of-supported-units">List of supported Units</a></li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -973,307 +962,40 @@
           
             <h1>
               
-              Units
+              Property node
             </h1>
           
 
         
 
 
-<h2 id="introduction-to-units">Introduction to Units</h2>
-<p>HIM keeps a list of the units of measurements that can be used as the value of the <code>unit</code> metadata, see the example below.</p>
-<pre tabindex="0"><code>Vehicle.Speed:
-  datatype: float
-  type: sensor
-  unit: km/h
-  description: Vehicle speed.
-</code></pre><p>Data that has an associated unit from the list shall declare it using the <code>unit</code> metadata.
-It is allowed for a domain to specify an additional list with domain specific units that complement the common units list.
-Units shall if possible be based on <a href="https://www.iso.org/standard/30669.html">SI-units</a>, but exceptions like the speed example above are acceptable.
-The list contains entries of a unit with a prefix, e. g. <code>mm</code> for millimeter, which are the only prefixes that are valid.
-The unit must be written exactly as shown in the list.</p>
-<p>In some cases it is natural to omit the data unit type. This concerns typically signals where data type <code>string</code> is used,
-but also signals where the value just represents a number, like in the example below:</p>
-<pre tabindex="0"><code>Vehicle.Cabin.DoorCount:
-  datatype: uint8
-  type: attribute
-  default: 4
-  description: Number of doors in vehicle.
-</code></pre><p>HIM also supports <code>percent</code> and <code>ratio</code> as data units.</p>
-<h2 id="list-of-supported-units">List of supported Units</h2>
-<p>This list is mainly derived from the <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.330-2019.pdf">International System of Units (SI)</a>.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Unit</th>
-<th style="text-align:left">Domain</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">mm</td>
-<td style="text-align:left">Distance</td>
-<td style="text-align:left">Distance measured in millimeters</td>
-</tr>
-<tr>
-<td style="text-align:left">cm</td>
-<td style="text-align:left">Distance</td>
-<td style="text-align:left">Distance measured in centimeters</td>
-</tr>
-<tr>
-<td style="text-align:left">m</td>
-<td style="text-align:left">Distance</td>
-<td style="text-align:left">Distance measured in meters</td>
-</tr>
-<tr>
-<td style="text-align:left">km</td>
-<td style="text-align:left">Distance</td>
-<td style="text-align:left">Distance measured in kilometers</td>
-</tr>
-<tr>
-<td style="text-align:left">inch</td>
-<td style="text-align:left">Distance</td>
-<td style="text-align:left">Distance measured in inches</td>
-</tr>
-<tr>
-<td style="text-align:left">km/h</td>
-<td style="text-align:left">Speed</td>
-<td style="text-align:left">Speed measured in kilometers per hours</td>
-</tr>
-<tr>
-<td style="text-align:left">m/s</td>
-<td style="text-align:left">Speed</td>
-<td style="text-align:left">Speed measured in meters per second</td>
-</tr>
-<tr>
-<td style="text-align:left">m/s^2</td>
-<td style="text-align:left">Acceleration</td>
-<td style="text-align:left">Acceleration measured in meters per second squared</td>
-</tr>
-<tr>
-<td style="text-align:left">cm/s^2</td>
-<td style="text-align:left">Acceleration</td>
-<td style="text-align:left">Acceleration measured in centimeters per second squared</td>
-</tr>
-<tr>
-<td style="text-align:left">ml</td>
-<td style="text-align:left">Volume</td>
-<td style="text-align:left">Volume measured in milliliters</td>
-</tr>
-<tr>
-<td style="text-align:left">l</td>
-<td style="text-align:left">Volume</td>
-<td style="text-align:left">Volume measured in liters</td>
-</tr>
-<tr>
-<td style="text-align:left">cm^3</td>
-<td style="text-align:left">Volume</td>
-<td style="text-align:left">Volume measured in cubic centimeters</td>
-</tr>
-<tr>
-<td style="text-align:left">celsius</td>
-<td style="text-align:left">Temperature</td>
-<td style="text-align:left">Temperature measured in degree celsius</td>
-</tr>
-<tr>
-<td style="text-align:left">degrees</td>
-<td style="text-align:left">Angle</td>
-<td style="text-align:left">Angle measured in degrees</td>
-</tr>
-<tr>
-<td style="text-align:left">degrees/s</td>
-<td style="text-align:left">Angular Speed</td>
-<td style="text-align:left">Angular speed measured in degrees per second</td>
-</tr>
-<tr>
-<td style="text-align:left">W</td>
-<td style="text-align:left">Power</td>
-<td style="text-align:left">Power measured in watts</td>
-</tr>
-<tr>
-<td style="text-align:left">kW</td>
-<td style="text-align:left">Power</td>
-<td style="text-align:left">Power measured in kilowatts</td>
-</tr>
-<tr>
-<td style="text-align:left">PS</td>
-<td style="text-align:left">Power</td>
-<td style="text-align:left">Power measured in horsepower</td>
-</tr>
-<tr>
-<td style="text-align:left">kWh</td>
-<td style="text-align:left">Energy Consumption</td>
-<td style="text-align:left">Energy consumption measured in kilowatt hours</td>
-</tr>
-<tr>
-<td style="text-align:left">g</td>
-<td style="text-align:left">Weight</td>
-<td style="text-align:left">Mass measured in grams</td>
-</tr>
-<tr>
-<td style="text-align:left">kg</td>
-<td style="text-align:left">Weight</td>
-<td style="text-align:left">Mass measured in kilograms</td>
-</tr>
-<tr>
-<td style="text-align:left">lbs</td>
-<td style="text-align:left">Weight</td>
-<td style="text-align:left">Mass measured in pounds</td>
-</tr>
-<tr>
-<td style="text-align:left">V</td>
-<td style="text-align:left">Electric Potential</td>
-<td style="text-align:left">Electric potential measured in volts</td>
-</tr>
-<tr>
-<td style="text-align:left">A</td>
-<td style="text-align:left">Electric Current</td>
-<td style="text-align:left">Electric current measured in amperes</td>
-</tr>
-<tr>
-<td style="text-align:left">Ah</td>
-<td style="text-align:left">Electric Charge</td>
-<td style="text-align:left">Electric charge measured in ampere hours</td>
-</tr>
-<tr>
-<td style="text-align:left">ms</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">Time measured in milliseconds</td>
-</tr>
-<tr>
-<td style="text-align:left">s</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">Time measured in seconds</td>
-</tr>
-<tr>
-<td style="text-align:left">min</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">Time measured in minutes</td>
-</tr>
-<tr>
-<td style="text-align:left">h</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">Time measured in hours</td>
-</tr>
-<tr>
-<td style="text-align:left">day</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">Time measured in days</td>
-</tr>
-<tr>
-<td style="text-align:left">weeks</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">Time measured in weeks</td>
-</tr>
-<tr>
-<td style="text-align:left">months</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">Time measured in months</td>
-</tr>
-<tr>
-<td style="text-align:left">years</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">Time measured in years</td>
-</tr>
-<tr>
-<td style="text-align:left">UNIX Timestamp</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">Unix time is a system for describing a point in time. It is the number of seconds that have elapsed since the Unix epoch, excluding leap seconds.</td>
-</tr>
-<tr>
-<td style="text-align:left">mbar</td>
-<td style="text-align:left">Pressure</td>
-<td style="text-align:left">Pressure measured in millibars</td>
-</tr>
-<tr>
-<td style="text-align:left">Pa</td>
-<td style="text-align:left">Pressure</td>
-<td style="text-align:left">Pressure measured in pascal</td>
-</tr>
-<tr>
-<td style="text-align:left">kPa</td>
-<td style="text-align:left">Pressure</td>
-<td style="text-align:left">Pressure measured in kilopascal</td>
-</tr>
-<tr>
-<td style="text-align:left">stars</td>
-<td style="text-align:left">Rating</td>
-<td style="text-align:left">Rating measured in stars</td>
-</tr>
-<tr>
-<td style="text-align:left">g/s</td>
-<td style="text-align:left">Mass per time</td>
-<td style="text-align:left">Mass per time measured in grams per second</td>
-</tr>
-<tr>
-<td style="text-align:left">g/km</td>
-<td style="text-align:left">Mass per distance</td>
-<td style="text-align:left">Mass per distance measured in grams per kilometers</td>
-</tr>
-<tr>
-<td style="text-align:left">kWh/100km</td>
-<td style="text-align:left">Energy Consumption per distance</td>
-<td style="text-align:left">Energy consumption per distance measured in kilowatt hours per 100 kilometers</td>
-</tr>
-<tr>
-<td style="text-align:left">ml/100km</td>
-<td style="text-align:left">Volume per distance</td>
-<td style="text-align:left">Volume per distance measured in milliliters per 100 kilometers</td>
-</tr>
-<tr>
-<td style="text-align:left">l/100km</td>
-<td style="text-align:left">Volume per distance</td>
-<td style="text-align:left">Volume per distance measured in liters per 100 kilometers</td>
-</tr>
-<tr>
-<td style="text-align:left">l/h</td>
-<td style="text-align:left">Flow</td>
-<td style="text-align:left">Flow measured in liters per hour</td>
-</tr>
-<tr>
-<td style="text-align:left">mpg</td>
-<td style="text-align:left">Distance per Volume</td>
-<td style="text-align:left">Distance per volume measured in miles per gallon</td>
-</tr>
-<tr>
-<td style="text-align:left">N</td>
-<td style="text-align:left">Force</td>
-<td style="text-align:left">Force measured in newton</td>
-</tr>
-<tr>
-<td style="text-align:left">Nm</td>
-<td style="text-align:left">Torque</td>
-<td style="text-align:left">Torque measured in newton meters</td>
-</tr>
-<tr>
-<td style="text-align:left">rpm</td>
-<td style="text-align:left">Rotational Speed</td>
-<td style="text-align:left">Rotational speed measured in revolutions per minute</td>
-</tr>
-<tr>
-<td style="text-align:left">Hz</td>
-<td style="text-align:left">Frequency</td>
-<td style="text-align:left">Frequency measured in hertz</td>
-</tr>
-<tr>
-<td style="text-align:left">ratio</td>
-<td style="text-align:left">Relation</td>
-<td style="text-align:left">Relation measured as ratio</td>
-</tr>
-<tr>
-<td style="text-align:left">percent</td>
-<td style="text-align:left">Relation</td>
-<td style="text-align:left">Relation measured in percent</td>
-</tr>
-<tr>
-<td style="text-align:left">&hellip;</td>
-<td style="text-align:left">&hellip;</td>
-<td style="text-align:left">&hellip;</td>
-</tr>
-</tbody>
-</table>
-
+<p>Data represented by the node type <code>property</code> have a relationship to any other data having the same <code>struct</code> parent in that they are all sampled in an &ldquo;atomic&rdquo; operation,
+i.e. the set of data points have the same timestamp representing the sample time.</p>
+<p>Nodes of the type <code>property</code> must have the following mandatory metadata:</p>
+<ul>
+<li>Name</li>
+<li>Type</li>
+<li>Datatype</li>
+<li>Description</li>
+</ul>
+<p>For more information, see the <a href="/hierarchical_information_model/common_rule_set/basics#mandatory-metadata">Common Rule Set: Mandatory Metadata</a>.</p>
+<p>Besides the mandatory metadata mentioned above, the following optional metadata may be used</p>
+<ul>
+<li>Unit</li>
+<li>Min</li>
+<li>Max</li>
+<li>Allowed</li>
+<li>Comment</li>
+</ul>
+<p>For more information, please see the <a href="/hierarchical_information_model/common_rule_set/basics#optional-metadata">Common Rule Set: Optional Metadata</a>.</p>
+<p>This node type must have a node of type <code>struct</code> as parent, and must not have any children.</p>
+<p>An example of the specification of a <code>property</code> node is given below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-YAML" data-lang="YAML"><span style="display:flex;"><span><span style="color:#f92672">Type.OpenHours.Open</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">datatype</span>: <span style="color:#ae81ff">uint8</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">property</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">max</span>: <span style="color:#ae81ff">24</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">Time the address opens</span>
+</span></span></code></pre></div>
 
 <footer class="footline">
 	
@@ -1310,22 +1032,6 @@ but also signals where the value just represents a number, like in the example b
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -1334,22 +1040,7 @@ but also signals where the value just represents a number, like in the example b
 
                     
                     
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
                     
                     
 
@@ -1358,9 +1049,6 @@ but also signals where the value just represents a number, like in the example b
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1386,14 +1074,10 @@ but also signals where the value just represents a number, like in the example b
                     
 
                     
-            
-        
-                    
                         
             
             
                 
-                    
                     
                 
                 
@@ -1411,8 +1095,37 @@ but also signals where the value just represents a number, like in the example b
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
+            
+            
+                
                     
                 
                 
@@ -1596,6 +1309,7 @@ but also signals where the value just represents a number, like in the example b
             
                 
                     
+                    
                 
                 
 
@@ -1608,6 +1322,9 @@ but also signals where the value just represents a number, like in the example b
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1641,6 +1358,7 @@ but also signals where the value just represents a number, like in the example b
             
                 
                     
+                    
                 
                 
 
@@ -1656,6 +1374,9 @@ but also signals where the value just represents a number, like in the example b
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1842,10 +1563,10 @@ but also signals where the value just represents a number, like in the example b
 	 
 	 
 		
-			<a class="nav nav-prev" href="/hierarchical_information_model/common_rule_set/data_entry/structs/" title="Structs Explained"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/hierarchical_information_model/service_data_rule_set/iostruct/" title="IO-struct node"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/hierarchical_information_model/common_rule_set/data_entry/value_restrictions/" title="Value Restrictions" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/hierarchical_information_model/service_data_rule_set/service/" title="Service node" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

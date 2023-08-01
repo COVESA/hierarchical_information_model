@@ -5,7 +5,8 @@
     <link>https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/</link>
     <description>Recent content in HIM Type Definition Rule Set on Hierarchical Information Model</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Aug 2019 12:37:03 +0200</lastBuildDate><atom:link href="https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Type Definition Model</title>
       <link>https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/basics/</link>
@@ -16,6 +17,28 @@
 The currently supported node types are suited for definition of structs.
 Node Types The node types for representing type definitions are:
 Branch Struct Property Please see more information about these node types here.</description>
+    </item>
+    
+    <item>
+      <title>Property node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/property/</link>
+      <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/property/</guid>
+      <description>Data represented by the node type property have a relationship to any other data having the same struct parent in that they are all sampled in an &amp;ldquo;atomic&amp;rdquo; operation, i.e. the set of data points have the same timestamp representing the sample time.
+Nodes of the type property must have the following mandatory metadata:
+Name Type Datatype Description For more information, see the Common Rule Set: Mandatory Metadata.
+Besides the mandatory metadata mentioned above, the following optional metadata may be used</description>
+    </item>
+    
+    <item>
+      <title>Struct node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/struct/</link>
+      <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/struct/</guid>
+      <description>A struct node type may be used to represent multiple data points that have the relationship that they are always sampled in an &amp;ldquo;atomic&amp;rdquo; operation, i. e. the set of samples have the same timestamp. An example of such a set of data points are the GPS dta points latitude, longitude, height.
+This node type is only allowed in trees of the information types typedefinition or service. For more information, please see respective parts of this document.</description>
     </item>
     
   </channel>

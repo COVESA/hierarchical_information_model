@@ -20,6 +20,29 @@ serviceName is the name of the procedure. input1,..,inputM denotes the input par
     </item>
     
     <item>
+      <title>IO-struct node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/iostruct/</link>
+      <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/iostruct/</guid>
+      <description>An iostruct node type may be used to encapsulate multiple data points that have the relationship that they are all representing either Input parameters or Output parameters of the service that they are linked to.
+This node type is only allowed in trees of the information type servicedata. For more information, please see respective parts of this document.
+An iostruct node must have one of the two names Input or Output.</description>
+    </item>
+    
+    <item>
+      <title>Property node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/property/</link>
+      <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/property/</guid>
+      <description>Data represented by the node type property have a relationship to any other data having the same struct parent in that they are all sampled in an &amp;ldquo;atomic&amp;rdquo; operation, i.e. the set of data points have the same timestamp representing the sample time.
+Nodes of the type property must have the following mandatory metadata:
+Name Type Datatype Description For more information, see the Common Rule Set: Mandatory Metadata.
+Besides the mandatory metadata mentioned above, the following optional metadata may be used</description>
+    </item>
+    
+    <item>
       <title>Service node</title>
       <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/service/</link>
       <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
@@ -29,7 +52,18 @@ serviceName is the name of the procedure. input1,..,inputM denotes the input par
 Name Type Description For more information, see the Common Rule Set: Mandatory Metadata.
 Besides the mandatory metadata mentioned above, the following optional metadata may be used
 Comment For more information, please see the Common Rule Set: Optional Metadata.
-A parent must be of the node type branch. Children, if any, must be of the node type struct. An example of the specification of a service node is given below.</description>
+A parent must be of the node type branch. Children, if any, must be of the node type iostruct. An example of the specification of a service node is given below.</description>
+    </item>
+    
+    <item>
+      <title>Symlink node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/symlink/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/symlink/</guid>
+      <description>Data represented by the node type symlink have a relationship to any other data having the same iostruct parent in that they are all representing either Input parameters or Output parameters of the service that they are linked to.
+An Otput parameter declared as a symlink will lead to that the returned value is read from that data point.
+An Input parameter declared as a symlink will lead to that the provided input value is written to that data point.</description>
     </item>
     
   </channel>

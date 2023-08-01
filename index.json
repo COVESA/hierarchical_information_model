@@ -18,7 +18,7 @@
 	"title": "Service Data Model",
 	"tags": [],
 	"description": "",
-	"content": "HIM Service Data A service is in HIM defined by a procedure signature as shown below:\n(output1,..outputN) serviceName(input1,..inputM)\nwhere\nserviceName is the name of the procedure. input1,..,inputM denotes the input parameters of the procedure, which may be zero or more. output1,..,outputN denotes the output parameters of the procedure, which may be zero or more. HIM only specifies the data defining the above procedure signature, it does not specify details of how a call is made, such as how it is serialized, etc.\nService data tree structure The general structure of how service data is represented in a HIM tree is shown in the figure below.\n*Figure x. HIM service data graph representation\nThe name of the procedure is the name of the node of service type. The input and output parameters are respectively represented by a node of type struct that must have the names \u0026lsquo;Input\u0026rsquo; and \u0026lsquo;Output\u0026rsquo;, respectively. An input/output parameter is represented by a node of type property. Any Input/Output nodes, and their associated children, are only present if the procedure has at least one parameter of the respective Input/Output.\nService state A service may have a temporal duration from it is started and until it completes. It is therefore desireable that the state of the service can be observed, as it may be the case that an ongoing service execution does not allow new service actuations to be started. The state of a HIM service is represented by a uint8 datatype value that all service nodes have as a mandatory metadata.\nThe allowed values of the service state are:\n0-99 : ongoing 100 : ready 101 : unavailable 102 : broken The rules for how a service shall update the state value follows below:\nA fully functioning that is not ongoing shall have the value 100. When a valid service request is received the state shall be set to zero (0). The service may update the state value as the service execution proceeds. When the service execution successfully terminates the state value mus be set to 100. If a service is functional but temporarily unavailable it shall be set to 101. If a service requires repair or other type of critical maintenance to become functioning it shall be set to 102. The service state does not represent the error code that is typically part of a transport protocol.\n"
+	"content": "HIM Service Data A service is in HIM defined by a procedure signature as shown below:\n(output1,..outputN) serviceName(input1,..inputM)\nwhere\nserviceName is the name of the procedure. input1,..,inputM denotes the input parameters of the procedure, which may be zero or more. output1,..,outputN denotes the output parameters of the procedure, which may be zero or more. HIM only specifies the data defining the above procedure signature, it does not specify details of how a call is made, such as how it is serialized, etc.\nService data tree structure The general structure of how service data is represented in a HIM tree is shown in the figure below.\n*Figure x. HIM service data graph representation\nThe name of the procedure is the name of the node of service type. The input and output parameters are respectively represented by a node of type iostruct that must have the names \u0026lsquo;Input\u0026rsquo; and \u0026lsquo;Output\u0026rsquo;, respectively. An input/output parameter is represented by a node of type property or symlink. Any Input/Output nodes, and their associated children, are only present if the procedure has at least one parameter of the respective Input/Output.\nService state A service may have a temporal duration from it is started and until it completes. It is therefore desireable that the state of the service can be observed, as it may be the case that an ongoing service execution does not allow new service actuations to be started. The state of a HIM service is represented by a uint8 datatype value that all service nodes have as a mandatory metadata.\nThe allowed values of the service state are:\n0-99 : ongoing 100 : ready 101 : unavailable 102 : broken The rules for how a service shall update the state value follows below:\nA fully functioning that is not ongoing shall have the value 100. When a valid service request is received the state shall be set to zero (0). The service may update the state value as the service execution proceeds. When the service execution successfully terminates the state value mus be set to 100. If a service is functional but temporarily unavailable it shall be set to 101. If a service requires repair or other type of critical maintenance to become functioning it shall be set to 102. The service state does not represent the error code that is typically part of a transport protocol.\n"
 },
 {
 	"uri": "https://covesa.github.io/hierarchical_information_model/configuration_rule_set/basics/",
@@ -88,7 +88,7 @@
 	"title": "HIM Service Data Rule Set",
 	"tags": [],
 	"description": "",
-	"content": "HIM Service Data Rule Set The rules that are specific for the information type service_data is described in this part of the document, and together with the rules in the Common rule set part it forms the overall rules for this information type.\n"
+	"content": "HIM Service Data Rule Set The rules that are specific for the information type servicedata is described in this part of the document, and together with the rules in the Common rule set part it forms the overall rules for this information type.\n"
 },
 {
 	"uri": "https://covesa.github.io/hierarchical_information_model/common_rule_set/node_types/",
@@ -96,6 +96,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Common Node Types Node types that are used by more than one information type.\n"
+},
+{
+	"uri": "https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/",
+	"title": "HIM Type Definition Rule Set",
+	"tags": [],
+	"description": "",
+	"content": "HIM Type Definition Rule Set The rules that are specific for the information type type_definition is described in this part of the document, and together with the rules in the Common rule set part it forms the overall rules for this information type.\n"
 },
 {
 	"uri": "https://covesa.github.io/hierarchical_information_model/common_rule_set/data_entry/units/",
@@ -119,13 +126,6 @@
 	"content": "HIM Configuration Rule Set The overall rule set for the information type configuration is described in this part of the document, together with the rules in the Common rule set part.\n"
 },
 {
-	"uri": "https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/",
-	"title": "HIM Type Definition Rule Set",
-	"tags": [],
-	"description": "",
-	"content": "HIM Type Definition Rule Set The rules that are specific for the information type type_definition is described in this part of the document, and together with the rules in the Common rule set part it forms the overall rules for this information type.\n"
-},
-{
 	"uri": "https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/actuator/",
 	"title": "Actuator node",
 	"tags": [],
@@ -140,7 +140,21 @@
 	"content": "The interior of a HIM tree is built up of nodes that have the node type branch.\nNodes of the type branch must have the following mandatory metadata:\nName Type Description For more information, see the Common Rule Set: Mandatory Metadata.\nBesides the mandatory metadata mentioned above, the following optional metadata may be used\nComment Instances Aggregate For more information, please see the Common Rule Set: Optional Metadata.\nThe root node of a HIM tre must be of the node type branch.\nA leaf node cannot have the branch node type.\nIf it has a parent, then it must be of the node type branch.\nAn example of the specification of a branch node is given below.\nNodeName: type: branch description: This is a branch node containing its mandatory metadata. "
 },
 {
-	"uri": "https://covesa.github.io/hierarchical_information_model/common_rule_set/node_types/property/",
+	"uri": "https://covesa.github.io/hierarchical_information_model/service_data_rule_set/iostruct/",
+	"title": "IO-struct node",
+	"tags": [],
+	"description": "",
+	"content": "An iostruct node type may be used to encapsulate multiple data points that have the relationship that they are all representing either Input parameters or Output parameters of the service that they are linked to.\nThis node type is only allowed in trees of the information type servicedata. For more information, please see respective parts of this document.\nAn iostruct node must have one of the two names Input or Output.\nNodes of the type iostruct must have the following mandatory metadata:\nName Type Description For more information, see the Common Rule Set: Mandatory Metadata.\nBesides the mandatory metadata mentioned above, the following optional metadata may be used\nComment For more information, please see the Common Rule Set: Optional Metadata.\nA leaf node cannot have the iostruct node type. A parent must be of the node type service. Children must be of the node types property or symlink. It must have at least one child. An example of the specification of a struct node is given below.\nInput: type: iostruct description: This is an iostruct node representing Input parameters of a service. "
+},
+{
+	"uri": "https://covesa.github.io/hierarchical_information_model/service_data_rule_set/property/",
+	"title": "Property node",
+	"tags": [],
+	"description": "",
+	"content": "Data represented by the node type property have a relationship to any other data having the same struct parent in that they are all sampled in an \u0026ldquo;atomic\u0026rdquo; operation, i.e. the set of data points have the same timestamp representing the sample time.\nNodes of the type property must have the following mandatory metadata:\nName Type Datatype Description For more information, see the Common Rule Set: Mandatory Metadata.\nBesides the mandatory metadata mentioned above, the following optional metadata may be used\nUnit Min Max Allowed Comment For more information, please see the Common Rule Set: Optional Metadata.\nThis node type must have a node of type struct as parent, and must not have any children.\nAn example of the specification of a property node is given below.\nType.OpenHours.Open: datatype: uint8 type: property max: 24 description: Time the address opens "
+},
+{
+	"uri": "https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/property/",
 	"title": "Property node",
 	"tags": [],
 	"description": "",
@@ -158,14 +172,21 @@
 	"title": "Service node",
 	"tags": [],
 	"description": "",
-	"content": "Nodes of the type service must have the following mandatory metadata:\nName Type Description For more information, see the Common Rule Set: Mandatory Metadata.\nBesides the mandatory metadata mentioned above, the following optional metadata may be used\nComment For more information, please see the Common Rule Set: Optional Metadata.\nA parent must be of the node type branch. Children, if any, must be of the node type struct. An example of the specification of a service node is given below.\nNodeName: type: service description: This is a service node containing its mandatory metadata. Service State A service node has a mandatory datatype of uint8. As it cannot be set to any other datatype than uint8, the datatype metadata shall not be explicitly shown in the node.\n"
+	"content": "Nodes of the type service must have the following mandatory metadata:\nName Type Description For more information, see the Common Rule Set: Mandatory Metadata.\nBesides the mandatory metadata mentioned above, the following optional metadata may be used\nComment For more information, please see the Common Rule Set: Optional Metadata.\nA parent must be of the node type branch. Children, if any, must be of the node type iostruct. An example of the specification of a service node is given below.\nServiceName: type: service description: This is a service node containing its mandatory metadata. Service State A service node has a mandatory datatype of uint8. As it cannot be set to any other datatype than uint8, the datatype metadata shall not be explicitly shown in the node. The main purpose of the state information is to provide a \u0026ldquo;percentage\u0026rdquo; state of the execution to clients.\nThe service must set i to zero (0) at the beginning of the execution, and it must set it to hundred (100) at the end of a successful execution. It may further update it one or more times during the execution.\nIf an error occurs during execution the state shall be set to one of the predefined error values. This error value is not replacing either a service specific error value which the service may return as an Output parameter, nor with the error value that a transport protocol may report.\n"
 },
 {
-	"uri": "https://covesa.github.io/hierarchical_information_model/common_rule_set/node_types/struct/",
+	"uri": "https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/struct/",
 	"title": "Struct node",
 	"tags": [],
 	"description": "",
 	"content": "A struct node type may be used to represent multiple data points that have the relationship that they are always sampled in an \u0026ldquo;atomic\u0026rdquo; operation, i. e. the set of samples have the same timestamp. An example of such a set of data points are the GPS dta points latitude, longitude, height.\nThis node type is only allowed in trees of the information types typedefinition or service. For more information, please see respective parts of this document.\nNodes of the type struct must have the following mandatory metadata:\nName Type Description For more information, see the Common Rule Set: Mandatory Metadata.\nBesides the mandatory metadata mentioned above, the following optional metadata may be used\nComment For more information, please see the Common Rule Set: Optional Metadata.\nA leaf node cannot have the struct node type. A parent must be of the node type branch or service. Children must be of the node type property. It must have at least one child. An example of the specification of a struct node is given below.\nNodeName: type: struct description: This is a struct node containing its mandatory metadata. "
+},
+{
+	"uri": "https://covesa.github.io/hierarchical_information_model/common_rule_set/node_types/property/",
+	"title": "Property node",
+	"tags": [],
+	"description": "",
+	"content": "The property node type is used in both the service and typedefinition rule sets, but as they differ slightly on the semantics in respective rule set it has a separate definition in each of the rule sets, please see their definitions in the Service Rule Set:Property node node type and the Type Definition Rule Set:Property node node type respectively.\n"
 },
 {
 	"uri": "https://covesa.github.io/hierarchical_information_model/configuration_rule_set/node_types/proxy/",
@@ -173,6 +194,13 @@
 	"tags": [],
 	"description": "",
 	"content": "A proxy node in a HIM configuration file defines a tree that the server managing this forest does not have a local copy of. It however knows how to forward requests to the server that managaes the tree and has a local copy of it. An example could be a home automation scenario, where a server deployed in a car knows the Local Area Network access point address bearer type, so that when in proximity of the LAN, and after the vehicle has connected to it, requests received by the HIM server in he vehicle can then be routed to the server deployed on the LAN.\nNodes of the type proxy must have the following mandatory metadata:\nName Type Domain Version Description For more information, see the Common Rule Set: Mandatory Metadata.\nBesides the mandatory metadata mentioned above, the following optional metadata may be used\nPublic Comment For more information, please see the Common Rule Set: Optional Metadata.\nThis node type must have a node of type branch as parent, and must not have any children.\nName The name of this node must be the same as that of the root node of the tree it is representing, and it must be unique in the forest described in this file. This makes it possible to change the root node name of a \u0026ldquo;standard\u0026rdquo; tree, which then enables that multiple instances of the same standard tree can be present in the same forest. A scenario where this may happen is when a truck has more than one trailer that each is represented by the same standard tree. The trailers can then be distinguished by having different root node names.\nDomain The domain metadata is what defines the domain and information type that the tree represents. A domain name dot delimited segment names:\nThe first segment (the left-most) represents a \u0026ldquo;top domain\u0026rdquo;. Examples of top domains can be Automotive, RoadInfrastructure, Aviation. Following segments, except the last, are sub domains. Examples of sub domains can be Car, Truck, Trailer, ChargingStation. The number of sub domains is not fixed, but it is recomended to stay below five. Each additional sub domain should be a subset of the previos domain. The last segment (the right-most) represents the information type. Version The version shall be identical to the version of the tree where it shall be mandatory. Versioning shall be based on the Semantic versioning principles.\nPublic The public metadata shall, if available, be a URL to a public copy of the tree. It may be used to provision a server with a copy of the tree, but also by a client to obtain a copy instead of e. g. requesting the proxy server to provision a copy from the server managing it.\nAn example of the specification of a taxonomy node is given below.\nVehicleData: type: proxy domain: HomeAutomation.Zigbee.ResourceData version: X.Y.Z public: https://himrepo.oem.com?taxonomy=HomeAutomation.Zigbee.ResourceData.X.Y.Z description: …. "
+},
+{
+	"uri": "https://covesa.github.io/hierarchical_information_model/service_data_rule_set/symlink/",
+	"title": "Symlink node",
+	"tags": [],
+	"description": "",
+	"content": "Data represented by the node type symlink have a relationship to any other data having the same iostruct parent in that they are all representing either Input parameters or Output parameters of the service that they are linked to.\nAn Otput parameter declared as a symlink will lead to that the returned value is read from that data point.\nAn Input parameter declared as a symlink will lead to that the provided input value is written to that data point.\nNodes of the type symlink must have the following mandatory metadata:\nName Type Path Domain Version Description The Path must be a valid path to a leaf node in the tree declared by the Domain and Version metadata.\nThe Domain must declare an existing HIM tree of information type resourcedata.\nThe Version must be a dot delimited triplet declaring a version of the tree eclared by the Domain. The triplet may a suffix of either \u0026ldquo;+\u0026rdquo; or \u0026ldquo;-\u0026rdquo;, denoting that also any following or previous versions are also valid.\nBesides the mandatory metadata mentioned above, the following optional metadata may be used\nComment For more information, please see the Common Rule Set: Optional Metadata.\nThis node type must have a node of type iostruct as parent, and must not have any children.\nAn example of the specification of a symlink node is given below.\nVehicleService.GPS.GetPosition.Output.Latitude: type: symlink path: Vehicle.CurrentLocation.Latitude domain: Automotive.Vehicle.Car.ResourceData version: 3.0.0+ description: This is a symlink to a VSS tree. "
 },
 {
 	"uri": "https://covesa.github.io/hierarchical_information_model/configuration_rule_set/node_types/taxonomy/",
