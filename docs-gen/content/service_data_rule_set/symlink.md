@@ -1,13 +1,12 @@
 ---
 title: "Symlink node"
-date: 2019-08-04T12:37:03+02:00
 weight: 30
 ---
 
 Data represented by the node type `symlink` have a relationship to any other data having the same `iostruct` parent in that they are all representing either
 Input parameters or Output parameters of the service that they are linked to.
 
-An Otput parameter declared as a symlink will lead to that the returned value is read from that data point. 
+An Otput parameter declared as a symlink will lead to that the returned value is read from that data point.
 
 An Input parameter declared as a symlink will lead to that the provided input value is written to that data point.
 

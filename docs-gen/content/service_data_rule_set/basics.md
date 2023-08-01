@@ -51,5 +51,4 @@ The rules for how a service shall update the state value follows below:
 - If a service is functional but temporarily unavailable it shall be set to 101.
 - If a service requires repair or other type of critical maintenance to become functioning it shall be set to 102.
 
-The service state does not represent the error code that is typically part of a transport protocol. 
-
+The service state does not represent the error code that is typically part of a transport protocol.
