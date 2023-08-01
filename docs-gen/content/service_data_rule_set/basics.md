@@ -24,8 +24,8 @@ The general structure of how service data is represented in a HIM tree is shown 
 *Figure x. HIM service data graph representation
 
 - The name of the procedure is the name of the node of `service` type.
-- The input and output parameters are respectively represented by a  node of type `struct` that must have the names 'Input' and 'Output', respectively.
-- An input/output parameter is represented by a node of type `property`.
+- The input and output parameters are respectively represented by a  node of type `iostruct` that must have the names 'Input' and 'Output', respectively.
+- An input/output parameter is represented by a node of type `property` or `symlink`.
 
 Any Input/Output nodes, and their associated children, are only present if the procedure has at least one parameter of the respective Input/Output.
 

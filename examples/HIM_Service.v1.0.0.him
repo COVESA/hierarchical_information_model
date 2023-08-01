@@ -11,13 +11,15 @@ VehicleService.ExternalLightning.HeadLampsOnOff:
   description: Service name: HeadLampsOnOff, Input: Switch, Output: None.
 
 VehicleService.ExternalLightning.HeadLampsOnOff.Input:
-  type: struct
-  description: A struct type containing the input parameter(s).
+  type: iostruct
+  description: An iostruct type containing the input parameter(s).
 
 VehicleService.ExternalLightning.HeadLampsOnOff.Input.Switch:
-  datatype: boolean
-  type: property
-  description: true = headlamps on, false = headlamps off
+  type: symlink
+  path: Vehicle.Body.Lights.IsHighBeamSwitchOn
+  domain: Automotive.Vehicle.Car.ResourceData
+  version: 3.0.0+
+  description: The reference in the VSS data tree is set to the input value.
 
 VehicleService.Version:
   type: branch
