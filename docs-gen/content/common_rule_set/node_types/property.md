@@ -4,7 +4,8 @@ date: 2019-08-04T12:37:03+02:00
 weight: 30
 ---
 
-Sensors are signals to read values of properties in a vehicle. Values of sensors typically change over time. Reading a sensor shall return the current actual value of the related property, e.g. the current speed or the current position of the seat.
+Data represented by the node type `property` have a relationship to any other data having the same `struct` parent in that they are all sampled in an "atomic" operation,
+i.e. the set of data points have the same timestamp representing the sample time.
 
 Nodes of the type `property` must have the following mandatory metadata:
 - Name
