@@ -13,10 +13,9 @@
       <pubDate>Sun, 04 Aug 2019 13:05:11 +0200</pubDate>
       
       <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/basics/</guid>
-      <description>HIM Service Data A service is in HIM defined by a procedure signature as shown below:
-(output1,..outputN) serviceName(input1,..inputM)
-where
-serviceName is the name of the procedure. input1,..,inputM denotes the input parameters of the procedure, which may be zero or more. output1,..,outputN denotes the output parameters of the procedure, which may be zero or more. HIM only specifies the data defining the above procedure signature, it does not specify details of how a call is made, such as how it is serialized, etc.</description>
+      <description>HIM Service-Data Tree A HIM service data tree contains a taxonomy of microservice declarations. The tree structure is used to create a sets of microservices. Such as set is named Service, or Service Group for larger sets where a set of Service Groups would then form a Service, see the figure below, or the example service data tree.
+*Figure x. HIM service tree structure
+HIM Microservice Data A microservice is in HIM defined by a procedure signature as shown below:</description>
     </item>
     
     <item>
@@ -25,7 +24,7 @@ serviceName is the name of the procedure. input1,..,inputM denotes the input par
       <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
       
       <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/iostruct/</guid>
-      <description>An iostruct node type may be used to encapsulate multiple data points that have the relationship that they are all representing either Input parameters or Output parameters of the service that they are linked to.
+      <description>An iostruct node type may be used to encapsulate multiple data points that have the relationship that they are all representing either Input parameters or Output parameters of the microservice that they are linked to.
 This node type is only allowed in trees of the information type servicedata. For more information, please see respective parts of this document.
 An iostruct node must have one of the two names Input or Output.</description>
     </item>
@@ -36,23 +35,23 @@ An iostruct node must have one of the two names Input or Output.</description>
       <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
       
       <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/property/</guid>
-      <description>Data represented by the node type property have a relationship to any other data having the same struct parent in that they are all sampled in an &amp;ldquo;atomic&amp;rdquo; operation, i.e. the set of data points have the same timestamp representing the sample time.
+      <description>Data represented by the node type property have a relationship to any other data having the same iostruct parent in that they are all sampled in an &amp;ldquo;atomic&amp;rdquo; operation, i.e. the set of data points have the same timestamp representing the sample time.
 Nodes of the type property must have the following mandatory metadata:
 Name Type Datatype Description For more information, see the Common Rule Set: Mandatory Metadata.
 Besides the mandatory metadata mentioned above, the following optional metadata may be used</description>
     </item>
     
     <item>
-      <title>Service node</title>
-      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/service/</link>
-      <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
+      <title>Microservice node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/microservice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/service/</guid>
-      <description>Nodes of the type service must have the following mandatory metadata:
+      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/microservice/</guid>
+      <description>Nodes of the type microservice must have the following mandatory metadata:
 Name Type Description For more information, see the Common Rule Set: Mandatory Metadata.
 Besides the mandatory metadata mentioned above, the following optional metadata may be used
 Comment For more information, please see the Common Rule Set: Optional Metadata.
-A parent must be of the node type branch. Children, if any, must be of the node type iostruct. An example of the specification of a service node is given below.</description>
+A parent must be of the node type branch. Children, if any, must be of the node type iostruct. An example of the specification of a microservice node is given below.</description>
     </item>
     
     <item>

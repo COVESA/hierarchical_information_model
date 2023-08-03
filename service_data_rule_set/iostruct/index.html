@@ -12,21 +12,21 @@
     <title>IO-struct node :: Hierarchical Information Model</title>
 
     
-    <link href="/hierarchical_information_model/css/nucleus.css?1690896656" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1690896656" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hybrid.css?1690896656" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/featherlight.min.css?1690896656" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1690896656" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/auto-complete.css?1690896656" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1690896656" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/theme.css?1690896656" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hugo-theme.css?1690896656" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/nucleus.css?1691065893" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1691065893" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hybrid.css?1691065893" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/featherlight.min.css?1691065893" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1691065893" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/auto-complete.css?1691065893" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1691065893" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme.css?1691065893" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hugo-theme.css?1691065893" rel="stylesheet">
     
-    <link href="/hierarchical_information_model/css/theme-blue.css?1690896656" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme-blue.css?1691065893" rel="stylesheet">
     
     
 
-    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1690896656"></script>
+    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1691065893"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1690896656"></script>
-<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1690896656"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1691065893"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1691065893"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/covesa.github.io\/hierarchical_information_model\/";
     
 </script>
-<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1690896656"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1691065893"></script>
 
     
   </div>
@@ -590,9 +590,9 @@
  
   
     
-      <li data-nav-id="/hierarchical_information_model/service_data_rule_set/service/" title="Service node" class="dd-item ">
-        <a href="/hierarchical_information_model/service_data_rule_set/service/">
-        Service node
+      <li data-nav-id="/hierarchical_information_model/service_data_rule_set/microservice/" title="Microservice node" class="dd-item ">
+        <a href="/hierarchical_information_model/service_data_rule_set/microservice/">
+        Microservice node
         
         </a>
     </li>
@@ -970,7 +970,7 @@
 
 
 <p>An <code>iostruct</code> node type may be used to encapsulate multiple data points that have the relationship that they are all representing either
-Input parameters or Output parameters of the service that they are linked to.</p>
+Input parameters or Output parameters of the microservice that they are linked to.</p>
 <p>This node type is only allowed in trees of the information type <code>servicedata</code>.
 For more information, please see respective parts of this document.</p>
 <p>An <code>iostruct</code> node must have one of the two names <code>Input</code> or <code>Output</code>.</p>
@@ -988,14 +988,14 @@ For more information, please see respective parts of this document.</p>
 <p>For more information, please see the <a href="/hierarchical_information_model/common_rule_set/basics#optional-metadata">Common Rule Set: Optional Metadata</a>.</p>
 <ul>
 <li>A leaf node cannot have the <code>iostruct</code> node type.</li>
-<li>A parent must be of the node type <code>service</code>.</li>
+<li>A parent must be of the node type <code>microservice</code>.</li>
 <li>Children must be of the node types <code>property</code> or <code>symlink</code>.</li>
 <li>It must have at least one child.</li>
 </ul>
 <p>An example of the specification of a <code>struct</code> node is given below.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-YAML" data-lang="YAML"><span style="display:flex;"><span><span style="color:#f92672">Input</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">iostruct</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">This is an iostruct node representing Input parameters of a service.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">This is an iostruct node representing Input parameters of a microservice.</span>
 </span></span></code></pre></div>
 
 <footer class="footline">
@@ -1577,19 +1577,19 @@ For more information, please see respective parts of this document.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/hierarchical_information_model/js/clipboard.min.js?1690896656"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1690896656"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1690896656"></script>
-    <script src="/hierarchical_information_model/js/jquery.sticky.js?1690896656"></script>
-    <script src="/hierarchical_information_model/js/featherlight.min.js?1690896656"></script>
-    <script src="/hierarchical_information_model/js/highlight.pack.js?1690896656"></script>
+    <script src="/hierarchical_information_model/js/clipboard.min.js?1691065893"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1691065893"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1691065893"></script>
+    <script src="/hierarchical_information_model/js/jquery.sticky.js?1691065893"></script>
+    <script src="/hierarchical_information_model/js/featherlight.min.js?1691065893"></script>
+    <script src="/hierarchical_information_model/js/highlight.pack.js?1691065893"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1690896656"></script>
-    <script src="/hierarchical_information_model/js/learn.js?1690896656"></script>
-    <script src="/hierarchical_information_model/js/hugo-learn.js?1690896656"></script>
+    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1691065893"></script>
+    <script src="/hierarchical_information_model/js/learn.js?1691065893"></script>
+    <script src="/hierarchical_information_model/js/hugo-learn.js?1691065893"></script>
     
         
-            <script src="/hierarchical_information_model/mermaid/mermaid.js?1690896656"></script>
+            <script src="/hierarchical_information_model/mermaid/mermaid.js?1691065893"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
