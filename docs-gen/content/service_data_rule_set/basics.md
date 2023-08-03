@@ -4,51 +4,62 @@ date: 2019-08-04T13:05:11+02:00
 weight: 1
 ---
 
-## HIM Service Data
-A service is in HIM defined by a procedure signature as shown below:
+## HIM Service-Data Tree
+A HIM service data tree contains a taxonomy of microservice declarations.
+The tree structure is used to create a sets of microservices.
+Such as set is named `Service`, or `Service Group` for larger sets where a set of Service Groups would then form a Service,
+see the figure below, or the [example service data tree](https://github.com/COVESA/hierarchical_information_model/blob/master/examples/HIM_Service.v1.0.0.him).
 
-**(output1,..outputN) serviceName(input1,..inputM)**
+![HIM service tree structure](/hierarchical_information_model/images/service_tree_structure.png?width=50pc)
+*Figure x. HIM service tree structure
+
+## HIM Microservice Data
+A microservice is in HIM defined by a procedure signature as shown below:
+
+**(output1,..outputN) microServiceName(input1,..inputM)**
 
 where
-- serviceName is the name of the procedure.
+- microServiceName is the name of the procedure.
 - input1,..,inputM denotes the input parameters of the procedure, which may be zero or more.
 - output1,..,outputN denotes the output parameters of the procedure, which may be zero or more.
 
 HIM only specifies the data defining the above procedure signature, it does not specify details of how a call is made, such as how it is serialized, etc.
+This is expeted to be defined in an interface specification that uses HIM.
 
-## Service data tree structure
+## Microservice tree structure
 
-The general structure of how service data is represented in a HIM tree is shown in the figure below.
+The general structure of how a microservice is represented in a HIM tree is shown in the figure below.
 
-![HIM service data graph structure](/hierarchical_information_model/images/service_graph_representation.png?width=50pc)
-*Figure x. HIM service data graph representation
+![HIM microservice tree structure](/hierarchical_information_model/images/microservice_tree_structure.png?width=50pc)
+*Figure x. HIM microservice tree structure
 
-- The name of the procedure is the name of the node of `service` type.
+- The name of the procedure is the name of the node of `microservice` type.
 - The input and output parameters are respectively represented by a  node of type `iostruct` that must have the names 'Input' and 'Output', respectively.
 - An input/output parameter is represented by a node of type `property` or `symlink`.
 
 Any Input/Output nodes, and their associated children, are only present if the procedure has at least one parameter of the respective Input/Output.
 
-## Service state
+## Microservice state
 
-A service may have a temporal duration from it is started and until it completes.
-It is therefore desireable that the state of the service can be observed,
-as it may be the case that an ongoing service execution does not allow new service actuations to be started.
-The state of a HIM service is represented by a uint8 datatype value that all `service` nodes have as a mandatory metadata.
+A microservice may have a temporal duration from it is started and until it completes.
+It is therefore desireable that the state of the microservice can be observed,
+as it may be the case that an ongoing microservice execution does not allow new microservice actuations to be started.
+The state of a HIM microservice is represented by a uint8 datatype value that all `microservice` nodes have as a mandatory metadata.
 
-The allowed values of the service state are:
+The allowed values of the microservice state are:
 - 0-99 : ongoing
 - 100 : ready
 - 101 : unavailable
 - 102 : broken
 
-The rules for how a service shall update the state value follows below:
+The rules for how a microservice shall update the state value follows below:
 
 - A fully functioning that is not ongoing shall have the value 100.
-- When a valid service request is received the state shall be set to zero (0).
-- The service may update the state value as the service execution proceeds.
-- When the service execution successfully terminates the state value mus be set to 100.
-- If a service is functional but temporarily unavailable it shall be set to 101.
-- If a service requires repair or other type of critical maintenance to become functioning it shall be set to 102.
+- When a valid microservice request is received the state shall be set to zero (0).
+- The microservice may update the state value as the microservice execution proceeds.
+- When the microservice execution successfully terminates the state value must be set to 100.
+- If a microservice is functional but temporarily unavailable it shall be set to 101.
+- If a microservice requires repair or other type of critical maintenance to become functioning it shall be set to 102.
 
-The service state does not represent the error code that is typically part of a transport protocol.
+The microservice state does not represent the error code that is typically part of a transport protocol.
+If the microservice has specific error codes then these should be returned as an output parameter.
