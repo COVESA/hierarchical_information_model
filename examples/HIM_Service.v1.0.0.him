@@ -1,20 +1,20 @@
-VehicleService:
+VehicleServices:
   type: branch
-  description: Vehicle services.
+  description: The Vehicle services.
 
-VehicleService.ExternalLightning:
+VehicleService.ExteriorLighting:
   type: branch
-  description: External lightning services.
+  description: The Exterior lighting service.
 
-VehicleService.ExternalLightning.HeadLampsOnOff:
-  type: service
-  description: Service name: HeadLampsOnOff, Input: Switch, Output: None.
+VehicleService.ExteriorLighting.HeadLampsOnOff:
+  type: microservice
+  description: Microservice name: HeadLampsOnOff, Input: Switch, Output: None.
 
-VehicleService.ExternalLightning.HeadLampsOnOff.Input:
+VehicleService.ExteriorLighting.HeadLampsOnOff.Input:
   type: iostruct
   description: An iostruct type containing the input parameter(s).
 
-VehicleService.ExternalLightning.HeadLampsOnOff.Input.Switch:
+VehicleService.ExteriorLighting.HeadLampsOnOff.Input.Switch:
   type: symlink
   path: Vehicle.Body.Lights.IsHighBeamSwitchOn
   domain: Automotive.Vehicle.Car.ResourceData
