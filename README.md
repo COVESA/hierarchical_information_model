@@ -20,7 +20,7 @@ This repository is managed by the [COVESA Data Expert Group](https://wiki.covesa
 
 The information of a domain that is described using HIM is represented in a graph made up of a tree structure with parent-child relationships,
 as shown in Figure 1.
-![HIM graph structure](pics/him_graph_structure.png?raw=true)<br>
+![HIM graph structure](docs-gen/static/images/him_graph_structure.png?raw=true)<br>
 *Figure 1. HIM graph structure<br>
 
 HIM does not have the ambition to define the content of any domain,
@@ -34,8 +34,13 @@ HIM currently supports the following "information types":
 - Service data: Information defining the details of a "service" in the form of a procedure (name, iput, output).
 - Type definition data: Information defining complex/composite data types that are used by the other information types.
 
+HIM also provides a rule set for the definition of a "configuration file" that can be used by a HIM enabled data server in its management of
+a "forest" of multiple trees. This information can also by the server be provided to a client wanting to know what data or services the server
+has to offer.
+
 What is not an ambition of HIM is to define how the information is transported between agents,
 which is left to projects defining transport protocols, interfaces, and the like.
+Neither is it aiming for defining the content of any tree, which is also left to other projects.
 
 ## HIM origin
 
