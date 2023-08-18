@@ -61,5 +61,8 @@ The rules for how a microservice shall update the state value follows below:
 - If a microservice is functional but temporarily unavailable it shall be set to 101.
 - If a microservice requires repair or other type of critical maintenance to become functioning it shall be set to 102.
 
+If an underlying service framework does not support updating the state value then it shall be kept constant at the value 100,
+or possibly be switched between 100 and an error value if that is supported.
+
 The microservice state does not represent the error code that is typically part of a transport protocol.
 If the microservice has specific error codes then these should be returned as an output parameter.
