@@ -30,7 +30,8 @@ An example of the specification of a `microservice` node is given below.
 ```YAML
 microserviceName:
   type: microservice
-  description: This is a microservice node containing its mandatory metadata.
+  scope: invoke
+  description: This is an example of a microservice node containing its mandatory metadata.
 ```
 
 ## Microservice State
