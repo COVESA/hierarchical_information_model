@@ -6,7 +6,15 @@ weight: 30
 Nodes of the type `microservice` must have the following mandatory metadata:
 - Name
 - Type
+- Scope
 - Description
+
+An interface exposing the microservice may support not only the possibility to "invoke" it, i. e. to execute the functionality the microservice offers.
+It may also, or exclusively, support the option to "monitor" the microservice, i. e. to get information about its execution by other clients invoking it.
+This behavior of the microservice is set by the Scope which must have one of the following values
+* invoke
+* monitor
+* all
 
 For more information, see the [Common Rule Set: Mandatory Metadata](/hierarchical_information_model/common_rule_set/basics#mandatory-metadata).
 
