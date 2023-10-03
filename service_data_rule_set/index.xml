@@ -48,10 +48,7 @@ Besides the mandatory metadata mentioned above, the following optional metadata 
       
       <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/microservice/</guid>
       <description>Nodes of the type microservice must have the following mandatory metadata:
-Name Type Description For more information, see the Common Rule Set: Mandatory Metadata.
-Besides the mandatory metadata mentioned above, the following optional metadata may be used
-Comment For more information, please see the Common Rule Set: Optional Metadata.
-A parent must be of the node type branch. Children, if any, must be of the node type iostruct. An example of the specification of a microservice node is given below.</description>
+Name Type Scope Description An interface exposing the microservice may support not only the possibility to &amp;ldquo;invoke&amp;rdquo; it, i. e. to execute the functionality the microservice offers. It may also, or exclusively, support the option to &amp;ldquo;monitor&amp;rdquo; the microservice, i. e. to get information about its execution by other clients invoking it. This behavior of the microservice is set by the Scope which must have one of the following values</description>
     </item>
     
     <item>
