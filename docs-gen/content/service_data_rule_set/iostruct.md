@@ -25,7 +25,7 @@ Besides the mandatory metadata mentioned above, the following optional metadata 
 For more information, please see the [Common Rule Set: Optional Metadata](/hierarchical_information_model/common_rule_set/basics#optional-metadata).
 
 - A leaf node cannot have the `iostruct` node type.
-- A parent must be of the node type `microservice`.
+- A parent must be of one of the node types `iprocedure` or `mprocedure`.
 - Children must be of the node types `property` or `symlink`.
 - It must have at least one child.
 

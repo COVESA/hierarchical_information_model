@@ -31,7 +31,7 @@ Another ambition of HIM s that it shall support definition of taxonomies of diff
 and not only the type here called "resource data".
 HIM currently supports the following "information types":
 - Resource data: Information defining the data that a resource produces or consumes.
-- Service data: Information defining the details of a "service" in the form of a procedure (name, iput, output).
+- Service data: Information defining the details of a "service" in the form of a procedure (name, input, output).
 - Type definition data: Information defining complex/composite data types that are used by the other information types.
 
 HIM also provides a rule set for the definition of a "configuration file" that can be used by a HIM enabled data server in its management of
