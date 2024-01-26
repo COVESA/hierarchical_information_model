@@ -12,21 +12,21 @@
     <title>Service Data Model :: Hierarchical Information Model</title>
 
     
-    <link href="/hierarchical_information_model/css/nucleus.css?1706281858" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1706281858" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hybrid.css?1706281858" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/featherlight.min.css?1706281858" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1706281858" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/auto-complete.css?1706281858" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1706281858" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/theme.css?1706281858" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hugo-theme.css?1706281858" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/nucleus.css?1706283711" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1706283711" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hybrid.css?1706283711" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/featherlight.min.css?1706283711" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1706283711" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/auto-complete.css?1706283711" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1706283711" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme.css?1706283711" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hugo-theme.css?1706283711" rel="stylesheet">
     
-    <link href="/hierarchical_information_model/css/theme-blue.css?1706281858" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme-blue.css?1706283711" rel="stylesheet">
     
     
 
-    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1706281858"></script>
+    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1706283711"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1706281858"></script>
-<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1706281858"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1706283711"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1706283711"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/covesa.github.io\/hierarchical_information_model\/";
     
 </script>
-<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1706281858"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1706283711"></script>
 
     
   </div>
@@ -952,7 +952,7 @@
     <li><a href="#him-microservice-data">HIM Microservice Data</a></li>
     <li><a href="#microservice-tree-structure">Microservice tree structure</a></li>
     <li><a href="#node-types-iprocedure-and-mprocedure">Node types iprocedure and mprocedure</a></li>
-    <li><a href="#microservice-state">Microservice state</a></li>
+    <li><a href="#microservice-completion-state">Microservice completion state</a></li>
   </ul>
 </nav>
     </div>
@@ -1000,35 +1000,33 @@ This is expeted to be defined in an interface specification that uses HIM.</p>
 <p><img src="/hierarchical_information_model/images/microservice_tree_structure.png?width=50pc" alt="HIM microservice tree structure">
 *Figure x. HIM microservice tree structure</p>
 <ul>
-<li>The name of the procedure is the name of the node of one f the types <code>iprocedure</code> or <code>mprocedure</code>, see more about the types below.</li>
+<li>The name of the procedure is the name of the node of one of the types <code>iprocedure</code> or <code>mprocedure</code>, see more about the types below.</li>
 <li>The input and output parameters are respectively represented by a  node of type <code>iostruct</code> that must have the names &lsquo;Input&rsquo; and &lsquo;Output&rsquo;, respectively.</li>
 <li>An input/output parameter is represented by a node of type <code>property</code> or <code>symlink</code>.</li>
 </ul>
 <p>Any Input/Output nodes, and their associated children, are only present if the procedure has at least one parameter of the respective Input/Output.</p>
 <h2 id="node-types-iprocedure-and-mprocedure">Node types iprocedure and mprocedure</h2>
-<p>The typical pattern for invoking a procedure by a client is that the logic implementing the procedure is actuated, and this atuation is controlled by the procedure input parameters.
+<p>The typical pattern for invoking a procedure by a client is that the logic implementing the procedure is actuated, and this actuation is controlled by the procedure input parameters.
 In a multi-client environment there might also be a need for clients to monitor the state and outputs of a procedure that might be invoked by other clients.
 The procedure may not have exactly the same input and output parameters for these two cases.
 A call for monitoring of the procedure should not include input parameters that are used in controlling its actuation as the procedure in this case is not actuated.
 The output may also contain other parameters for improving the observability of its state than when it is called for actuation of it.</p>
 <p>To realize these different cases, two different node types representing the procedure exist, the iprocedure (invoke procedure) node type and the mprocedure (monitor procedure) node type.
-The node names of these two nodes shall have the same procedure name, prefixe with &ldquo;i&rdquo; for the iprocedure node type and &ldquo;m&rdquo; for the mprocedure node type.
+The node names of these two nodes shall have the same procedure name, prefixed with &ldquo;i&rdquo; for the iprocedure node type and &ldquo;m&rdquo; for the mprocedure node type.
 The iprocedure node type MUST be defined for a procedure, the mprocedure node type MUST NOT be defined if there is not also an iprocedure definition.</p>
 <p>An interface implementing the HIM service data model is expected to support the two flavors of procedure calls.
 It may choose to support only the invoke flavor.</p>
-<h2 id="microservice-state">Microservice state</h2>
-<p>A microservice may have a temporal duration from it is started and until it completes.
-It may therefore desireable that the state of the microservice can be observed,
+<h2 id="microservice-completion-state">Microservice completion state</h2>
+<p>A microservice may have a significant temporal duration from it is started and until it completes.
+It may therefore be desireable that the state of the microservice can be observed,
 as e. g. it may be the case that an ongoing microservice execution does not allow new microservice actuations to be started.
-If an observable microservice state is desired, then the designer of this HIM service domain must create such an output parameter of the microservice.
-The characteristics of this output parameter can be freely chosen, but below is a proposal that if widely used may help to improvve interoperability.</p>
-<p>The state of the HIM microservice is represented by a uint8 datatype value.</p>
+If an observable microservice completion state is desired, then the designer of this HIM service domain must create such an output parameter of the microservice.
+The characteristics of this output parameter can be freely chosen, but below is a proposal that if widely used may help to improve interoperability.</p>
+<p>The completion state of the HIM microservice is represented by a uint8 datatype value.</p>
 <p>The allowed values of the microservice state are:</p>
 <ul>
 <li>0-99 : ongoing</li>
 <li>100 : ready</li>
-<li>101 : unavailable</li>
-<li>102 : broken</li>
 </ul>
 <p>The rules for how a microservice shall update the state value follows below:</p>
 <ul>
@@ -1036,13 +1034,8 @@ The characteristics of this output parameter can be freely chosen, but below is 
 <li>When a valid microservice request is received the state shall be set to zero (0).</li>
 <li>The microservice may update the state value as the microservice execution proceeds.</li>
 <li>When the microservice execution successfully terminates the state value must be set to 100.</li>
-<li>If a microservice is functional but temporarily unavailable it shall be set to 101.</li>
-<li>If a microservice requires repair or other type of critical maintenance to become functioning it shall be set to 102.</li>
 </ul>
-<p>If an underlying service framework does not support updating the state value then it shall be kept constant at the value 100,
-or possibly be switched between 100 and an error value if that is supported.</p>
-<p>The microservice state does not represent the error code that is typically part of a transport protocol.
-If the microservice has specific error codes then these should be returned as an output parameter.</p>
+<p>If there is a need for microservice specific error codes then these should be defined as another output parameter.</p>
 
 
 <footer class="footline">
@@ -1621,19 +1614,19 @@ If the microservice has specific error codes then these should be returned as an
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/hierarchical_information_model/js/clipboard.min.js?1706281858"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1706281858"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1706281858"></script>
-    <script src="/hierarchical_information_model/js/jquery.sticky.js?1706281858"></script>
-    <script src="/hierarchical_information_model/js/featherlight.min.js?1706281858"></script>
-    <script src="/hierarchical_information_model/js/highlight.pack.js?1706281858"></script>
+    <script src="/hierarchical_information_model/js/clipboard.min.js?1706283711"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1706283711"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1706283711"></script>
+    <script src="/hierarchical_information_model/js/jquery.sticky.js?1706283711"></script>
+    <script src="/hierarchical_information_model/js/featherlight.min.js?1706283711"></script>
+    <script src="/hierarchical_information_model/js/highlight.pack.js?1706283711"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1706281858"></script>
-    <script src="/hierarchical_information_model/js/learn.js?1706281858"></script>
-    <script src="/hierarchical_information_model/js/hugo-learn.js?1706281858"></script>
+    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1706283711"></script>
+    <script src="/hierarchical_information_model/js/learn.js?1706283711"></script>
+    <script src="/hierarchical_information_model/js/hugo-learn.js?1706283711"></script>
     
         
-            <script src="/hierarchical_information_model/mermaid/mermaid.js?1706281858"></script>
+            <script src="/hierarchical_information_model/mermaid/mermaid.js?1706283711"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
