@@ -42,16 +42,16 @@ Besides the mandatory metadata mentioned above, the following optional metadata 
     </item>
     
     <item>
-      <title>iprocedure and mprocedure nodes</title>
-      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/iprocedure-mprocedure/</link>
+      <title>procedure node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/procedure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/iprocedure-mprocedure/</guid>
-      <description>As described in the Service Data Model chapter there are two types of nodes that can be used to represent microservices.
-Nodes of the types iprocedure or mprocedure must have the following mandatory metadata:
+      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/procedure/</guid>
+      <description>The procedure node type must have the following mandatory metadata:
 Name Type Description For more information, see the Common Rule Set: Mandatory Metadata.
 Besides the mandatory metadata mentioned above, the following optional metadata may be used
-Comment For more information, please see the Common Rule Set: Optional Metadata.</description>
+Comment For more information, please see the Common Rule Set: Optional Metadata.
+A parent must be of the node type branch. Children, if any, must be of the node type iostruct. An example of the specification of a procedure node is given below.</description>
     </item>
     
     <item>
