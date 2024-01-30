@@ -7,7 +7,7 @@ VehicleService.ExteriorLighting:
   description: The Exterior lighting service.
 
 VehicleService.ExteriorLighting.HeadLampsOnOff:
-  type: microservice
+  type: procedure
   description: Microservice name: HeadLampsOnOff, Input: Switch, Output: None.
 
 VehicleService.ExteriorLighting.HeadLampsOnOff.Input:
