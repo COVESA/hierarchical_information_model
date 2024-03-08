@@ -35,7 +35,7 @@ The creation of a HIM configuration file is the responsibility of the HIM server
 
 The following node types can be used in a configuration tree:
 1. [Branch](/hierarchical_information_model/common_rule_set/node_types/branch/)
-2. [Taxonomy](/hierarchical_information_model/configuration_rule_set/node_types/taxonomy/)
+2. [Direct](/hierarchical_information_model/configuration_rule_set/node_types/diect/)
 3. [Proxy](/hierarchical_information_model/configuration_rule_set/node_types/proxy/)
 
 ## Configuration Tree Example
@@ -53,27 +53,27 @@ HIM:
 
 
 VehicleData:
-  type: taxonomy
+  type: direct
   domain: Vehicle.Car.ResourceData
   version: X.Y.Z
   local: file://<full-path-name>
-  public: https://himrepo.oem.com?taxonomy=Vehicle.Car.ResourceData.X.Y.Z
+  public: https://himrepo.oem.com?instance=Vehicle.Car.ResourceData.X.Y.Z
   description:  ….
 
 VehicleServices:
-  type: taxonomy
+  type: direct
   domain: Vehicle.Car.ServiceData
   version: X.Y.Z
   local: file://<full-path-name>
-  public: https://himrepo.oem.com?taxonomy=Vehicle.Car.ServiceData.X.Y.Z
+  public: https://himrepo.oem.com?instance=Vehicle.Car.ServiceData.X.Y.Z
   description:  ….
 
 Types:
-  type: taxonomy
+  type: direct
   domain: Vehicle.Car.TypeDefinition
   version: X.Y.Z
   local: file://<full-path-name>
-  public: https://himrepo.oem.com?taxonomy=Vehicle.Car.DataType.X.Y.Z
+  public: https://himrepo.oem.com?instance=Vehicle.Car.DataType.X.Y.Z
   description:  ….
 
 
@@ -81,6 +81,6 @@ ChargingStationData:
   type: proxy
   domain:ChargingStation.Vehicle.ResourceData
   version: X.Y.Z
-  public: https://himrepo.energyco.com?taxonomy=ChargingStation.Vehicle.ResourceData.X.Y.Z
+  public: https://himrepo.energyco.com?instance=ChargingStation.Vehicle.ResourceData.X.Y.Z
   description:  ….
   ```

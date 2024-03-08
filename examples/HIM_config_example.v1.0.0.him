@@ -4,27 +4,27 @@ HIM:
 
 
 VehicleData:
-  type: taxonomy
+  type: direct
   domain: Vehicle.Car.ResourceData
   version: X.Y.Z
   local: file://<full-path-name>
-  public: https://himrepo.oem.com?taxonomy=Vehicle.Car.ResourceData.X.Y.Z
+  public: https://himrepo.oem.com?instance=Vehicle.Car.ResourceData.X.Y.Z
   description:  ….
 
 VehicleServices:
-  type: taxonomy
+  type: direct
   domain: Vehicle.Car.ServiceData
   version: X.Y.Z
   local: file://<full-path-name>
-  public: https://himrepo.oem.com?taxonomy=Vehicle.Car.ServiceData.X.Y.Z
+  public: https://himrepo.oem.com?instance=Vehicle.Car.ServiceData.X.Y.Z
   description:  ….
 
 Types:
-  type: taxonomy
+  type: direct
   domain: Vehicle.Car.TypeDefinition
   version: X.Y.Z
   local: file://<full-path-name>
-  public: https://himrepo.oem.com?taxonomy=Vehicle.Car.DataType.X.Y.Z
+  public: https://himrepo.oem.com?instance=Vehicle.Car.DataType.X.Y.Z
   description:  ….
 
 
@@ -32,7 +32,7 @@ ChargingStationData:
   type: proxy
   domain:ChargingStation.Vehicle.ResourceData
   version: X.Y.Z
-  public: https://himrepo.energyco.com?taxonomy=ChargingStation.Vehicle.ResourceData.X.Y.Z
+  public: https://himrepo.energyco.com?instance=ChargingStation.Vehicle.ResourceData.X.Y.Z
   description:  ….
 
 HIM.Version:
