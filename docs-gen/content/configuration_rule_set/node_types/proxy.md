@@ -55,16 +55,16 @@ Versioning shall be based on the [Semantic versioning](https://semver.org/spec/v
 ## Public
 
 The public metadata shall, if available, be a URL to a public copy of the tree.
-It may be used to provision a server with a copy of the tree, 
+It may be used to provision a server with a copy of the tree,
 but also by a client to obtain a copy instead of e. g. requesting the proxy server to provision a copy from the server managing it.
 
-An example of the specification of a `taxonomy` node is given below.
+An example of the specification of a `proxy` node is given below.
 
 ```YAML
 VehicleData:
   type: proxy
   domain: HomeAutomation.Zigbee.ResourceData
   version: X.Y.Z
-  public: https://himrepo.oem.com?taxonomy=HomeAutomation.Zigbee.ResourceData.X.Y.Z
+  public: https://himrepo.oem.com?instance=HomeAutomation.Zigbee.ResourceData.X.Y.Z
   description:  ….
 ```

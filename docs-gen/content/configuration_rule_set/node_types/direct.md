@@ -1,12 +1,12 @@
 ---
-title: "Taxonomy node"
+title: "Direct node"
 weight: 30
 ---
 
-A `taxonomy` node in a HIM configuration file defines a tree that the server managing this forest have a local and complete copy of.
+A `direct` node in a HIM configuration file defines a tree that the server managing this forest have a local and complete copy of.
 This means that the server can efficiently parse the tree to e. g. verify that a client request for information points to an existing node in the tree.
 
-Nodes of the type `taxonomy` must have the following mandatory metadata:
+Nodes of the type `direct` must have the following mandatory metadata:
 - Name
 - Type
 - Domain
@@ -58,17 +58,17 @@ The `local` metadta shall not be supplied to a client requesting the configurati
 ## Public
 
 The public metadata shall, if available, be a URL to a public copy of the tree.
-It may be used to provision a server with a copy of the tree, 
+It may be used to provision a server with a copy of the tree,
 but also by a client to obtin a copy instead of e. g. requesting the server to provision a copy.
 
-An example of the specification of a `taxonomy` node is given below.
+An example of the specification of a `direct` node is given below.
 
 ```YAML
 VehicleData:
-  type: taxonomy
+  type: direct
   domain: Vehicle.Car.ResourceData
   version: X.Y.Z
   local: file://<full-path-name>
-  public: https://himrepo.oem.com?taxonomy=Vehicle.Car.ResourceData.X.Y.Z
+  public: https://himrepo.oem.com?intance=Vehicle.Car.ResourceData.X.Y.Z
   description:  ….
 ```
