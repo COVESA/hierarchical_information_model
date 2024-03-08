@@ -44,7 +44,6 @@ This example shows a forest consisting of three local trees, and a remote tree:
 2. A local tree containing passenger car related services, having the root node name VehicleServices.
 3. A local tree containing type passenger car related ype definitions, having the root node name Types.
 4. A remote tree containing charge station related signals, having the root node name ChargingStationData.
-- 
 
 ```YAML
 HIM:
