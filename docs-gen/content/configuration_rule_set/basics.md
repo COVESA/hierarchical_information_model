@@ -12,13 +12,13 @@ To support the server in managing this forest of trees, a HIM configuration tree
 The server may also share this configuration file on request from clients, in order for them to discover the information available by the forest.
 The HIM model is not restricted to client/server models.
 
-A file containing this configuration shall have a name starting with "HIM_configuration", 
+A file containing this configuration shall have a name starting with "HIM_configuration",
 with an optional suffix that might describe the domain, information type, or version.
 The file may have the extension ".him", which typically would indicate that it is YAML formatted.
-Any file extension can be used that indicates it has been transformed from its YAML source format to a different format like ".json". 
+Any file extension can be used that indicates it has been transformed from its YAML source format to a different format like ".json".
 
 The configuration tree root node shall have a name starting with "HIM_config", which may be followed by additional information
-such as a descriptive domain name, version, etc. 
+such as a descriptive domain name, version, etc.
 
 A server may share the information of this file with a client that wants to discover what information the server manages.
 

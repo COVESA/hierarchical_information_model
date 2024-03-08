@@ -58,7 +58,7 @@ The `local` metadta shall not be supplied to a client requesting the configurati
 ## Public
 
 The public metadata shall, if available, be a URL to a public copy of the tree.
-It may be used to provision a server with a copy of the tree, 
+It may be used to provision a server with a copy of the tree,
 but also by a client to obtin a copy instead of e. g. requesting the server to provision a copy.
 
 An example of the specification of a `direct` node is given below.
