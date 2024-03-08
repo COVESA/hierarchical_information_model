@@ -195,6 +195,17 @@ This node type is only allowed in trees of the information types typedefinition 
     </item>
     
     <item>
+      <title>Direct node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/node_types/direct/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/node_types/direct/</guid>
+      <description>A direct node in a HIM configuration file defines a tree that the server managing this forest have a local and complete copy of. This means that the server can efficiently parse the tree to e. g. verify that a client request for information points to an existing node in the tree.
+Nodes of the type direct must have the following mandatory metadata:
+Name Type Domain Version Local Description For more information, see the Common Rule Set: Mandatory Metadata.</description>
+    </item>
+    
+    <item>
       <title>procedure node</title>
       <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/procedure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -234,17 +245,6 @@ A parent must be of the node type branch. Children, if any, must be of the node 
       <description>Data represented by the node type symlink have a relationship to any other data having the same iostruct parent in that they are all representing either Input parameters or Output parameters of the service that they are linked to.
 An Otput parameter declared as a symlink will lead to that the returned value is read from that data point.
 An Input parameter declared as a symlink will lead to that the provided input value is written to that data point.</description>
-    </item>
-    
-    <item>
-      <title>Taxonomy node</title>
-      <link>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/node_types/taxonomy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/node_types/taxonomy/</guid>
-      <description>A taxonomy node in a HIM configuration file defines a tree that the server managing this forest have a local and complete copy of. This means that the server can efficiently parse the tree to e. g. verify that a client request for information points to an existing node in the tree.
-Nodes of the type taxonomy must have the following mandatory metadata:
-Name Type Domain Version Local Description For more information, see the Common Rule Set: Mandatory Metadata.</description>
     </item>
     
     <item>

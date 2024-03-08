@@ -12,21 +12,21 @@
     <title>HIM Configuration Rules :: Hierarchical Information Model</title>
 
     
-    <link href="/hierarchical_information_model/css/nucleus.css?1706518705" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1706518705" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hybrid.css?1706518705" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/featherlight.min.css?1706518705" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1706518705" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/auto-complete.css?1706518705" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1706518705" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/theme.css?1706518705" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hugo-theme.css?1706518705" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/nucleus.css?1709896494" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1709896494" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hybrid.css?1709896494" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/featherlight.min.css?1709896494" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1709896494" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/auto-complete.css?1709896494" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1709896494" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme.css?1709896494" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hugo-theme.css?1709896494" rel="stylesheet">
     
-    <link href="/hierarchical_information_model/css/theme-blue.css?1706518705" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme-blue.css?1709896494" rel="stylesheet">
     
     
 
-    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1706518705"></script>
+    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1709896494"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1706518705"></script>
-<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1706518705"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1709896494"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1709896494"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/covesa.github.io\/hierarchical_information_model\/";
     
 </script>
-<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1706518705"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1709896494"></script>
 
     
   </div>
@@ -813,9 +813,9 @@
  
   
     
-      <li data-nav-id="/hierarchical_information_model/configuration_rule_set/node_types/proxy/" title="Proxy node" class="dd-item ">
-        <a href="/hierarchical_information_model/configuration_rule_set/node_types/proxy/">
-        Proxy node
+      <li data-nav-id="/hierarchical_information_model/configuration_rule_set/node_types/direct/" title="Direct node" class="dd-item ">
+        <a href="/hierarchical_information_model/configuration_rule_set/node_types/direct/">
+        Direct node
         
         </a>
     </li>
@@ -834,9 +834,9 @@
  
   
     
-      <li data-nav-id="/hierarchical_information_model/configuration_rule_set/node_types/taxonomy/" title="Taxonomy node" class="dd-item ">
-        <a href="/hierarchical_information_model/configuration_rule_set/node_types/taxonomy/">
-        Taxonomy node
+      <li data-nav-id="/hierarchical_information_model/configuration_rule_set/node_types/proxy/" title="Proxy node" class="dd-item ">
+        <a href="/hierarchical_information_model/configuration_rule_set/node_types/proxy/">
+        Proxy node
         
         </a>
     </li>
@@ -1000,7 +1000,7 @@ possible also multiple <code>public</code> URLs to renditions of the tree in dif
 <p>The following node types can be used in a configuration tree:</p>
 <ol>
 <li><a href="/hierarchical_information_model/common_rule_set/node_types/branch/">Branch</a></li>
-<li><a href="/hierarchical_information_model/configuration_rule_set/node_types/taxonomy/">Taxonomy</a></li>
+<li><a href="/hierarchical_information_model/configuration_rule_set/node_types/diect/">Direct</a></li>
 <li><a href="/hierarchical_information_model/configuration_rule_set/node_types/proxy/">Proxy</a></li>
 </ol>
 <h2 id="configuration-tree-example">Configuration Tree Example</h2>
@@ -1011,36 +1011,33 @@ possible also multiple <code>public</code> URLs to renditions of the tree in dif
 <li>A local tree containing type passenger car related ype definitions, having the root node name Types.</li>
 <li>A remote tree containing charge station related signals, having the root node name ChargingStationData.</li>
 </ol>
-<ul>
-<li></li>
-</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-YAML" data-lang="YAML"><span style="display:flex;"><span><span style="color:#f92672">HIM</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">branch</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">Contains the set of trees that are managed as one virtual domain.</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">VehicleData</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">taxonomy</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">direct</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">domain</span>: <span style="color:#ae81ff">Vehicle.Car.ResourceData</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">version</span>: <span style="color:#ae81ff">X.Y.Z</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">local</span>: <span style="color:#ae81ff">file://&lt;full-path-name&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">public</span>: <span style="color:#ae81ff">https://himrepo.oem.com?taxonomy=Vehicle.Car.ResourceData.X.Y.Z</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">public</span>: <span style="color:#ae81ff">https://himrepo.oem.com?instance=Vehicle.Car.ResourceData.X.Y.Z</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>:  <span style="color:#ae81ff">….</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">VehicleServices</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">taxonomy</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">direct</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">domain</span>: <span style="color:#ae81ff">Vehicle.Car.ServiceData</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">version</span>: <span style="color:#ae81ff">X.Y.Z</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">local</span>: <span style="color:#ae81ff">file://&lt;full-path-name&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">public</span>: <span style="color:#ae81ff">https://himrepo.oem.com?taxonomy=Vehicle.Car.ServiceData.X.Y.Z</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">public</span>: <span style="color:#ae81ff">https://himrepo.oem.com?instance=Vehicle.Car.ServiceData.X.Y.Z</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>:  <span style="color:#ae81ff">….</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">Types</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">taxonomy</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">direct</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">domain</span>: <span style="color:#ae81ff">Vehicle.Car.TypeDefinition</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">version</span>: <span style="color:#ae81ff">X.Y.Z</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">local</span>: <span style="color:#ae81ff">file://&lt;full-path-name&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">public</span>: <span style="color:#ae81ff">https://himrepo.oem.com?taxonomy=Vehicle.Car.DataType.X.Y.Z</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">public</span>: <span style="color:#ae81ff">https://himrepo.oem.com?instance=Vehicle.Car.DataType.X.Y.Z</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>:  <span style="color:#ae81ff">….</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
@@ -1048,7 +1045,7 @@ possible also multiple <code>public</code> URLs to renditions of the tree in dif
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">proxy</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">domain:ChargingStation.Vehicle.ResourceData</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">version</span>: <span style="color:#ae81ff">X.Y.Z</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">public</span>: <span style="color:#ae81ff">https://himrepo.energyco.com?taxonomy=ChargingStation.Vehicle.ResourceData.X.Y.Z</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">public</span>: <span style="color:#ae81ff">https://himrepo.energyco.com?instance=ChargingStation.Vehicle.ResourceData.X.Y.Z</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>:  <span style="color:#ae81ff">….</span>
 </span></span></code></pre></div>
 
@@ -1628,19 +1625,19 @@ possible also multiple <code>public</code> URLs to renditions of the tree in dif
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/hierarchical_information_model/js/clipboard.min.js?1706518705"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1706518705"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1706518705"></script>
-    <script src="/hierarchical_information_model/js/jquery.sticky.js?1706518705"></script>
-    <script src="/hierarchical_information_model/js/featherlight.min.js?1706518705"></script>
-    <script src="/hierarchical_information_model/js/highlight.pack.js?1706518705"></script>
+    <script src="/hierarchical_information_model/js/clipboard.min.js?1709896494"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1709896494"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1709896494"></script>
+    <script src="/hierarchical_information_model/js/jquery.sticky.js?1709896494"></script>
+    <script src="/hierarchical_information_model/js/featherlight.min.js?1709896494"></script>
+    <script src="/hierarchical_information_model/js/highlight.pack.js?1709896494"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1706518705"></script>
-    <script src="/hierarchical_information_model/js/learn.js?1706518705"></script>
-    <script src="/hierarchical_information_model/js/hugo-learn.js?1706518705"></script>
+    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1709896494"></script>
+    <script src="/hierarchical_information_model/js/learn.js?1709896494"></script>
+    <script src="/hierarchical_information_model/js/hugo-learn.js?1709896494"></script>
     
         
-            <script src="/hierarchical_information_model/mermaid/mermaid.js?1706518705"></script>
+            <script src="/hierarchical_information_model/mermaid/mermaid.js?1709896494"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
