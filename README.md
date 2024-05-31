@@ -6,6 +6,11 @@
 
 Please find the official documentation generated from this repository at: [HIM Documentation](https://covesa.github.io/hierarchical_information_model/)
 
+### Maintainers
+Ulf Björkengren - Ford Motor Company
+
+
+
 ## Governance
 
 <!-- Give a short rationale for the repository -->
