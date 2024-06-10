@@ -5,16 +5,15 @@ weight: 1
 ---
 ## Specification format
 
-The syntax used to define the content of a HIM taxonomy is based on YAML and must comply to the 
-[YAML specification](https://yaml.org/).
+The syntax used to define the content of a HIM taxonomy is based on YAML and must comply to the [YAML specification](https://yaml.org/).
 
 A HIM taxonomy may contain subtrees that are identical copies of each other, for example descriptions of doors in a vehicle.
-In order not to have to repeat the content of the subtree multiple times, the subtree can be defined in a separate file, 
+In order not to have to repeat the content of the subtree multiple times, the subtree can be defined in a separate file,
 which can then be included into the main tree by the directive
 ```
 #include <filename> [prefix]
 ```
-The optional [prefix] specifies a branch name to be prepended to all node names in the included file. 
+The optional [prefix] specifies a branch name to be prepended to all node names in the included file.
 The include directive may be used in files that are themselves included.
 Please note that, from a YAML perspective, the include directive is just another comment.
 
@@ -52,14 +51,13 @@ NodeName:
 
 A node name is recommeded to be unique with the scope of the tree it is used in. The name shall follow the [Naming Conventions](#naming-conventions)
 
-The qualified node name, which must be unique within the scope of the tree, are defined left-to-right of the concatenation of the node names, 
+The qualified node name, which must be unique within the scope of the tree, are defined left-to-right of the concatenation of the node names,
 starting from the root node of the tree and traversing the tree nodes to the node in focus, with a period (.) as delimiter between node names.
 An example of a qualified node name, which is called a path, is
 ```
 a.b.c
 ```
-where a is the name of the root node, b is a child of a, 
-and the node in focus is c, a child of b.
+where a is the name of the root node, b is a child of a, and the node in focus is c, a child of b.
 
 ### Node types
 
@@ -71,14 +69,14 @@ while the node types specifi to a single information type are found in respectiv
 
 #### Struct node type
 
-The 'struct' node type is used to define a structure data type that groups a number of fields. 
+The 'struct' node type is used to define a structure data type that groups a number of fields.
 An example is shown below.
 ```YAML
 NodeName:
   type: struct
   description: This is a struct node containing its mandatory metadata.
 ```
-This node type must have at least one child of node type property, and must not have children of any other node type. 
+This node type must have at least one child of node type property, and must not have children of any other node type.
 
 #### Property Node Type
 
@@ -90,7 +88,7 @@ NodeName:
   datatype: "any supported datatype, including a reference to a struct definition"
   description: This is a property node containing its mandatory metadata.
 ```
-The 'datatype' metadata is mandatory for a property node. It may also have optional metadata such as unit, min, max, and allowed. 
+The 'datatype' metadata is mandatory for a property node. It may also have optional metadata such as unit, min, max, and allowed.
 
 A property node can only have a struct node as its parent, and must not have any children.
 
