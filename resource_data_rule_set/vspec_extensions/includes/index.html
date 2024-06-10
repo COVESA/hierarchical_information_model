@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/hierarchical_information_model/images/fav.png" type="image/x-icon" />
 
-    <title>HIM Configuration Rule Set :: Hierarchical Information Model</title>
+    <title>Includes :: Hierarchical Information Model</title>
 
     
     <link href="/hierarchical_information_model/css/nucleus.css?1718011682" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/hierarchical_information_model/configuration_rule_set/">
+  <body class="" data-url="/hierarchical_information_model/resource_data_rule_set/vspec_extensions/includes/">
     <nav id="sidebar" class="">
 
 
@@ -383,7 +383,7 @@
   
     
     <li data-nav-id="/hierarchical_information_model/resource_data_rule_set/" title="HIM Resource Data Rule Set" class="dd-item
-        
+        parent
         
         
         ">
@@ -433,7 +433,7 @@
   
     
     <li data-nav-id="/hierarchical_information_model/resource_data_rule_set/vspec_extensions/" title="vspec extensions" class="dd-item
-        
+        parent
         
         
         ">
@@ -480,7 +480,7 @@
  
   
     
-      <li data-nav-id="/hierarchical_information_model/resource_data_rule_set/vspec_extensions/includes/" title="Includes" class="dd-item ">
+      <li data-nav-id="/hierarchical_information_model/resource_data_rule_set/vspec_extensions/includes/" title="Includes" class="dd-item active">
         <a href="/hierarchical_information_model/resource_data_rule_set/vspec_extensions/includes/">
         Includes
         
@@ -818,7 +818,7 @@
     
     <li data-nav-id="/hierarchical_information_model/configuration_rule_set/" title="HIM Configuration Rule Set" class="dd-item
         
-        active
+        
         
         ">
       <a href="/hierarchical_information_model/configuration_rule_set/">
@@ -982,7 +982,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/covesa/hierarchical_information_model/edit/master/docs-gen/content/configuration_rule_set/_index.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/covesa/hierarchical_information_model/edit/master/docs-gen/content/resource_data_rule_set/vspec_extensions/includes.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -997,6 +997,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1007,7 +1009,19 @@
             
           
           
-            <a href='/hierarchical_information_model/'>Hierarchical Information Model</a> > HIM Configuration Rule Set
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/hierarchical_information_model/'>Hierarchical Information Model</a> > <a href='/hierarchical_information_model/resource_data_rule_set/'>HIM Resource Data Rule Set</a> > <a href='/hierarchical_information_model/resource_data_rule_set/vspec_extensions/'>vspec extensions</a> > Includes
+          
+        
+          
+        
           
         
           
@@ -1016,6 +1030,17 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#reusing-signal-trees">REUSING SIGNAL TREES</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1023,29 +1048,59 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Includes
+            </h1>
           
 
         
 
 
+<p>An include directive in a vspec file will read the file it refers to and the
+contents of that file will be inserted into the current buffer in place of the
+include directive.  The included file will, in its turn, be scanned for
+include directives to be replaced, effectively forming a tree of included
+files.</p>
+<p>See Fig 6 for an example of such a tree.</p>
+<p><img src="/hierarchical_information_model/images/include_directives.png" alt="Include directive"><!-- raw HTML omitted -->
+<em>Fig 6. Include directives</em></p>
+<p>The include directive has the following format:</p>
+<pre><code>#include &lt;filename&gt; [prefix]
+</code></pre>
+<p>The <code>&lt;filename&gt;</code> part specifies the path, relative to the file with the <code>#include</code> directive, to the vspec file to replace the directive with.</p>
+<p>The optional <code>[prefix]</code> specifies a branch name to be
+prepended to all signal entries in the included file. This allows a vspec file
+to be reused multiple times by different files, each file specifying their
+own branch to attach the included file to.</p>
+<p>An example of an include directive is:</p>
+<pre><code>#include doors.vpsec chassis.doors
+</code></pre>
+<p>The <code>door.vspec</code> section specifies the file to include.</p>
+<p>The <code>chassis.doors</code> section specifies that all signal entries in <code>door.vspec</code> should have their names prefixed with <code>chassis.doors</code>.</p>
+<p>If an included vspec file has branch or signal specifications that have
+already been defined prior to the included file, the new specifications in the
+included file will override the previous specifications.</p>
+<h2 id="reusing-signal-trees">REUSING SIGNAL TREES</h2>
+<p>Complete subtrees of signals can be reused by including
+them multiple times, attaching them to different branches each time
+they are included.</p>
+<p>An example is given in Fig 7 where a generic door signal specification is
+included four times to describe all doors in the vehicle.</p>
+<p><img src="/hierarchical_information_model/images/spec_file_reuse.png" alt="Include directive"><!-- raw HTML omitted -->
+<em>Fig 7. Reusing signal trees</em></p>
+<p>The <code>door.vspec</code> file is included four times by the master <code>root.vspec</code> file.
+The signals of <code>door.vspec</code>, <code>Locked</code>, <code>WinPos</code>, and <code>Open</code> are attached
+on the front left and right doors of row 1 (front) and row 2 (back).</p>
+<p>If <code>door.vspec</code> is changed, the changes will be propagated to all four doors.</p>
 
-	<h1 id="him-configuration-rule-set">HIM Configuration Rule Set</h1>
-<p>The overall rule set for the information type <code>configuration</code> is described in this part of the document,
-together with the rules in the <a href="/hierarchical_information_model/common_rule_set">Common rule set part</a>.</p>
 
-
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
-        
-            </div> 
         
         </div>
         
@@ -1274,6 +1329,7 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
             
                 
                     
+                    
                 
                 
 
@@ -1288,6 +1344,9 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1305,6 +1364,7 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
             
                 
                     
+                    
                 
                 
 
@@ -1317,6 +1377,9 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1334,56 +1397,6 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1404,50 +1417,8 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1556,6 +1527,19 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -1564,6 +1548,88 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1579,9 +1645,6 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1654,10 +1717,10 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
 	 
 	 
 		
-			<a class="nav nav-prev" href="/hierarchical_information_model/type_definition_rule_set/struct/" title="Struct node"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/hierarchical_information_model/resource_data_rule_set/vspec_extensions/instances/" title="Instances"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/hierarchical_information_model/configuration_rule_set/basics/" title="HIM Configuration Rules" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/hierarchical_information_model/resource_data_rule_set/actuator/" title="Actuator node" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1689,3 +1752,4 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
 
   </body>
 </html>
+

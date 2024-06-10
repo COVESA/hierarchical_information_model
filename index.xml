@@ -18,14 +18,15 @@ A HIM taxonomy may contain subtrees that are identical copies of each other, for
     </item>
     
     <item>
-      <title>Data</title>
+      <title>Data model</title>
       <link>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/basics/</link>
       <pubDate>Sun, 04 Aug 2019 13:05:11 +0200</pubDate>
       
       <guid>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/basics/</guid>
-      <description>It is the leaf nodes of a tree that represents and defines the actual data. The definition is expressed by metadata describing the data associated to the node.
+      <description>The rule set for resource data is inherited from the VSS rule set. It is the leaf nodes of a tree that represents and defines the actual data. The definition is expressed by metadata describing the data associated to the node.
 Node Types The node types for representing data entries are:
-Sensor Actuator Attribute Please see the respective chapters for more information about these node types.</description>
+Sensor Actuator Attribute Please see the respective chapters for more information about these node types.
+Vspec YAML extensions The vspec format is based on YAML that is extended with two features described in respective chapters shown below.</description>
     </item>
     
     <item>
@@ -70,6 +71,15 @@ Branch Struct Property Please see more information about these node types here.<
     </item>
     
     <item>
+      <title>Instances</title>
+      <link>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/instances/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/instances/</guid>
+      <description>The data model resembles primarily the physical structure of the vehicle, so quite often there is a need to repeat branches and data entries (e.g. doors, axles, etc). To avoid hard-coded repetitions of branches and data entries in the specification an instance-concept is supported. Instances remove the need of repeating definitions, by defining at the node itself how often it occurs in the resulting tree. They are meant as a short-cut in the specification and interpreted by the tools.</description>
+    </item>
+    
+    <item>
       <title>Includes</title>
       <link>https://covesa.github.io/hierarchical_information_model/common_rule_set/includes/</link>
       <pubDate>Sun, 04 Aug 2019 12:59:44 +0200</pubDate>
@@ -78,6 +88,18 @@ Branch Struct Property Please see more information about these node types here.<
       <description>An include directive in a HIM file will read the file it refers to and the contents of that file will be inserted into the current buffer in place of the include directive. The included file will, in its turn, be scanned for include directives to be replaced, effectively allowing formation of a tree of includedfiles.
 See the figurefor an example of such a tree.
 Figure: Include directives
+The include directive has the following format:</description>
+    </item>
+    
+    <item>
+      <title>Includes</title>
+      <link>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/includes/</link>
+      <pubDate>Sun, 04 Aug 2019 12:59:44 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/includes/</guid>
+      <description>An include directive in a vspec file will read the file it refers to and the contents of that file will be inserted into the current buffer in place of the include directive. The included file will, in its turn, be scanned for include directives to be replaced, effectively forming a tree of included files.
+See Fig 6 for an example of such a tree.
+Fig 6. Include directives
 The include directive has the following format:</description>
     </item>
     

@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/hierarchical_information_model/images/fav.png" type="image/x-icon" />
 
-    <title>HIM Configuration Rule Set :: Hierarchical Information Model</title>
+    <title>Instances :: Hierarchical Information Model</title>
 
     
     <link href="/hierarchical_information_model/css/nucleus.css?1718011682" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/hierarchical_information_model/configuration_rule_set/">
+  <body class="" data-url="/hierarchical_information_model/resource_data_rule_set/vspec_extensions/instances/">
     <nav id="sidebar" class="">
 
 
@@ -383,7 +383,7 @@
   
     
     <li data-nav-id="/hierarchical_information_model/resource_data_rule_set/" title="HIM Resource Data Rule Set" class="dd-item
-        
+        parent
         
         
         ">
@@ -433,7 +433,7 @@
   
     
     <li data-nav-id="/hierarchical_information_model/resource_data_rule_set/vspec_extensions/" title="vspec extensions" class="dd-item
-        
+        parent
         
         
         ">
@@ -459,7 +459,7 @@
  
   
     
-      <li data-nav-id="/hierarchical_information_model/resource_data_rule_set/vspec_extensions/instances/" title="Instances" class="dd-item ">
+      <li data-nav-id="/hierarchical_information_model/resource_data_rule_set/vspec_extensions/instances/" title="Instances" class="dd-item active">
         <a href="/hierarchical_information_model/resource_data_rule_set/vspec_extensions/instances/">
         Instances
         
@@ -818,7 +818,7 @@
     
     <li data-nav-id="/hierarchical_information_model/configuration_rule_set/" title="HIM Configuration Rule Set" class="dd-item
         
-        active
+        
         
         ">
       <a href="/hierarchical_information_model/configuration_rule_set/">
@@ -982,7 +982,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/covesa/hierarchical_information_model/edit/master/docs-gen/content/configuration_rule_set/_index.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/covesa/hierarchical_information_model/edit/master/docs-gen/content/resource_data_rule_set/vspec_extensions/instances.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -997,6 +997,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1007,7 +1009,19 @@
             
           
           
-            <a href='/hierarchical_information_model/'>Hierarchical Information Model</a> > HIM Configuration Rule Set
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/hierarchical_information_model/'>Hierarchical Information Model</a> > <a href='/hierarchical_information_model/resource_data_rule_set/'>HIM Resource Data Rule Set</a> > <a href='/hierarchical_information_model/resource_data_rule_set/vspec_extensions/'>vspec extensions</a> > Instances
+          
+        
+          
+        
           
         
           
@@ -1016,6 +1030,31 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#definition">Definition</a>
+      <ul>
+        <li><a href="#how-can-i-create-instances-for-my-branch">How can I create instances for my <code>branch</code>?</a></li>
+        <li><a href="#how-can-i-exclude-child-nodes-from-instantiation">How can I exclude child-nodes from instantiation?</a></li>
+      </ul>
+    </li>
+    <li><a href="#example">Example</a></li>
+    <li><a href="#redefinition">Redefinition</a></li>
+    <li><a href="#recommendations">Recommendations</a>
+      <ul>
+        <li><a href="#recommendation-instance-mismatch">Recommendation: Instance Mismatch</a></li>
+        <li><a href="#recommendation-features-shared-among-instances">Recommendation: Features shared among instances</a></li>
+        <li><a href="#recommendation-features-lacking-for-some-instances">Recommendation: Features lacking for some instances</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1023,29 +1062,184 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Instances
+            </h1>
           
 
         
 
 
+<p>The data model resembles primarily the physical structure of the vehicle, so
+quite often there is a need to repeat branches and data entries
+(e.g. doors, axles, etc). To avoid hard-coded repetitions of
+branches and data entries in the specification an instance-concept is supported.
+Instances remove the need of repeating definitions, by defining at the node itself how often it occurs in
+the resulting tree. They are meant as a short-cut in the specification and
+interpreted by the tools.</p>
+<p><img src="/hierarchical_information_model/images/instances.png?width=60pc" alt="Example tree"></p>
+<h2 id="definition">Definition</h2>
+<h3 id="how-can-i-create-instances-for-my-branch">How can I create instances for my <code>branch</code>?</h3>
+<ol>
+<li>An instance can be defined in any branch.</li>
+<li>The instantiation is done for every node in the following path.</li>
+<li>Instances are defined with the key-word <code>instances</code>, followed by its
+definition, which can be either:
+<ul>
+<li>a list of strings, where each element defines a single instance, e.g.
+<code>['Left','Right']</code> results into two instances of every following
+data entry in the path, named <code>Left</code> and <code>Right</code></li>
+<li>a string, followed by a range defined through <code>[n,m]</code>, with <code>n,m</code> as integer and <code>n &lt;= m</code>,
+which defines the number of instances.
+<code>Position[1,4]</code> results into 4 instances of every following
+data entry in the path, named <code>Position1</code>, <code>Position2</code>, <code>Position3</code>
+and <code>Position4</code>. It is recommended to use <code>1</code> as start index for the first row/axle/position/&hellip;</li>
+</ul>
+</li>
+<li>If multiple instances occur in one node or on the path to a data entry,
+the instances get combined, by the order of occurrence. Following the example above,
+four position instances will be created for each of the &lsquo;Left&rsquo; and &lsquo;Right&rsquo; instances,
+resulting into a total number of 8 instances.</li>
+</ol>
+<h3 id="how-can-i-exclude-child-nodes-from-instantiation">How can I exclude child-nodes from instantiation?</h3>
+<p>Often it makes sense to instantiate all child-nodes of a branch.
+But there are cases, when nodes are linked more the general concept of
+a branch, but not to the single instance. This could be the <code>DoorCount</code>,
+which would rather be <code>Door.Count</code>, <code>WheelDiameter</code>, which is rather linked
+to an axle rather than the wheel itself or <code>Brake.FluidLevel</code> which is not
+measured for a single break, but rather a system indication.</p>
+<p>To exclude a child-node from the instantiation of the <em>direct</em> parent node, set the
+keyword <code>instantiate</code> to <code>false</code> (<code>true</code> by default). Please check the following
+example for details.</p>
+<h2 id="example">Example</h2>
+<p>The example from above in the specification:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-YAML" data-lang="YAML"><span style="display:flex;"><span><span style="color:#75715e"># Cabin.vspec</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Door</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">branch</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">instances</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">Row[1,4]</span>
+</span></span><span style="display:flex;"><span>    - [<span style="color:#e6db74">&#34;Left&#34;</span>,<span style="color:#e6db74">&#34;Right&#34;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">All doors, including windows and switches</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include SingleDoor.vspec Door</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Door.Count</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">datatype</span>: <span style="color:#ae81ff">uint8</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">attribute</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">default</span>: <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">instantiate</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">Number of doors in vehicle.</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#75715e"># SingleDoor.vspec</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Definition of a single door</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">IsOpen</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">datatype</span>: <span style="color:#ae81ff">boolean</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">actuator</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">Is door open or closed</span>
+</span></span></code></pre></div><p>Results in the following dot-notated output:</p>
+<pre tabindex="0"><code>Vehicle.Cabin.Door
+Vehicle.Cabin.Door.Count
+Vehicle.Cabin.Door.Row1
+Vehicle.Cabin.Door.Row1.Left
+Vehicle.Cabin.Door.Row1.Left.IsOpen
+Vehicle.Cabin.Door.Row1.Right
+Vehicle.Cabin.Door.Row1.Right.IsOpen
+Vehicle.Cabin.Door.Row2
+Vehicle.Cabin.Door.Row2.Left
+Vehicle.Cabin.Door.Row2.Left.IsOpen
+Vehicle.Cabin.Door.Row2.Right
+Vehicle.Cabin.Door.Row2.Right.IsOpen
+Vehicle.Cabin.Door.Row3
+Vehicle.Cabin.Door.Row3.Left
+Vehicle.Cabin.Door.Row3.Left.IsOpen
+Vehicle.Cabin.Door.Row3.Right
+Vehicle.Cabin.Door.Row3.Right.IsOpen
+Vehicle.Cabin.Door.Row4
+Vehicle.Cabin.Door.Row4.Left
+Vehicle.Cabin.Door.Row4.Left.IsOpen
+Vehicle.Cabin.Door.Row4.Right
+Vehicle.Cabin.Door.Row4.Right.IsOpen
+</code></pre><h2 id="redefinition">Redefinition</h2>
+<p>It is possible to override the default instantiation provided by redefining the branch with
+different instantiation information. If multiple definitions of a branch exist with different
+instance definitions, then the last found definition will be used.
+As an example, if only two rows of doors are needed, then the default instance definition
+can be overridden by redefining the Door branch as shown in the example below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-YAML" data-lang="YAML"><span style="display:flex;"><span><span style="color:#75715e">#Redefinition changing number of rows from 4 to 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#The redefinition must appear &#34;after&#34; the original definition</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Vehicle.Cabin.Door</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">branch</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">instances</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">Row[1,2]</span>
+</span></span><span style="display:flex;"><span>    - [<span style="color:#e6db74">&#34;Left&#34;</span>,<span style="color:#e6db74">&#34;Right&#34;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">All doors, including windows and switches</span>
+</span></span></code></pre></div><h2 id="recommendations">Recommendations</h2>
+<p>The instantiation feature is designed to be able to be configured for a wide range of vehicles.
+This means that the default instantiation represented in the standard may not fit every vehicle.
+An example can be seen in the windshield signals defined in <code>Body.vspec</code>, parts of them are shown below.
+It offers the possibility to control windshield heating separately for front and rear windshield,
+and it also gives the possibility to report washer fluid level separately for each windshield.
+This fits very well for a vehicle that has separate washer fluid containers for front and rear windshield
+and that offers heating for both windshields. But that is not the case for all vehicles,
+it is not even certain that all vehicles have two windshields. This sections gives recommendations on how
+to use it for a vehicle if the default specification does not offer an exact match of the capabilities of the vehicle.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-YAML" data-lang="YAML"><span style="display:flex;"><span><span style="color:#f92672">Windshield</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">branch</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">instances</span>: [<span style="color:#e6db74">&#34;Front&#34;</span>, <span style="color:#e6db74">&#34;Rear&#34;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">Windshield signals</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Windshield.Heating</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">branch</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">Windshield heater signals</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Windshield.Heating.Status</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">datatype</span>: <span style="color:#ae81ff">boolean</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">actuator</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">Windshield heater status. 0 - off, 1 - on</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Windshield.WasherFluid</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">branch</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">Windshield washer fluid signals</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Windshield.WasherFluid.LevelLow</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">datatype</span>: <span style="color:#ae81ff">boolean</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">sensor</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">Low level indication for washer fluid. True = Level Low. False = Level OK.</span>
+</span></span></code></pre></div><h3 id="recommendation-instance-mismatch">Recommendation: Instance Mismatch</h3>
+<p>If a vehicle does not have as many instances as specified by default then one
+of the following methods are recommended:</p>
+<ul>
+<li>Redefine the branch. If a vehicle for example does not have a rear windshield
+then append a redefinition at the end of the vspec file:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-YAML" data-lang="YAML"><span style="display:flex;"><span><span style="color:#f92672">Vehicle.Body.Windshield</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">branch</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">instances</span>: [<span style="color:#e6db74">&#34;Front&#34;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">Windshield signals</span>
+</span></span></code></pre></div><ul>
+<li>Accept that a <code>branch Vehicle.Body.Windshield.Rear</code> will exist in the generated tree representation,
+use other mechanisms to ignore that branch</li>
+</ul>
+<h3 id="recommendation-features-shared-among-instances">Recommendation: Features shared among instances</h3>
+<p>If a feature is shared among instances, it is recommended to publish that feature for all concerned instances.</p>
+<p>Example: A washer fluid can be handled separately for front and rear windshield.
+If a vehicle use a common container serving both front and rear windshield,
+then it is recommended that the vehicle report information on that container in both
+<code>Vehicle.Body.Windshield.Front.WasherFluid.LevelLow</code> and <code>Vehicle.Body.Windshield.Rear.WasherFluid.LevelLow</code>.</p>
+<h3 id="recommendation-features-lacking-for-some-instances">Recommendation: Features lacking for some instances</h3>
+<p>Not all instances in a vehicle might have the same features. If e.g. the front windshield
+from the example above lack a heater, then it is recommended to use other mechanisms
+to ignore <code>Vehicle.Body.Windshield.Front.Heating</code>.</p>
 
-	<h1 id="him-configuration-rule-set">HIM Configuration Rule Set</h1>
-<p>The overall rule set for the information type <code>configuration</code> is described in this part of the document,
-together with the rules in the <a href="/hierarchical_information_model/common_rule_set">Common rule set part</a>.</p>
 
-
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
-        
-            </div> 
         
         </div>
         
@@ -1274,6 +1468,7 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
             
                 
                     
+                    
                 
                 
 
@@ -1288,6 +1483,9 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1305,6 +1503,7 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
             
                 
                     
+                    
                 
                 
 
@@ -1317,6 +1516,7 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
             
             
                 
+                    
                     
                 
                 
@@ -1334,24 +1534,8 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -1363,83 +1547,6 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
             
         
@@ -1556,6 +1663,19 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -1564,6 +1684,88 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1579,9 +1781,6 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1654,10 +1853,10 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
 	 
 	 
 		
-			<a class="nav nav-prev" href="/hierarchical_information_model/type_definition_rule_set/struct/" title="Struct node"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/hierarchical_information_model/resource_data_rule_set/vspec_extensions/" title="vspec extensions"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/hierarchical_information_model/configuration_rule_set/basics/" title="HIM Configuration Rules" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/hierarchical_information_model/resource_data_rule_set/vspec_extensions/includes/" title="Includes" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1689,3 +1888,4 @@ together with the rules in the <a href="/hierarchical_information_model/common_r
 
   </body>
 </html>
+

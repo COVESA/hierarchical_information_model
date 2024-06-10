@@ -21,7 +21,12 @@
     <loc>https://covesa.github.io/hierarchical_information_model/common_rule_set/instances/</loc>
     <lastmod>2019-07-31T15:27:36+02:00</lastmod>
   </url><url>
+    <loc>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/instances/</loc>
+  </url><url>
     <loc>https://covesa.github.io/hierarchical_information_model/common_rule_set/includes/</loc>
+    <lastmod>2019-08-04T12:59:44+02:00</lastmod>
+  </url><url>
+    <loc>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/includes/</loc>
     <lastmod>2019-08-04T12:59:44+02:00</lastmod>
   </url><url>
     <loc>https://covesa.github.io/hierarchical_information_model/common_rule_set/data_entry/datatypes/</loc>
@@ -38,6 +43,9 @@
   </url><url>
     <loc>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/</loc>
     <lastmod>2019-08-04T13:05:11+02:00</lastmod>
+  </url><url>
+    <loc>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/</loc>
+    <lastmod>2019-08-04T12:59:44+02:00</lastmod>
   </url><url>
     <loc>https://covesa.github.io/hierarchical_information_model/common_rule_set/node_types/</loc>
     <lastmod>2019-08-04T12:37:03+02:00</lastmod>
