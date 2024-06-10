@@ -131,8 +131,12 @@ See the [Value restrictions chapter](/hierarchical_information_model/common_rule
 A comment can be used to provide additional informal information on a branch. This could include background information on the rationale for the branch, references to related branches, standards and similar. Recommended to start with a capital letter and end with a dot (.).
 
 ### Instances
-See the [Instances chapter](/hierarchical_information_model/common_rule_set/instances).
+See the [Instances chapter](/hierarchical_information_model/resource_data_rule_set/vspec_extensions/instances).
 The `instances` metadata is only allowed in `branch` type nodes.
+
+### Includes
+See the [Includes chapter](/hierarchical_information_model/resource_data_rule_set/vspec_extensions/includes).
+The `include` metadata is only allowed in `branch` type nodes.
 
 ### Aggregate
 Defines whether or not this branch is an aggregate.
