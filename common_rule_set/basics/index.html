@@ -12,21 +12,21 @@
     <title>Basic Rules :: Hierarchical Information Model</title>
 
     
-    <link href="/hierarchical_information_model/css/nucleus.css?1718011682" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1718011682" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hybrid.css?1718011682" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/featherlight.min.css?1718011682" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1718011682" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/auto-complete.css?1718011682" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1718011682" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/theme.css?1718011682" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hugo-theme.css?1718011682" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/nucleus.css?1718019645" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1718019645" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hybrid.css?1718019645" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/featherlight.min.css?1718019645" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1718019645" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/auto-complete.css?1718019645" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1718019645" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme.css?1718019645" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hugo-theme.css?1718019645" rel="stylesheet">
     
-    <link href="/hierarchical_information_model/css/theme-blue.css?1718011682" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme-blue.css?1718019645" rel="stylesheet">
     
     
 
-    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1718011682"></script>
+    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1718019645"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1718011682"></script>
-<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1718011682"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1718019645"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1718019645"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/covesa.github.io\/hierarchical_information_model\/";
     
 </script>
-<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1718011682"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1718019645"></script>
 
     
   </div>
@@ -241,48 +241,6 @@
         </ul>
       
     </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/hierarchical_information_model/common_rule_set/instances/" title="Instances" class="dd-item ">
-        <a href="/hierarchical_information_model/common_rule_set/instances/">
-        Instances
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/hierarchical_information_model/common_rule_set/includes/" title="Includes" class="dd-item ">
-        <a href="/hierarchical_information_model/common_rule_set/includes/">
-        Includes
-        
-        </a>
-    </li>
-     
   
  
 
@@ -1043,6 +1001,7 @@
         <li><a href="#minmaxallowed">Min/Max/Allowed</a></li>
         <li><a href="#comment">Comment</a></li>
         <li><a href="#instances">Instances</a></li>
+        <li><a href="#includes">Includes</a></li>
         <li><a href="#aggregate">Aggregate</a></li>
         <li><a href="#deprecation">Deprecation</a></li>
         <li><a href="#example">Example</a></li>
@@ -1079,8 +1038,7 @@
 
 
 <h2 id="specification-format">Specification format</h2>
-<p>The syntax used to define the content of a HIM taxonomy is based on YAML and must comply to the
-<a href="https://yaml.org/">YAML specification</a>.</p>
+<p>The syntax used to define the content of a HIM taxonomy is based on YAML and must comply to the <a href="https://yaml.org/">YAML specification</a>.</p>
 <p>A HIM taxonomy may contain subtrees that are identical copies of each other, for example descriptions of doors in a vehicle.
 In order not to have to repeat the content of the subtree multiple times, the subtree can be defined in a separate file,
 which can then be included into the main tree by the directive</p>
@@ -1119,8 +1077,7 @@ as some implementations may treat VSS identifiers as case insensitive.</p>
 starting from the root node of the tree and traversing the tree nodes to the node in focus, with a period (.) as delimiter between node names.
 An example of a qualified node name, which is called a path, is</p>
 <pre tabindex="0"><code>a.b.c
-</code></pre><p>where a is the name of the root node, b is a child of a,
-and the node in focus is c, a child of b.</p>
+</code></pre><p>where a is the name of the root node, b is a child of a, and the node in focus is c, a child of b.</p>
 <h3 id="node-types">Node types</h3>
 <p>The node types described here are used by more than one information type,
 while the node types specifi to a single information type are found in respective parts of this document.</p>
@@ -1175,8 +1132,11 @@ please see the rule set documentation for these.</p>
 <h3 id="comment">Comment</h3>
 <p>A comment can be used to provide additional informal information on a branch. This could include background information on the rationale for the branch, references to related branches, standards and similar. Recommended to start with a capital letter and end with a dot (.).</p>
 <h3 id="instances">Instances</h3>
-<p>See the <a href="/hierarchical_information_model/common_rule_set/instances">Instances chapter</a>.
+<p>See the <a href="/hierarchical_information_model/resource_data_rule_set/vspec_extensions/instances">Instances chapter</a>.
 The <code>instances</code> metadata is only allowed in <code>branch</code> type nodes.</p>
+<h3 id="includes">Includes</h3>
+<p>See the <a href="/hierarchical_information_model/resource_data_rule_set/vspec_extensions/includes">Includes chapter</a>.
+The <code>include</code> metadata is only allowed in <code>branch</code> type nodes.</p>
 <h3 id="aggregate">Aggregate</h3>
 <p>Defines whether or not this branch is an aggregate.
 If not defined, this defaults to <code>false</code>.
@@ -1360,38 +1320,6 @@ This is not a strict limit, it is e.g. not recommended to split long URLs presen
                     
             
         
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
             
         
@@ -1841,19 +1769,19 @@ This is not a strict limit, it is e.g. not recommended to split long URLs presen
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/hierarchical_information_model/js/clipboard.min.js?1718011682"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1718011682"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1718011682"></script>
-    <script src="/hierarchical_information_model/js/jquery.sticky.js?1718011682"></script>
-    <script src="/hierarchical_information_model/js/featherlight.min.js?1718011682"></script>
-    <script src="/hierarchical_information_model/js/highlight.pack.js?1718011682"></script>
+    <script src="/hierarchical_information_model/js/clipboard.min.js?1718019645"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1718019645"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1718019645"></script>
+    <script src="/hierarchical_information_model/js/jquery.sticky.js?1718019645"></script>
+    <script src="/hierarchical_information_model/js/featherlight.min.js?1718019645"></script>
+    <script src="/hierarchical_information_model/js/highlight.pack.js?1718019645"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1718011682"></script>
-    <script src="/hierarchical_information_model/js/learn.js?1718011682"></script>
-    <script src="/hierarchical_information_model/js/hugo-learn.js?1718011682"></script>
+    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1718019645"></script>
+    <script src="/hierarchical_information_model/js/learn.js?1718019645"></script>
+    <script src="/hierarchical_information_model/js/hugo-learn.js?1718019645"></script>
     
         
-            <script src="/hierarchical_information_model/mermaid/mermaid.js?1718011682"></script>
+            <script src="/hierarchical_information_model/mermaid/mermaid.js?1718019645"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
