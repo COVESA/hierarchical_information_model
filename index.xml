@@ -55,9 +55,9 @@ HIM Microservice Data A microservice is in HIM defined by a procedure signature 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/basics/</guid>
-      <description>A type_definition tree contains data type definitions that are not part of the primitive datatypes defined by HIM.
-The currently supported node types are suited for definition of structs.
-Node Types The node types for representing type definitions are:
+      <description>A type_definition tree contains data type definitions. These can either be complex datatypes that are not part of the primitive datatypes defined by HIM, or it can be common allowed definitions.
+Node Types The currently supported node types can be used for either the definition of structs, or for the definition of allowed value restrictions.
+The node types for representing type definitions are:
 Branch Struct Property Please see more information about these node types here.</description>
     </item>
     
@@ -167,10 +167,11 @@ Besides the mandatory metadata mentioned above, the following optional metadata 
       <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
       
       <guid>https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/property/</guid>
-      <description>Data represented by the node type property have a relationship to any other data having the same struct parent in that they are all sampled in an &amp;ldquo;atomic&amp;rdquo; operation, i.e. the set of data points have the same timestamp representing the sample time.
+      <description>The node type property can either be used to represent members of a struct, or common allowed definitions.
 Nodes of the type property must have the following mandatory metadata:
 Name Type Datatype Description For more information, see the Common Rule Set: Mandatory Metadata.
-Besides the mandatory metadata mentioned above, the following optional metadata may be used</description>
+Besides the mandatory metadata mentioned above, the following optional metadata may be used
+Unit Min Max Allowed Comment When used for allowed definition, the metadata types Unit, Min, Max must not be used.</description>
     </item>
     
     <item>
