@@ -4,8 +4,7 @@ date: 2019-08-04T12:37:03+02:00
 weight: 30
 ---
 
-Data represented by the node type `property` have a relationship to any other data having the same `struct` parent in that they are all sampled in an "atomic" operation,
-i.e. the set of data points have the same timestamp representing the sample time.
+The node type `property` can either be used to represent members of a struct, or common allowed definitions.
 
 Nodes of the type `property` must have the following mandatory metadata:
 - Name
@@ -22,11 +21,17 @@ Besides the mandatory metadata mentioned above, the following optional metadata 
 - Allowed
 - Comment
 
+When used for allowed definition, the metadata types Unit, Min, Max must not be used.
+
 For more information, please see the [Common Rule Set: Optional Metadata](/hierarchical_information_model/common_rule_set/basics#optional-metadata).
 
-This node type must have a node of type `struct` as parent, and must not have any children.
+## Property node used to define struct members
+Data represented by the node type `property` have a relationship to any other data having the same `struct` parent in that they are all sampled in an "atomic" operation,
+i.e. the set of data points have the same timestamp representing the sample time.
 
-An example of the specification of a `property` node is given below.
+In this usage the node type must have a node of type `struct` as parent, and must not have any children.
+
+An example of the specification of a `property` node for a struct member is given below.
 
 ```YAML
 Type.OpenHours.Open:
@@ -35,3 +40,17 @@ Type.OpenHours.Open:
   max: 24
   description: Time the address opens
 ```
+
+## Propety node used for allowed definition
+In this usage the node type must have a node of type `branch` as parent, and must not have any children.
+
+An example of the specification of a `property` node for an allowed definition is given below.
+
+```YAML
+Type.Cabin.DriverPositionValues:
+  type: property
+  datatype: string
+  allowed: ['LEFT', 'MIDDLE', 'RIGHT']
+  description: DriverPosition allowed values.
+```
+
