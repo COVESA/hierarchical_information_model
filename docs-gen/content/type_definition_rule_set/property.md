@@ -53,4 +53,3 @@ Type.Cabin.DriverPositionValues:
   allowed: ['LEFT', 'MIDDLE', 'RIGHT']
   description: DriverPosition allowed values.
 ```
-
