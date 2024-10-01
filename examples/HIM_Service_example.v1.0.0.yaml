@@ -8,7 +8,7 @@ VehicleService.ExteriorLighting:
 
 VehicleService.ExteriorLighting.HeadLampsOnOff:
   type: procedure
-  description: Microservice name: HeadLampsOnOff, Input: Switch, Output: None.
+  description: Microservice name=HeadLampsOnOff, Input=Switch, Output=None.
 
 VehicleService.ExteriorLighting.HeadLampsOnOff.Input:
   type: iostruct
