@@ -12,21 +12,21 @@
     <title>HIM Configuration Rules :: Hierarchical Information Model</title>
 
     
-    <link href="/hierarchical_information_model/css/nucleus.css?1720000977" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1720000977" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hybrid.css?1720000977" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/featherlight.min.css?1720000977" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1720000977" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/auto-complete.css?1720000977" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1720000977" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/theme.css?1720000977" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hugo-theme.css?1720000977" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/nucleus.css?1727788011" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1727788011" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hybrid.css?1727788011" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/featherlight.min.css?1727788011" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1727788011" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/auto-complete.css?1727788011" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1727788011" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme.css?1727788011" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hugo-theme.css?1727788011" rel="stylesheet">
     
-    <link href="/hierarchical_information_model/css/theme-blue.css?1720000977" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme-blue.css?1727788011" rel="stylesheet">
     
     
 
-    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1720000977"></script>
+    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1727788011"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1720000977"></script>
-<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1720000977"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1727788011"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1727788011"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/covesa.github.io\/hierarchical_information_model\/";
     
 </script>
-<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1720000977"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1727788011"></script>
 
     
   </div>
@@ -1017,23 +1017,22 @@
 <p>HIM supports structuring information into different trees instead of bundling it all into one tree.
 This is likely to lead to that e. g. a server that manages a super domain of somewhat heterogeneous information
 will have that information represented by multiple trees.
-HIM enables this &ldquo;forest of trees&rdquo; to be accessed in a homogeneous manner by using the paths of the nodes of the trees to address theinformation contained in the trees.
+HIM enables this &ldquo;forest of trees&rdquo; to be accessed in a uniform manner by using the paths of the nodes of the trees to address the information contained in the trees.
 To support the server in managing this forest of trees, a HIM configuration tree provides a representation of the key parameters of this forest.
-The server may also share this configuration file on request from clients, in order for them to discover the information available by the forest.
-The HIM model is not restricted to client/server models.</p>
-<p>A file containing this configuration shall have a name starting with &ldquo;HIM_configuration&rdquo;,
-with an optional suffix that might describe the domain, information type, or version.
-The file may have the extension &ldquo;.him&rdquo;, which typically would indicate that it is YAML formatted.
-Any file extension can be used that indicates it has been transformed from its YAML source format to a different format like &ldquo;.json&rdquo;.</p>
-<p>The configuration tree root node shall have a name starting with &ldquo;HIM_config&rdquo;, which may be followed by additional information
-such as a descriptive domain name, version, etc.</p>
-<p>A server may share the information of this file with a client that wants to discover what information the server manages.</p>
+The server may also share this configuration file on request from clients, in order for them to discover the information available by the forest.</p>
+<p>The HIM model is not restricted to client/server models.</p>
+<p>A file containing this configuration may have any name, but it is recommended that it contains version or date-time information.
+The file shall have the extension &ldquo;.him&rdquo;, which indicates that it is a HIM configuration file.
+Its format shall be YAML or any other text format that is compatible with YAML.</p>
+<p>The configuration tree root node shall have the name &ldquo;HIM&rdquo;.</p>
+<p>A server may share the information of this file with a client that wants to discover what information the server manages.
+It shall however not share the &ldquo;local&rdquo; metadata that is private to the server.</p>
 <p>A HIM compliant server shall be able to read a HIM configuration file and from that access the forest of trees it defines.</p>
 <p>A HIM compliant tree must follow the HIM rule set.
 The project specifying this tree must also define the <code>domain</code> metadata for this tree,
 and it may provide a <code>public</code> URL to a file containing the complete tree,
 possible also multiple <code>public</code> URLs to renditions of the tree in different formats such as YAML, JSON, etc.</p>
-<p>The creation of a HIM configuration file is the responsibility of the HIM server implementor.</p>
+<p>The creation of a HIM configuration file is the responsibility of the  &ldquo;manager&rdquo; of the HIM server.</p>
 <h2 id="configuration-node-types">Configuration node types</h2>
 <p>The following node types can be used in a configuration tree:</p>
 <ol>
@@ -1681,19 +1680,19 @@ possible also multiple <code>public</code> URLs to renditions of the tree in dif
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/hierarchical_information_model/js/clipboard.min.js?1720000977"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1720000977"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1720000977"></script>
-    <script src="/hierarchical_information_model/js/jquery.sticky.js?1720000977"></script>
-    <script src="/hierarchical_information_model/js/featherlight.min.js?1720000977"></script>
-    <script src="/hierarchical_information_model/js/highlight.pack.js?1720000977"></script>
+    <script src="/hierarchical_information_model/js/clipboard.min.js?1727788011"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1727788011"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1727788011"></script>
+    <script src="/hierarchical_information_model/js/jquery.sticky.js?1727788011"></script>
+    <script src="/hierarchical_information_model/js/featherlight.min.js?1727788011"></script>
+    <script src="/hierarchical_information_model/js/highlight.pack.js?1727788011"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1720000977"></script>
-    <script src="/hierarchical_information_model/js/learn.js?1720000977"></script>
-    <script src="/hierarchical_information_model/js/hugo-learn.js?1720000977"></script>
+    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1727788011"></script>
+    <script src="/hierarchical_information_model/js/learn.js?1727788011"></script>
+    <script src="/hierarchical_information_model/js/hugo-learn.js?1727788011"></script>
     
         
-            <script src="/hierarchical_information_model/mermaid/mermaid.js?1720000977"></script>
+            <script src="/hierarchical_information_model/mermaid/mermaid.js?1727788011"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -46,7 +46,7 @@ HIM Microservice Data A microservice is in HIM defined by a procedure signature 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/basics/</guid>
-      <description>Configuration Overview HIM supports structuring information into different trees instead of bundling it all into one tree. This is likely to lead to that e. g. a server that manages a super domain of somewhat heterogeneous information will have that information represented by multiple trees. HIM enables this &amp;ldquo;forest of trees&amp;rdquo; to be accessed in a homogeneous manner by using the paths of the nodes of the trees to address theinformation contained in the trees.</description>
+      <description>Configuration Overview HIM supports structuring information into different trees instead of bundling it all into one tree. This is likely to lead to that e. g. a server that manages a super domain of somewhat heterogeneous information will have that information represented by multiple trees. HIM enables this &amp;ldquo;forest of trees&amp;rdquo; to be accessed in a uniform manner by using the paths of the nodes of the trees to address the information contained in the trees.</description>
     </item>
     
     <item>
