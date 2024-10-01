@@ -40,4 +40,3 @@ Types.Version.Patch:
   datatype: uint32
   type: attribute
   description: Patch version number.
-

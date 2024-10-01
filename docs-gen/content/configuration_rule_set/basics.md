@@ -7,20 +7,20 @@ weight: 1
 HIM supports structuring information into different trees instead of bundling it all into one tree.
 This is likely to lead to that e. g. a server that manages a super domain of somewhat heterogeneous information
 will have that information represented by multiple trees.
-HIM enables this "forest of trees" to be accessed in a homogeneous manner by using the paths of the nodes of the trees to address theinformation contained in the trees.
+HIM enables this "forest of trees" to be accessed in a uniform manner by using the paths of the nodes of the trees to address the information contained in the trees.
 To support the server in managing this forest of trees, a HIM configuration tree provides a representation of the key parameters of this forest.
 The server may also share this configuration file on request from clients, in order for them to discover the information available by the forest.
+
 The HIM model is not restricted to client/server models.
 
-A file containing this configuration shall have a name starting with "HIM_configuration",
-with an optional suffix that might describe the domain, information type, or version.
-The file may have the extension ".him", which typically would indicate that it is YAML formatted.
-Any file extension can be used that indicates it has been transformed from its YAML source format to a different format like ".json".
+A file containing this configuration may have any name, but it is recommended that it contains version or date-time information.
+The file shall have the extension ".him", which indicates that it is a HIM configuration file.
+Its format shall be YAML or any other text format that is compatible with YAML.
 
-The configuration tree root node shall have a name starting with "HIM_config", which may be followed by additional information
-such as a descriptive domain name, version, etc.
+The configuration tree root node shall have the name "HIM".
 
 A server may share the information of this file with a client that wants to discover what information the server manages.
+It shall however not share the "local" metadata that is private to the server.
 
 A HIM compliant server shall be able to read a HIM configuration file and from that access the forest of trees it defines.
 
@@ -29,7 +29,7 @@ The project specifying this tree must also define the `domain` metadata for this
 and it may provide a `public` URL to a file containing the complete tree,
 possible also multiple `public` URLs to renditions of the tree in different formats such as YAML, JSON, etc.
 
-The creation of a HIM configuration file is the responsibility of the HIM server implementor.
+The creation of a HIM configuration file is the responsibility of the  "manager" of the HIM server.
 
 ## Configuration node types
 
