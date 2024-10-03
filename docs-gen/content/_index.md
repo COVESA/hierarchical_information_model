@@ -39,7 +39,7 @@ The documentation is structured in the different rule sets shortly described bel
 [Rules](/hierarchical_information_model/type_definition_rule_set/) for describing complex datatype definitions, specifically struct definitions.
 
 ## HIM Configuration Rule Set
-[Rules](/hierarchical_information_model/configuration_rule_set/) for how a set of domain taxonomies is defined. 
+[Rules](/hierarchical_information_model/configuration_rule_set/) for how a set of domain taxonomies is defined.
 
 ## HIM Common Rule Set
 [Rules](/hierarchical_information_model/common_rule_set/) that are commonly used in the other rule sets.
