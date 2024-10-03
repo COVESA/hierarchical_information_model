@@ -12,21 +12,21 @@
     <title>Hierarchical Information Model :: Hierarchical Information Model</title>
 
     
-    <link href="/hierarchical_information_model/css/nucleus.css?1727788011" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1727788011" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hybrid.css?1727788011" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/featherlight.min.css?1727788011" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1727788011" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/auto-complete.css?1727788011" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1727788011" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/theme.css?1727788011" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hugo-theme.css?1727788011" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/nucleus.css?1727948267" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1727948267" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hybrid.css?1727948267" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/featherlight.min.css?1727948267" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1727948267" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/auto-complete.css?1727948267" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1727948267" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme.css?1727948267" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hugo-theme.css?1727948267" rel="stylesheet">
     
-    <link href="/hierarchical_information_model/css/theme-blue.css?1727788011" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme-blue.css?1727948267" rel="stylesheet">
     
     
 
-    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1727788011"></script>
+    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1727948267"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1727788011"></script>
-<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1727788011"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1727948267"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1727948267"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/covesa.github.io\/hierarchical_information_model\/";
     
 </script>
-<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1727788011"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1727948267"></script>
 
     
   </div>
@@ -988,6 +988,22 @@ One example of such a project is the <a href="https://github.com/COVESA/vehicle_
 <p><a href="/hierarchical_information_model/configuration_rule_set/">Rules</a> for how a set of domain taxonomies is defined.</p>
 <h2 id="him-common-rule-set">HIM Common Rule Set</h2>
 <p><a href="/hierarchical_information_model/common_rule_set/">Rules</a> that are commonly used in the other rule sets.</p>
+<h2 id="him-profiles">HIM profiles</h2>
+<p>The HIM model supports different information types,
+and a server exposing an interface that uses HIM for its data representation may have to implement features that its clients have no interest in.
+A server to be used in an environment where the Resource data type (i. e. classical signals) is used can then be
+implemented without support for a service oriented architecture (SOA).
+To support scenarios like this HIM specifies the three different profiles shown below.</p>
+<p>A client that issues an inquiry on what profile is supported shall receive information on that in the response.</p>
+<h3 id="him-resource-profile">HIM Resource Profile</h3>
+<p>The HIM Resource profile excludes use of trees that contain the Service data information type.
+This profile is for example compatible with the VSS tree.</p>
+<h3 id="him-service-profile">HIM Service Profile</h3>
+<p>The HIM Service profile excludes use of trees that contain the Resource data information type.
+This profile can for example be used in &ldquo;pure&rdquo; SOA architectures.</p>
+<h3 id="him-all-profile">HIM All Profile</h3>
+<p>The HIM All profile supports use of trees that contain data of any HIM specified information type.
+This makes it possible for a server to serve clients that wants to have access to both &ldquo;classical signals&rdquo; and services represented by function calls.</p>
 <h2 id="heritage">Heritage</h2>
 <p>The ideas behind HIM originated in the <a href="https://github.com/COVESA/vehicle_signal_specification">COVESA VSS</a> project,
 when interest started to be raised for using it for of not only resource data but also service data,
@@ -1578,19 +1594,19 @@ This may explain why examples in this documentation are often taken from that do
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/hierarchical_information_model/js/clipboard.min.js?1727788011"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1727788011"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1727788011"></script>
-    <script src="/hierarchical_information_model/js/jquery.sticky.js?1727788011"></script>
-    <script src="/hierarchical_information_model/js/featherlight.min.js?1727788011"></script>
-    <script src="/hierarchical_information_model/js/highlight.pack.js?1727788011"></script>
+    <script src="/hierarchical_information_model/js/clipboard.min.js?1727948267"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1727948267"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1727948267"></script>
+    <script src="/hierarchical_information_model/js/jquery.sticky.js?1727948267"></script>
+    <script src="/hierarchical_information_model/js/featherlight.min.js?1727948267"></script>
+    <script src="/hierarchical_information_model/js/highlight.pack.js?1727948267"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1727788011"></script>
-    <script src="/hierarchical_information_model/js/learn.js?1727788011"></script>
-    <script src="/hierarchical_information_model/js/hugo-learn.js?1727788011"></script>
+    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1727948267"></script>
+    <script src="/hierarchical_information_model/js/learn.js?1727948267"></script>
+    <script src="/hierarchical_information_model/js/hugo-learn.js?1727948267"></script>
     
         
-            <script src="/hierarchical_information_model/mermaid/mermaid.js?1727788011"></script>
+            <script src="/hierarchical_information_model/mermaid/mermaid.js?1727948267"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
