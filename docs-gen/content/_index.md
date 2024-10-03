@@ -39,10 +39,31 @@ The documentation is structured in the different rule sets shortly described bel
 [Rules](/hierarchical_information_model/type_definition_rule_set/) for describing complex datatype definitions, specifically struct definitions.
 
 ## HIM Configuration Rule Set
-[Rules](/hierarchical_information_model/configuration_rule_set/) for how a set of domain taxonomies is defined. 
+[Rules](/hierarchical_information_model/configuration_rule_set/) for how a set of domain taxonomies is defined.
 
 ## HIM Common Rule Set
 [Rules](/hierarchical_information_model/common_rule_set/) that are commonly used in the other rule sets.
+
+## HIM profiles
+The HIM model supports different information types,
+and a server exposing an interface that uses HIM for its data representation may have to implement features that its clients have no interest in.
+A server to be used in an environment where the Resource data type (i. e. classical signals) is used can then be
+implemented without support for a service oriented architecture (SOA).
+To support scenarios like this HIM specifies the three different profiles shown below.
+
+A client that issues an inquiry on what profile is supported shall receive information on that in the response.
+
+### HIM Resource Profile
+The HIM Resource profile excludes use of trees that contain the Service data information type.
+This profile is for example compatible with the VSS tree.
+
+### HIM Service Profile
+The HIM Service profile excludes use of trees that contain the Resource data information type.
+This profile can for example be used in "pure" SOA architectures.
+
+### HIM All Profile
+The HIM All profile supports use of trees that contain data of any HIM specified information type.
+This makes it possible for a server to serve clients that wants to have access to both "classical signals" and services represented by function calls.
 
 ## Heritage
 The ideas behind HIM originated in the [COVESA VSS](https://github.com/COVESA/vehicle_signal_specification) project,
