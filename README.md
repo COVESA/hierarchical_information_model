@@ -28,7 +28,7 @@ together with the [COVESA CVIS project](https://wiki.covesa.global/display/WIK4/
 
 The information of a domain that is described using HIM is represented in a graph made up of a tree structure with parent-child relationships,
 as shown in Figure 1.
-![HIM graph structure](docs-gen/static/images/him_graph_structure.png?raw=true)<br>
+![HIM graph structure](docs-gen/static/images/him_graph_structure.png?raw=true)
 *Figure 1. HIM graph structure<br>
 
 HIM does not have the ambition to define the content of any domain,
@@ -83,12 +83,12 @@ Non-backwards compatible (NBC) changes to the `Model` shall be handled as follow
 
 * The period from that the NBC idea is introduced until it is accepted and merged shall be at least three months, including at least three WG meetings where it has been discussed.
 * Any participant in these WG discussions can request a vote whether to reject the idea or not. At least three regular WG participants, or regular participants in other projects that use HIM, must vote. A majority of at least 51% is required for decision.
- 
+
 Further, NBC changes to particularly important features of the `Model` in the Axiom list below must be handled as follows.
 
 * The period from that the NBC idea is introduced until it is accepted and merged shall be at least six months, including at least three WG meetings where it has been discussed.
 * Any participant in these WG discussions can request a vote whether to reject the idea or not. At least five regular WG participants, or regular participants in other projects that use HIM, must vote. A majority of at least 80% is required for decision.
- 
+
 Axioms:
 
 * The tree structure, where the tree root node name is used for identifying one tree in a forest, is a fundamental part of the `Model`.
@@ -96,7 +96,7 @@ Axioms:
 * Low complexity and ease of understanding have priority in the evolution of the `Model`.
 * As an example of keeping complexity low, the `Model` shall not include metadata related to the transport of data or the capture of data.
 Adding metadata that is not part of the `Model` may be done in an implementation of the `Model`.
- 
+
 The merging of an NBC change must lead to a new major release. The release notes must clearly state the NBC change,
 and if it involves an Axiom then also the rationale behind it.
 
