@@ -12,21 +12,21 @@
     <title>Proxy node :: Hierarchical Information Model</title>
 
     
-    <link href="/hierarchical_information_model/css/nucleus.css?1727948267" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1727948267" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hybrid.css?1727948267" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/featherlight.min.css?1727948267" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1727948267" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/auto-complete.css?1727948267" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1727948267" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/theme.css?1727948267" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hugo-theme.css?1727948267" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/nucleus.css?1742466757" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1742466757" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hybrid.css?1742466757" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/featherlight.min.css?1742466757" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1742466757" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/auto-complete.css?1742466757" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1742466757" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme.css?1742466757" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hugo-theme.css?1742466757" rel="stylesheet">
     
-    <link href="/hierarchical_information_model/css/theme-blue.css?1727948267" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme-blue.css?1742466757" rel="stylesheet">
     
     
 
-    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1727948267"></script>
+    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1742466757"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1727948267"></script>
-<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1727948267"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1742466757"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1742466757"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/covesa.github.io\/hierarchical_information_model\/";
     
 </script>
-<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1727948267"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1742466757"></script>
 
     
   </div>
@@ -995,7 +995,9 @@
     <li><a href="#name">Name</a></li>
     <li><a href="#domain">Domain</a></li>
     <li><a href="#version">Version</a></li>
+    <li><a href="#local">Local</a></li>
     <li><a href="#public">Public</a></li>
+    <li><a href="#example">Example</a></li>
   </ul>
 </nav>
     </div>
@@ -1031,6 +1033,7 @@ routed to the server deployed on the LAN.</p>
 <li>Type</li>
 <li>Domain</li>
 <li>Version</li>
+<li>Local</li>
 <li>Description</li>
 </ul>
 <p>For more information, see the <a href="/hierarchical_information_model/common_rule_set/basics#mandatory-metadata">Common Rule Set: Mandatory Metadata</a>.</p>
@@ -1069,17 +1072,22 @@ A domain name dot delimited segment names:</p>
 <h2 id="version">Version</h2>
 <p>The <code>version</code> shall be identical to the version of the tree where it shall be mandatory.
 Versioning shall be based on the <a href="https://semver.org/spec/v2.0.0.html">Semantic versioning</a> principles.</p>
+<h2 id="local">Local</h2>
+<p>The <code>local</code> metadata shall be a URL, including schema (schema://url), that points either directly to the server that contains the tree, or to a proxy for it.
+The schema selection is implementation specific, examples are “uds” if a Unix Doman socket is used, or “wss” if a secure WebSocket is used.
+The <code>local</code> metadata shall not be supplied to a client requesting the configuration file.</p>
 <h2 id="public">Public</h2>
-<p>The public metadata shall, if available, be a URL to a public copy of the tree.
-It may be used to provision a server with a copy of the tree,
-but also by a client to obtain a copy instead of e. g. requesting the proxy server to provision a copy from the server managing it.</p>
-<p>An example of the specification of a <code>proxy</code> node is given below.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-YAML" data-lang="YAML"><span style="display:flex;"><span><span style="color:#f92672">VehicleData</span>:
+<p>The <code>public</code> metadata shall, if available, be a URL to a public copy of the tree managed by the server at the end-point.
+It may be used to provision a client with a copy of the tree instead of e. g. requesting the (end-point) server to provision a copy.</p>
+<h2 id="example">Example</h2>
+<p>An example of the specification of a <code>proxy</code> node is given below.
+The <code>local</code> points to a Unix domain socket for communication with a proxy server in the vehicle that then communicates with the home over Zigbee.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-YAML" data-lang="YAML"><span style="display:flex;"><span><span style="color:#f92672">HIM.Home</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">proxy</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">domain</span>: <span style="color:#ae81ff">HomeAutomation.Zigbee.ResourceData</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">version</span>: <span style="color:#ae81ff">X.Y.Z</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">public</span>: <span style="color:#ae81ff">https://himrepo.oem.com?instance=HomeAutomation.Zigbee.ResourceData.X.Y.Z</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>:  <span style="color:#ae81ff">….</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">local</span>: <span style="color:#ae81ff">uds://path/to/uds-file</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">Home automation proxy tree.</span>
 </span></span></code></pre></div>
 
 <footer class="footline">
@@ -1680,19 +1688,19 @@ but also by a client to obtain a copy instead of e. g. requesting the proxy serv
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/hierarchical_information_model/js/clipboard.min.js?1727948267"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1727948267"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1727948267"></script>
-    <script src="/hierarchical_information_model/js/jquery.sticky.js?1727948267"></script>
-    <script src="/hierarchical_information_model/js/featherlight.min.js?1727948267"></script>
-    <script src="/hierarchical_information_model/js/highlight.pack.js?1727948267"></script>
+    <script src="/hierarchical_information_model/js/clipboard.min.js?1742466757"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1742466757"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1742466757"></script>
+    <script src="/hierarchical_information_model/js/jquery.sticky.js?1742466757"></script>
+    <script src="/hierarchical_information_model/js/featherlight.min.js?1742466757"></script>
+    <script src="/hierarchical_information_model/js/highlight.pack.js?1742466757"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1727948267"></script>
-    <script src="/hierarchical_information_model/js/learn.js?1727948267"></script>
-    <script src="/hierarchical_information_model/js/hugo-learn.js?1727948267"></script>
+    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1742466757"></script>
+    <script src="/hierarchical_information_model/js/learn.js?1742466757"></script>
+    <script src="/hierarchical_information_model/js/hugo-learn.js?1742466757"></script>
     
         
-            <script src="/hierarchical_information_model/mermaid/mermaid.js?1727948267"></script>
+            <script src="/hierarchical_information_model/mermaid/mermaid.js?1742466757"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
