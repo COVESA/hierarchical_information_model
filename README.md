@@ -16,12 +16,13 @@ Ulf Björkengren - Ford Motor Company
 <!-- Give a short rationale for the repository -->
 
 This repository contains the COVESA Hierarchical Information Model (HIM) - an initiative from COVESA to create a model
-that can be used to define information (see below) representing any domain.
+that can be used to define tree structures representing information (see below) defining a domain (e.g. Truck, Trailer, or Car domains).
 [VSS](https://github.com/COVESA/vehicle_signal_specification) is an example of one domain that is planned to be possible to model in HIM.
 
 <!-- Give a short description of which group/project in COVESA that manages this repository and link to their wiki -->
 
-This repository is managed by the [COVESA Data Expert Group](https://wiki.covesa.global/display/WIK4/Data+Expert+Group).
+This repository is managed by the [COVESA Data Expert Group](https://wiki.covesa.global/display/WIK4/Data+Expert+Group),
+together with the [COVESA CVIS project](https://wiki.covesa.global/display/WIK4/CVIS+Meeting+Topics+and+Meeting+Notes).
 
 ## HIM Overview
 
@@ -74,3 +75,29 @@ respository top folder.
 ~/vehicle_signal_specification$: pip install pre-commit
 ~/vehicle_signal_specification$: pre-commit install
 ```
+
+## Compatibility policy
+`Model` refers to the HIM model as it is defined on the [HIM repository](https://github.com/COVESA/hierarchical_information_model).
+
+Non-backwards compatible (NBC) changes to the `Model` shall be handled as follows.
+
+* The period from that the NBC idea is introduced until it is accepted and merged shall be at least three months, including at least three WG meetings where it has been discussed.
+* Any participant in these WG discussions can request a vote whether to reject the idea or not. At least three regular WG participants, or regular participants in other projects that use HIM, must vote. A majority of at least 51% is required for decision.
+ 
+Further, NBC changes to particularly important features of the `Model` in the Axiom list below must be handled as follows.
+
+* The period from that the NBC idea is introduced until it is accepted and merged shall be at least six months, including at least three WG meetings where it has been discussed.
+* Any participant in these WG discussions can request a vote whether to reject the idea or not. At least five regular WG participants, or regular participants in other projects that use HIM, must vote. A majority of at least 80% is required for decision.
+ 
+Axioms:
+
+* The tree structure, where the tree root node name is used for identifying one tree in a forest, is a fundamental part of the `Model`.
+* The metadata defining a tree node shall not include references to other nodes, whether it is in the same tree or in another tree.
+* Low complexity and ease of understanding have priority in the evolution of the `Model`.
+* As an example of keeping complexity low, the `Model` shall not include metadata related to the transport of data or the capture of data.
+Adding metadata that is not part of the `Model` may be done in an implementation of the `Model`.
+ 
+The merging of an NBC change must lead to a new major release. The release notes must clearly state the NBC change,
+and if it involves an Axiom then also the rationale behind it.
+
+If a vote is requested, then all other projects known to use the `Model` must be notified in due time about the coming vote.

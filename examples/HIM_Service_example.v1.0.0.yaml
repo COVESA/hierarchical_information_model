@@ -1,4 +1,4 @@
-VehicleServices:
+VehicleService:
   type: branch
   description: The Vehicle services.
 
