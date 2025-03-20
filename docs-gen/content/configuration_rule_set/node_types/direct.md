@@ -25,7 +25,6 @@ For more information, please see the [Common Rule Set: Optional Metadata](/hiera
 This node type must have a node of type `branch` as parent, and must not have any children.
 
 ## Name
-
 The name of this node must be the same as that of the root node of the tree it is representing,
 and it must be unique in the forest described in this file.
 This makes it possible to change the root node name of a "standard" tree,
@@ -34,7 +33,6 @@ A scenario  where this may happen is when a truck has more than one trailer that
 The trailers can then be distinguished by having different root node names.
 
 ## Domain
-
 The `domain` metadata is what defines the domain and information type that the tree represents.
 A domain name dot delimited segment names:
 - The first segment (the left-most) represents a "top domain".
@@ -46,29 +44,26 @@ A domain name dot delimited segment names:
 - The last segment (the right-most) represents the [information type](/hierarchical_information_model/).
 
 ## Version
-
 The `version` shall be identical to the version of the tree where it shall be mandatory.
 Versioning shall be based on the [Semantic versioning](https://semver.org/spec/v2.0.0.html) principles.
 
 ## Local
-
 The `local` metadata shall be a file URL or similar that points to a local file that contains the tree.
-The `local` metadta shall not be supplied to a client requesting the configuration file.
+The `local` metadata shall not be supplied to a client requesting the configuration file.
 
 ## Public
+The `public` metadata shall, if available, be a URL to a public copy of the tree.
+It may be used to provision a server with a copy of the tree, but also by a client to obtain a copy instead of e. g. requesting the server to provision a copy.
 
-The public metadata shall, if available, be a URL to a public copy of the tree.
-It may be used to provision a server with a copy of the tree,
-but also by a client to obtin a copy instead of e. g. requesting the server to provision a copy.
-
+## Example
 An example of the specification of a `direct` node is given below.
 
 ```YAML
-VehicleData:
+HIM.Vehicle:
   type: direct
   domain: Vehicle.Car.ResourceData
   version: X.Y.Z
   local: file://<full-path-name>
-  public: https://himrepo.oem.com?intance=Vehicle.Car.ResourceData.X.Y.Z
-  description:  ….
+  public: https://himrepo.oem.com?instance=Vehicle.Car.ResourceData.X.Y.Z
+  description: This is a tree of type direct.
 ```

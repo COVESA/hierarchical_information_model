@@ -1,36 +1,35 @@
 HIM:
   type: branch
-  description: Contains the set of trees that are managed as one virtual domain.
+  description: Contains the set of trees that a server manages as one virtual domain.
 
 
-VehicleData:
+HIM.Vehicle:
   type: direct
   domain: Vehicle.Car.ResourceData
   version: X.Y.Z
   local: file://<full-path-name>
   public: https://himrepo.oem.com?instance=Vehicle.Car.ResourceData.X.Y.Z
-  description:  ….
+  description:  Vehicle signal tree.
 
-VehicleServices:
+HIM.VehicleServices:
   type: direct
   domain: Vehicle.Car.ServiceData
   version: X.Y.Z
   local: file://<full-path-name>
   public: https://himrepo.oem.com?instance=Vehicle.Car.ServiceData.X.Y.Z
-  description:  ….
+  description:  Vehicle service tree.
 
-Types:
+HIM.Types:
   type: direct
   domain: Vehicle.Car.TypeDefinition
   version: X.Y.Z
   local: file://<full-path-name>
   public: https://himrepo.oem.com?instance=Vehicle.Car.DataType.X.Y.Z
-  description:  ….
+  description:  Type definition tree.
 
-
-ChargingStationData:
+HIM.Home:
   type: proxy
-  domain:ChargingStation.Vehicle.ResourceData
+  domain: HomeAutomation.Zigbee.ResourceData
   version: X.Y.Z
-  public: https://himrepo.energyco.com?instance=ChargingStation.Vehicle.ResourceData.X.Y.Z
-  description:  ….
+  local: uds://path/to/uds-file
+  description: Home automation proxy tree.
