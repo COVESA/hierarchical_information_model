@@ -101,3 +101,8 @@ The merging of an NBC change must lead to a new major release. The release notes
 and if it involves an Axiom then also the rationale behind it.
 
 If a vote is requested, then all other projects known to use the `Model` must be notified in due time about the coming vote.
+
+## Contributors
+HIM is an open standard and we invite anybody to contribute. Currently HIM contains - among others - significant  contributions from
+
+ - [Ford Motor Company](https://www.ford.com/)
