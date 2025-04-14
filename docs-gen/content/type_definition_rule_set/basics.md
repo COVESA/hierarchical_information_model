@@ -8,7 +8,7 @@ These can either be complex datatypes that are not part of the
 [primitive datatypes](/hierarchical_information_model/common_rule_set/data_entry/datatypes#primitive-datatypes) defined by HIM,
 or it can be common allowed definitions.
 
-## Rott node name
+## Root node name
 The name of the root node of the type definitions tree shall be "Types".
 
 ## Node Types
