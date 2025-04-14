@@ -56,7 +56,7 @@ HIM Microservice Data A microservice is in HIM defined by a procedure signature 
       
       <guid>https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/basics/</guid>
       <description>A type_definition tree contains data type definitions. These can either be complex datatypes that are not part of the primitive datatypes defined by HIM, or it can be common allowed definitions.
-Rott node name The name of the root node of the type definitions tree shall be &amp;ldquo;Types&amp;rdquo;.
+Root node name The name of the root node of the type definitions tree shall be &amp;ldquo;Types&amp;rdquo;.
 Node Types The currently supported node types can be used for either the definition of structs, or for the definition of allowed value restrictions.</description>
     </item>
     
