@@ -32,7 +32,7 @@
 	"title": "Type Definition Model",
 	"tags": [],
 	"description": "",
-	"content": "A type_definition tree contains data type definitions. These can either be complex datatypes that are not part of the primitive datatypes defined by HIM, or it can be common allowed definitions.\nNode Types The currently supported node types can be used for either the definition of structs, or for the definition of allowed value restrictions.\nThe node types for representing type definitions are:\nBranch Struct Property Please see more information about these node types here.\n"
+	"content": "A type_definition tree contains data type definitions. These can either be complex datatypes that are not part of the primitive datatypes defined by HIM, or it can be common allowed definitions.\nRott node name The name of the root node of the type definitions tree shall be \u0026ldquo;Types\u0026rdquo;.\nNode Types The currently supported node types can be used for either the definition of structs, or for the definition of allowed value restrictions.\nThe node types for representing type definitions are:\nBranch Struct Property Please see more information about these node types here.\n"
 },
 {
 	"uri": "https://covesa.github.io/hierarchical_information_model/common_rule_set/data_entry/",
