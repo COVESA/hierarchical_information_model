@@ -39,4 +39,3 @@ Version:
   default: 0.0.1
   description: This is an example of a microservice Version node containing its mandatory metadata.
 ```
-
