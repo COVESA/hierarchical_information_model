@@ -2,8 +2,8 @@
 
 This directory contains an example file of each of the information types that HIM currently defines:
 - Resource data: HIM_Resource_example.v1.0.0.vspec
-- Service data: HIM_Service_example.v1.0.0.yaml
-- Type definition data: TypeDefinition_example.v1.0.0.yaml
+- Service data: HIM_Service_example.v1.0.0.vspec
+- Type definition data: TypeDefinition_example.v1.0.0.vspec
 
 It also contains an example file of a HIM configuration file: HIM_config_example.v1.0.0.him
 
