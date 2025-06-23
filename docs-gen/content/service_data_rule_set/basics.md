@@ -44,22 +44,44 @@ Any Input/Output nodes, and their associated children, are only present if the p
 A microservice may have a significant temporal duration from it is started and until it completes.
 It may therefore be desireable that the state of the microservice can be observed,
 as e. g. it may be the case that an ongoing microservice execution does not allow new microservice actuations to be started.
-If an observable microservice completion state is desired, then the designer of this HIM service domain must create such an output parameter of the microservice.
-The characteristics of this output parameter can be freely chosen, but below is a proposal that if widely used may help to improve interoperability.
 
-The parameter shall be named Completion.
-
-The completion state of the HIM microservice is represented by a uint8 datatype value.
-
-The allowed values of the microservice state are:
-- 0-99 : ongoing
-- 100 : ready
+Service response or event messages shall therefore contain a parameter called Status, an enum with the following definition:
+```
+enum {
+	ONGOING = 1     // in execution of latest call
+	SUCCESSFUL = 0  // terminated successfully in latest call
+	FAILED = -1      // terminated due to failure in latest call
+}
+```
 
 The rules for how a microservice shall update the state value follows below:
 
-- A fully functioning microservice that is not ongoing shall have the value 100.
-- When a valid microservice request is received the state shall be set to zero (0).
-- The microservice may update the state value as the microservice execution proceeds.
-- When the microservice execution successfully terminates the state value must be set to 100.
+- A fully functioning microservice that is not ongoing shall have the value SUCCESSFUL.
+- When a valid microservice request is received and the service execution is started the state shall be set to ONGOING.
+- When the microservice execution successfully terminates the state value shall be set to SUCCESSFUL.
+- If the microservice fails at any point during its execution the state value shall be set to FAILED.
 
 If there is a need for microservice specific error codes then these should be defined as another output parameter.
+A microservice may include in other output parameters that carry information about its execution state.
+
+## Service group common properties
+A service group may have common configuration data, here referred to as properties.
+This could for example be the seating locations, i. e. the location names for the seats in the vehicle.
+Another example is the axle/wheel configuration of the vehicle, information about the number of axles and the number of wheels on each.
+If a service group shares common property data then the service group branch shall have a `branch` type child node with the name Properties.
+This node shall then have children nodes of `attribute` type with default values representing the configuration data.
+
+An example of a Properties node and its SeatingLayout child is given below.
+```YAML
+Properties:
+  type: branch
+  description: This is an example of a service group Properties node.
+```
+
+```YAML
+SeatingLayout:
+  type: attribute
+  datatype: string
+  default: [{"Row1": {"Left", "Right"}}, {"Row2": {""Left", "Middle", "Right""}}]
+  description: This is an example of the configuration of a seating layout.
+```
