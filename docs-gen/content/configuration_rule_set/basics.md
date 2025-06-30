@@ -53,18 +53,18 @@ HIM:
 
 VehicleData:
   type: direct
-  domain: Vehicle.Car.ResourceData
+  domain: Vehicle.Car.Data
   version: X.Y.Z
   local: file://<full-path-name>
-  public: https://himrepo.oem.com?instance=Vehicle.Car.ResourceData.X.Y.Z
+  public: https://himrepo.oem.com?instance=Vehicle.Car.Data.X.Y.Z
   description:  ….
 
 VehicleServices:
   type: direct
-  domain: Vehicle.Car.ServiceData
+  domain: Vehicle.Car.Service
   version: X.Y.Z
   local: file://<full-path-name>
-  public: https://himrepo.oem.com?instance=Vehicle.Car.ServiceData.X.Y.Z
+  public: https://himrepo.oem.com?instance=Vehicle.Car.Service.X.Y.Z
   description:  ….
 
 Types:
@@ -78,8 +78,8 @@ Types:
 
 ChargingStationData:
   type: proxy
-  domain:ChargingStation.Vehicle.ResourceData
+  domain:ChargingStation.Vehicle.Data
   version: X.Y.Z
-  public: https://himrepo.energyco.com?instance=ChargingStation.Vehicle.ResourceData.X.Y.Z
+  public: https://himrepo.energyco.com?instance=ChargingStation.Vehicle.Data.X.Y.Z
   description:  ….
   ```

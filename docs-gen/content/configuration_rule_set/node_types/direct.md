@@ -61,9 +61,9 @@ An example of the specification of a `direct` node is given below.
 ```YAML
 HIM.Vehicle:
   type: direct
-  domain: Vehicle.Car.ResourceData
+  domain: Vehicle.Car.Data
   version: X.Y.Z
   local: file://<full-path-name>
-  public: https://himrepo.oem.com?instance=Vehicle.Car.ResourceData.X.Y.Z
+  public: https://himrepo.oem.com?instance=Vehicle.Car.Data.X.Y.Z
   description: This is a tree of type direct.
 ```

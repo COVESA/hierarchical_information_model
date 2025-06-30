@@ -1,19 +1,19 @@
 ---
-title: "Service Data Model"
+title: "Service Model"
 date: 2019-08-04T13:05:11+02:00
 weight: 1
 ---
 
-## HIM Service-Data Tree
-A HIM service data tree contains a taxonomy of microservice declarations.
+## HIM Service Tree
+A HIM service tree contains a taxonomy of microservice declarations.
 The tree structure is used to create a sets of microservices.
 Such as set is named `Service`, or `Service Group` for larger sets where a set of Service Groups would then form a Service,
-see the figure below, or the [example service data tree](https://github.com/COVESA/hierarchical_information_model/blob/master/examples/HIM_Service_example.v1.0.0.yaml).
+see the figure below, or the [example service tree](https://github.com/COVESA/hierarchical_information_model/blob/master/examples/HIM_Service_example.v1.0.0.yaml).
 
 ![HIM service tree structure](/hierarchical_information_model/images/service_tree_structure.png?width=50pc)
 *Figure x. HIM service tree structure
 
-## HIM Microservice Data
+## HIM Microservice
 A microservice is in HIM defined by a procedure signature as shown below:
 
 **(output1,..outputN) microServiceName(input1,..inputM)**

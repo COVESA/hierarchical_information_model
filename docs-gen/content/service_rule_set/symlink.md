@@ -20,7 +20,7 @@ Nodes of the type `symlink` must have the following mandatory metadata:
 
 The Path must be a valid path to a leaf node in the tree declared by the Domain and Version metadata.
 
-The Domain must declare an existing HIM tree of information type resourcedata.
+The Domain must declare an existing HIM tree of information type Data.
 
 The Version must be a dot delimited triplet declaring a version of the tree eclared by the Domain.
 The triplet may a suffix of either "+" or "-", denoting that also any following or previous versions are also valid.
@@ -38,7 +38,7 @@ An example of the specification of a `symlink` node is given below.
 VehicleService.GPS.GetPosition.Output.Latitude:
   type: symlink
   path: Vehicle.CurrentLocation.Latitude
-  domain: Automotive.Vehicle.Car.ResourceData
+  domain: Automotive.Vehicle.Car.Data
   version: 3.0.0+
   description: This is a symlink to a VSS tree.
 ```
