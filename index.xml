@@ -19,25 +19,25 @@ A HIM taxonomy may contain subtrees that are identical copies of each other, for
     
     <item>
       <title>Data model</title>
-      <link>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/basics/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/basics/</link>
       <pubDate>Sun, 04 Aug 2019 13:05:11 +0200</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/basics/</guid>
-      <description>The rule set for resource data is inherited from the VSS rule set. It is the leaf nodes of a tree that represents and defines the actual data. The definition is expressed by metadata describing the data associated to the node.
+      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/basics/</guid>
+      <description>The rule set for Data is inherited from the VSS rule set. It is the leaf nodes of a tree that represents and defines the actual data. The definition is expressed by metadata describing the data associated to the node.
 Node Types The node types for representing data entries are:
 Sensor Actuator Attribute Please see the respective chapters for more information about these node types.
 Vspec YAML extensions The vspec format is based on YAML that is extended with two features described in respective chapters shown below.</description>
     </item>
     
     <item>
-      <title>Service Data Model</title>
-      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/basics/</link>
+      <title>Service Model</title>
+      <link>https://covesa.github.io/hierarchical_information_model/service_rule_set/basics/</link>
       <pubDate>Sun, 04 Aug 2019 13:05:11 +0200</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/basics/</guid>
-      <description>HIM Service-Data Tree A HIM service data tree contains a taxonomy of microservice declarations. The tree structure is used to create a sets of microservices. Such as set is named Service, or Service Group for larger sets where a set of Service Groups would then form a Service, see the figure below, or the example service data tree.
+      <guid>https://covesa.github.io/hierarchical_information_model/service_rule_set/basics/</guid>
+      <description>HIM Service Tree A HIM service tree contains a taxonomy of microservice declarations. The tree structure is used to create a sets of microservices. Such as set is named Service, or Service Group for larger sets where a set of Service Groups would then form a Service, see the figure below, or the example service tree.
 *Figure x. HIM service tree structure
-HIM Microservice Data A microservice is in HIM defined by a procedure signature as shown below:</description>
+HIM Microservice A microservice is in HIM defined by a procedure signature as shown below:</description>
     </item>
     
     <item>
@@ -62,19 +62,19 @@ Node Types The currently supported node types can be used for either the definit
     
     <item>
       <title>Instances</title>
-      <link>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/instances/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/instances/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/instances/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/instances/</guid>
       <description>The data model resembles primarily the physical structure of the vehicle, so quite often there is a need to repeat branches and data entries (e.g. doors, axles, etc). To avoid hard-coded repetitions of branches and data entries in the specification an instance-concept is supported. Instances remove the need of repeating definitions, by defining at the node itself how often it occurs in the resulting tree. They are meant as a short-cut in the specification and interpreted by the tools.</description>
     </item>
     
     <item>
-      <title>Includes</title>
-      <link>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/includes/</link>
+      <title>Include</title>
+      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/include/</link>
       <pubDate>Sun, 04 Aug 2019 12:59:44 +0200</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/includes/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/include/</guid>
       <description>An include directive in a vspec file will read the file it refers to and the contents of that file will be inserted into the current buffer in place of the include directive. The included file will, in its turn, be scanned for include directives to be replaced, effectively forming a tree of included files.
 See Fig 6 for an example of such a tree.
 Fig 6. Include directives
@@ -116,10 +116,10 @@ Vehicle.Speed: datatype: float type: sensor unit: km/h description: Vehicle spee
     
     <item>
       <title>Actuator node</title>
-      <link>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/actuator/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/actuator/</link>
       <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/actuator/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/actuator/</guid>
       <description>Actuators are used to control the desired value of a property. Some properties in a vehicle cannot change instantly. A typical example is position of a seat or a window. Reading a value of an actuator shall return the current actual value, e.g. the current position of the seat, rather than the wanted/desired position. A typical example could be if someone wants to change the position of a seat from 0 to 100.</description>
     </item>
     
@@ -139,21 +139,21 @@ The root node of a HIM tre must be of the node type branch.</description>
     
     <item>
       <title>IO-struct node</title>
-      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/iostruct/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/service_rule_set/iostruct/</link>
       <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/iostruct/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/service_rule_set/iostruct/</guid>
       <description>An iostruct node type may be used to encapsulate multiple data points that have the relationship that they are all representing either Input parameters or Output parameters of the microservice that they are linked to.
-This node type is only allowed in trees of the information type servicedata. For more information, please see respective parts of this document.
+This node type is only allowed in trees of the information type service. For more information, please see respective parts of this document.
 An iostruct node must have one of the two names Input or Output.</description>
     </item>
     
     <item>
       <title>Property node</title>
-      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/property/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/service_rule_set/property/</link>
       <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/property/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/service_rule_set/property/</guid>
       <description>Data represented by the node type property have a relationship to any other data having the same iostruct parent in that they are all sampled in an &amp;ldquo;atomic&amp;rdquo; operation, i.e. the set of data points have the same timestamp representing the sample time.
 Nodes of the type property must have the following mandatory metadata:
 Name Type Datatype Description For more information, see the Common Rule Set: Mandatory Metadata.
@@ -175,10 +175,10 @@ Unit Min Max Allowed Comment When used for allowed definition, the metadata type
     
     <item>
       <title>Sensor node</title>
-      <link>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/sensor/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/sensor/</link>
       <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/sensor/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/sensor/</guid>
       <description>Sensors are signals to read values of properties in a vehicle. Values of sensors typically change over time. Reading a sensor shall return the current actual value of the related property, e.g. the current speed or the current position of the seat.
 Nodes of the type sensor must have the following mandatory metadata:
 Name Type Datatype Description For more information, see the Common Rule Set: Mandatory Metadata.
@@ -192,7 +192,7 @@ Besides the mandatory metadata mentioned above, the following optional metadata 
       
       <guid>https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/struct/</guid>
       <description>A struct node type may be used to represent multiple data points that have the relationship that they are always sampled in an &amp;ldquo;atomic&amp;rdquo; operation, i. e. the set of samples have the same timestamp. An example of such a set of data points are the GPS dta points latitude, longitude, height.
-This node type is only allowed in trees of the information types typedefinition or service. For more information, please see respective parts of this document.</description>
+This node type is only allowed in trees of the information type typedefinition. For more information, please see respective parts of this document.</description>
     </item>
     
     <item>
@@ -208,10 +208,10 @@ Name Type Domain Version Local Description For more information, see the Common 
     
     <item>
       <title>procedure node</title>
-      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/procedure/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/service_rule_set/procedure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/procedure/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/service_rule_set/procedure/</guid>
       <description>The procedure node type must have the following mandatory metadata:
 Name Type Description For more information, see the Common Rule Set: Mandatory Metadata.
 Besides the mandatory metadata mentioned above, the following optional metadata may be used
@@ -239,10 +239,10 @@ A parent must be of the node type branch. The procedure node must have a child o
     
     <item>
       <title>Symlink node</title>
-      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/symlink/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/service_rule_set/symlink/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/symlink/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/service_rule_set/symlink/</guid>
       <description>Data represented by the node type symlink have a relationship to any other data having the same iostruct parent in that they are all representing either Input parameters or Output parameters of the service that they are linked to.
 An Otput parameter declared as a symlink will lead to that the returned value is read from that data point.
 An Input parameter declared as a symlink will lead to that the provided input value is written to that data point.</description>
@@ -250,10 +250,10 @@ An Input parameter declared as a symlink will lead to that the provided input va
     
     <item>
       <title>Attribute node</title>
-      <link>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/attribute/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/attribute/</link>
       <pubDate>Sun, 04 Aug 2019 12:37:31 +0200</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/attribute/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/attribute/</guid>
       <description>Nodes of the types attribute must have the following mandatory metadata:
 Name Type Datatype Default Description For more information, see the Common Rule Set: Mandatory Metadata.
 Besides the mandatory metadata mentioned above, the following optional metadata may be used

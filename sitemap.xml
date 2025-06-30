@@ -5,10 +5,10 @@
     <loc>https://covesa.github.io/hierarchical_information_model/common_rule_set/basics/</loc>
     <lastmod>2019-08-04T13:05:11+02:00</lastmod>
   </url><url>
-    <loc>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/basics/</loc>
+    <loc>https://covesa.github.io/hierarchical_information_model/data_rule_set/basics/</loc>
     <lastmod>2019-08-04T13:05:11+02:00</lastmod>
   </url><url>
-    <loc>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/basics/</loc>
+    <loc>https://covesa.github.io/hierarchical_information_model/service_rule_set/basics/</loc>
     <lastmod>2019-08-04T13:05:11+02:00</lastmod>
   </url><url>
     <loc>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/basics/</loc>
@@ -18,9 +18,9 @@
     <loc>https://covesa.github.io/hierarchical_information_model/common_rule_set/data_entry/</loc>
     <lastmod>2019-08-04T11:11:30+02:00</lastmod>
   </url><url>
-    <loc>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/instances/</loc>
+    <loc>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/instances/</loc>
   </url><url>
-    <loc>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/includes/</loc>
+    <loc>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/include/</loc>
     <lastmod>2019-08-04T12:59:44+02:00</lastmod>
   </url><url>
     <loc>https://covesa.github.io/hierarchical_information_model/common_rule_set/data_entry/datatypes/</loc>
@@ -32,13 +32,13 @@
     <loc>https://covesa.github.io/hierarchical_information_model/common_rule_set/</loc>
     <lastmod>2019-08-04T13:05:11+02:00</lastmod>
   </url><url>
-    <loc>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/</loc>
+    <loc>https://covesa.github.io/hierarchical_information_model/data_rule_set/</loc>
     <lastmod>2019-08-04T13:05:11+02:00</lastmod>
   </url><url>
-    <loc>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/</loc>
+    <loc>https://covesa.github.io/hierarchical_information_model/service_rule_set/</loc>
     <lastmod>2019-08-04T13:05:11+02:00</lastmod>
   </url><url>
-    <loc>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/</loc>
+    <loc>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/</loc>
     <lastmod>2019-08-04T12:59:44+02:00</lastmod>
   </url><url>
     <loc>https://covesa.github.io/hierarchical_information_model/common_rule_set/node_types/</loc>
@@ -54,22 +54,22 @@
   </url><url>
     <loc>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/</loc>
   </url><url>
-    <loc>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/actuator/</loc>
+    <loc>https://covesa.github.io/hierarchical_information_model/data_rule_set/actuator/</loc>
     <lastmod>2019-08-04T12:37:03+02:00</lastmod>
   </url><url>
     <loc>https://covesa.github.io/hierarchical_information_model/common_rule_set/node_types/branch/</loc>
     <lastmod>2019-08-04T12:37:03+02:00</lastmod>
   </url><url>
-    <loc>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/iostruct/</loc>
+    <loc>https://covesa.github.io/hierarchical_information_model/service_rule_set/iostruct/</loc>
     <lastmod>2019-08-04T12:37:03+02:00</lastmod>
   </url><url>
-    <loc>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/property/</loc>
+    <loc>https://covesa.github.io/hierarchical_information_model/service_rule_set/property/</loc>
     <lastmod>2019-08-04T12:37:03+02:00</lastmod>
   </url><url>
     <loc>https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/property/</loc>
     <lastmod>2019-08-04T12:37:03+02:00</lastmod>
   </url><url>
-    <loc>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/sensor/</loc>
+    <loc>https://covesa.github.io/hierarchical_information_model/data_rule_set/sensor/</loc>
     <lastmod>2019-08-04T12:37:03+02:00</lastmod>
   </url><url>
     <loc>https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/struct/</loc>
@@ -77,15 +77,15 @@
   </url><url>
     <loc>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/node_types/direct/</loc>
   </url><url>
-    <loc>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/procedure/</loc>
+    <loc>https://covesa.github.io/hierarchical_information_model/service_rule_set/procedure/</loc>
   </url><url>
     <loc>https://covesa.github.io/hierarchical_information_model/common_rule_set/node_types/property/</loc>
   </url><url>
     <loc>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/node_types/proxy/</loc>
   </url><url>
-    <loc>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/symlink/</loc>
+    <loc>https://covesa.github.io/hierarchical_information_model/service_rule_set/symlink/</loc>
   </url><url>
-    <loc>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/attribute/</loc>
+    <loc>https://covesa.github.io/hierarchical_information_model/data_rule_set/attribute/</loc>
     <lastmod>2019-08-04T12:37:31+02:00</lastmod>
   </url><url>
     <loc>https://covesa.github.io/hierarchical_information_model/common_rule_set/data_entry/value_restrictions/</loc>

@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>HIM Service Data Rule Set on Hierarchical Information Model</title>
-    <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/</link>
-    <description>Recent content in HIM Service Data Rule Set on Hierarchical Information Model</description>
+    <title>HIM Service Rule Set on Hierarchical Information Model</title>
+    <link>https://covesa.github.io/hierarchical_information_model/service_rule_set/</link>
+    <description>Recent content in HIM Service Rule Set on Hierarchical Information Model</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Aug 2019 13:05:11 +0200</lastBuildDate><atom:link href="https://covesa.github.io/hierarchical_information_model/service_data_rule_set/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Aug 2019 13:05:11 +0200</lastBuildDate><atom:link href="https://covesa.github.io/hierarchical_information_model/service_rule_set/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Service Data Model</title>
-      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/basics/</link>
+      <title>Service Model</title>
+      <link>https://covesa.github.io/hierarchical_information_model/service_rule_set/basics/</link>
       <pubDate>Sun, 04 Aug 2019 13:05:11 +0200</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/basics/</guid>
-      <description>HIM Service-Data Tree A HIM service data tree contains a taxonomy of microservice declarations. The tree structure is used to create a sets of microservices. Such as set is named Service, or Service Group for larger sets where a set of Service Groups would then form a Service, see the figure below, or the example service data tree.
+      <guid>https://covesa.github.io/hierarchical_information_model/service_rule_set/basics/</guid>
+      <description>HIM Service Tree A HIM service tree contains a taxonomy of microservice declarations. The tree structure is used to create a sets of microservices. Such as set is named Service, or Service Group for larger sets where a set of Service Groups would then form a Service, see the figure below, or the example service tree.
 *Figure x. HIM service tree structure
-HIM Microservice Data A microservice is in HIM defined by a procedure signature as shown below:</description>
+HIM Microservice A microservice is in HIM defined by a procedure signature as shown below:</description>
     </item>
     
     <item>
       <title>IO-struct node</title>
-      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/iostruct/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/service_rule_set/iostruct/</link>
       <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/iostruct/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/service_rule_set/iostruct/</guid>
       <description>An iostruct node type may be used to encapsulate multiple data points that have the relationship that they are all representing either Input parameters or Output parameters of the microservice that they are linked to.
-This node type is only allowed in trees of the information type servicedata. For more information, please see respective parts of this document.
+This node type is only allowed in trees of the information type service. For more information, please see respective parts of this document.
 An iostruct node must have one of the two names Input or Output.</description>
     </item>
     
     <item>
       <title>Property node</title>
-      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/property/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/service_rule_set/property/</link>
       <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/property/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/service_rule_set/property/</guid>
       <description>Data represented by the node type property have a relationship to any other data having the same iostruct parent in that they are all sampled in an &amp;ldquo;atomic&amp;rdquo; operation, i.e. the set of data points have the same timestamp representing the sample time.
 Nodes of the type property must have the following mandatory metadata:
 Name Type Datatype Description For more information, see the Common Rule Set: Mandatory Metadata.
@@ -43,10 +43,10 @@ Besides the mandatory metadata mentioned above, the following optional metadata 
     
     <item>
       <title>procedure node</title>
-      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/procedure/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/service_rule_set/procedure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/procedure/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/service_rule_set/procedure/</guid>
       <description>The procedure node type must have the following mandatory metadata:
 Name Type Description For more information, see the Common Rule Set: Mandatory Metadata.
 Besides the mandatory metadata mentioned above, the following optional metadata may be used
@@ -56,10 +56,10 @@ A parent must be of the node type branch. The procedure node must have a child o
     
     <item>
       <title>Symlink node</title>
-      <link>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/symlink/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/service_rule_set/symlink/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/service_data_rule_set/symlink/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/service_rule_set/symlink/</guid>
       <description>Data represented by the node type symlink have a relationship to any other data having the same iostruct parent in that they are all representing either Input parameters or Output parameters of the service that they are linked to.
 An Otput parameter declared as a symlink will lead to that the returned value is read from that data point.
 An Input parameter declared as a symlink will lead to that the provided input value is written to that data point.</description>

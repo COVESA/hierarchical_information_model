@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vspec extensions on Hierarchical Information Model</title>
-    <link>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/</link>
+    <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/</link>
     <description>Recent content in vspec extensions on Hierarchical Information Model</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Aug 2019 12:59:44 +0200</lastBuildDate><atom:link href="https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Aug 2019 12:59:44 +0200</lastBuildDate><atom:link href="https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Instances</title>
-      <link>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/instances/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/instances/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/instances/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/instances/</guid>
       <description>The data model resembles primarily the physical structure of the vehicle, so quite often there is a need to repeat branches and data entries (e.g. doors, axles, etc). To avoid hard-coded repetitions of branches and data entries in the specification an instance-concept is supported. Instances remove the need of repeating definitions, by defining at the node itself how often it occurs in the resulting tree. They are meant as a short-cut in the specification and interpreted by the tools.</description>
     </item>
     
     <item>
-      <title>Includes</title>
-      <link>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/includes/</link>
+      <title>Include</title>
+      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/include/</link>
       <pubDate>Sun, 04 Aug 2019 12:59:44 +0200</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/resource_data_rule_set/vspec_extensions/includes/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/include/</guid>
       <description>An include directive in a vspec file will read the file it refers to and the contents of that file will be inserted into the current buffer in place of the include directive. The included file will, in its turn, be scanned for include directives to be replaced, effectively forming a tree of included files.
 See Fig 6 for an example of such a tree.
 Fig 6. Include directives
