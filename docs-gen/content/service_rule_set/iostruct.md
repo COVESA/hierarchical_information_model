@@ -7,7 +7,7 @@ weight: 30
 An `iostruct` node type may be used to encapsulate multiple data points that have the relationship that they are all representing either
 Input parameters or Output parameters of the microservice that they are linked to.
 
-This node type is only allowed in trees of the information type `servicedata`.
+This node type is only allowed in trees of the information type `service`.
 For more information, please see respective parts of this document.
 
 An `iostruct` node must have one of the two names `Input` or `Output`.

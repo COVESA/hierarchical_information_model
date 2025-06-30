@@ -112,8 +112,9 @@ For more information on which information/node types this metadata can be used,
 please see the rule set documentation for these.
 
 For oversight a few general rules are shown here:
-- The entries 1 through 4 cannot be used in `branch` or `service` node types.
-- The entries 6 and 7 can only be used in `branch` type nodes.
+- The entries 1 through 4 cannot be used in the `branch` node type.
+- The entries 6 and 7 can only be used in the `branch` node type.
+- None of the entries can be used in the `procedure` node type.
 
 ### Datatype
 See the [Datatypes chapter](/hierarchical_information_model/common_rule_set/data_entry/datatypes)
@@ -129,11 +130,11 @@ See the [Value restrictions chapter](/hierarchical_information_model/common_rule
 A comment can be used to provide additional informal information on a branch. This could include background information on the rationale for the branch, references to related branches, standards and similar. Recommended to start with a capital letter and end with a dot (.).
 
 ### Instances
-See the [Instances chapter](/hierarchical_information_model/resource_data_rule_set/vspec_extensions/instances).
+See the [Instances chapter](/hierarchical_information_model/data_rule_set/vspec_extensions/instances).
 The `instances` metadata is only allowed in `branch` type nodes.
 
-### Includes
-See the [Includes chapter](/hierarchical_information_model/resource_data_rule_set/vspec_extensions/includes).
+### Include
+See the [Include chapter](/hierarchical_information_model/data_rule_set/vspec_extensions/include).
 The `include` metadata is only allowed in `branch` type nodes.
 
 ### Aggregate

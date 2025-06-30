@@ -8,4 +8,4 @@ chapter: true
 
 The vspec file format has he following feature extensions, see respective chapter for details.
 * Instances
-* Includes
+* Include
