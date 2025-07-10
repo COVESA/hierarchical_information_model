@@ -65,6 +65,15 @@ This profile can for example be used in "pure" SOA architectures.
 The HIM All profile supports use of trees that contain data of any HIM specified information type.
 This makes it possible for a server to serve clients that wants to have access to both "classical signals" and services represented by function calls.
 
+## HIM enablers
+HIM enables a single server implementation to support use cases from multiple domains, e. g. telemetry via a tree such as the
+[COVESA VSS](https://github.com/COVESA/vehicle_signal_specification) tree,
+or diagnostics via a tree referring to diagnostics data, or trees describing the data or services of other domains.
+
+The same server can expose access to both data (signals) and services (procedures).
+Instead of developing a new server and possibly also define a new interface when a new domain is to be served,
+a new tree containing the signals or services for the domain is created and linked to the server via the HIM configuration file.
+
 ## Heritage
 The ideas behind HIM originated in the [COVESA VSS](https://github.com/COVESA/vehicle_signal_specification) project,
 when interest started to be raised for using it for of not only Data but also service data,
