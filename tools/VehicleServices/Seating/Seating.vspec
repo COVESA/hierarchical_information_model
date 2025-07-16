@@ -1,0 +1,51 @@
+# Copyright (c) 2024 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+#
+# Vehicle Seating Service Group Specification file
+#
+
+#
+# The root branch for highlevel vehicle services.
+#
+Seating:
+  type: branch
+  description: Root node for seating services.
+
+Seating.Properties:
+  type: branch
+  description: Seating properties branch.
+
+Seating.Properties.Support:
+  type: []struct
+  datatype: Type.Seating.RowSupport
+  description: Supported featurs per seat.
+
+Seating.MoveSeat:
+  type: procedure
+  description: Handles all types of seat movement
+
+Seating.MoveSeat.Input:
+  type: iostruct
+  description: Struct defining the input parameters
+
+Seating.MoveSeat.Input.MovementType:
+  type: property
+  datatype: string
+  description: The type of movement that the service applies
+
+Seating.MoveSeat.Input.Position:
+  type: property
+  datatype: float
+  description: The position that the movement shall end at
+
+Seating.MoveSeat.Version:
+  type: attribute
+  datatype: string
+  default: 0.0.1
+  description: MoveSeat version
