@@ -1,0 +1,29 @@
+# Copyright (c) 2024 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+#
+# Root Vehicle Service Specification file
+#
+# This top level service specification file includes all other vspec
+# files into a complete specification.
+# To generate other formats using the exporters
+# available in https://github.com/COVESA/hierarchical_information_model/himTools.
+# Any vspec2 files must first be operated on by
+# the HimConfigurator pre-processor tool.
+#
+
+#
+# The root branch for highlevel vehicle services.
+#
+VehicleService:
+  type: branch
+  description: Root node of service tree.
+
+#include Seating/Seating.vspec VehicleService
+
+#include HVAC/HVAC.vspec VehicleService
