@@ -206,7 +206,7 @@ func exportBinary(ctx VspecContext, thisNode PropertyData) {
 	if !ctx.FileWrite {
 		*(ctx.TmpStorage) = append(*(ctx.TmpStorage), thisNode)
 		return
-	}	
+	}
     ctx.ExporterFp.Write(serializeUInt((uint8)(len(thisNode.Name))))
     ctx.ExporterFp.Write([]byte(thisNode.Name))
 
