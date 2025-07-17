@@ -29,6 +29,7 @@ This can be done by issuing "$ ./himTools -e binary," resulting in the binary fi
 4. Clone the VISSR repo.
 5. Copy the file himExporter.binary to the vissr/server/vissv2server/forest directory.
 6. Add the following lines to the vissr/server/vissv2serverviss.him file
+```
 HIM.VehicleService:
   type: direct
   domain: Vehicle.Car.Service
@@ -36,6 +37,7 @@ HIM.VehicleService:
   local: forest/himExport.binary
 #  public: https://himrepo.oem.com?instance=Vehicle.Car.ResourceData.X.Y.Z
   description: A HIM service tree.
+```
 7. Start the VISSR server plus a feeder. This can be done by issuing "$ ./runstack startme" in the vissr directory.
 8. Start a VISR client. This can e. g. be done by clicking on the HTML-based client vissr/client/client-1.0/Javascript/wsclient.html that will start up in a browser tab.
 9. Find the IP address of the machine, or use "localhost" if the server runs on the same machine. Enter it in the box and click the "Server IP" button. "Connected" shall then be shown in the tab below.
