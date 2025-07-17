@@ -99,6 +99,7 @@ func getNode(scanner *bufio.Scanner, nextNodeName string) (string, PropertyData,
 				thisNode.Datatype = value
 			case "allowed":
 				thisNode.Allowed, nextLine, continueScan = getAllowedValues(scanner)
+//fmt.Printf("getAllowedValues: len(thisNode.Allowed)=%d\n", len(thisNode.Allowed))
 			case "min":
 				thisNode.Min = value
 			case "max":
@@ -184,7 +185,10 @@ func exportYaml(ctx VspecContext, node PropertyData) {
 		ctx.ExporterFp.Write([]byte(string(indent) + `  datatype: ` + node.Datatype + "\n"))
 	}
 	if len(node.Allowed) > 0 {
-		ctx.ExporterFp.Write([]byte(string(indent) + `  allowed: [` + node.Allowed[0] + "]\n"))
+		ctx.ExporterFp.Write([]byte(string(indent) + `  allowed:` + "\n"))
+		for i := 0; i < len(node.Allowed); i++ {
+			ctx.ExporterFp.Write([]byte(string(indent) + node.Allowed[i] + "\n"))
+		}
 	}
 	if len(node.Min) > 0 {
 		ctx.ExporterFp.Write([]byte(string(indent) + `  min: ` + node.Min + "\n"))
@@ -243,7 +247,7 @@ func exportBinary(ctx VspecContext, thisNode PropertyData) {
     ctx.ExporterFp.Write(serializeUInt((uint16)(allowedStrLen)))
     if len(thisNode.Allowed) > 0 {
 	for i := 0; i < len(thisNode.Allowed); i++ {
-	    allowedWrite(ctx.ExporterFp, thisNode.Allowed[i])
+	    allowedBinaryWrite(ctx.ExporterFp, thisNode.Allowed[i])
 	}
     }
 
@@ -309,7 +313,7 @@ func calculatAllowedStrLen(allowed []string) int {
     return strLen
 }
 
-func allowedWrite(fp *os.File, allowed string) {
+func allowedBinaryWrite(fp *os.File, allowed string) {
     fp.Write(intToHex(len(allowed)))
 //fmt.Printf("allowedHexLen: %s\n", string(intToHex(len(allowed))))
     fp.Write([]byte(allowed))
@@ -507,14 +511,21 @@ func mapToExporterL1(ctx VspecContext, nodeName string, exporterMapL1 map[string
 //				fmt.Println(k,": ", vvv)
 				setNodeData(&nodeData, k ,vvv)
 			case interface{}:
-				mapToExporterL1(ctx, k, vvv.(map[string]interface{}))
-				nodeData.Children++
+				switch vvvv := vvv.(type) {
+				case map[string]interface{}:
+					mapToExporterL1(ctx, k, vvvv)
+					nodeData.Children++
+				case []interface{}:
+					for i := 0; i < len(vvvv); i++ {
+						setNodeData(&nodeData, k ,vvvv[i].(string))
+					}
+					nodeData.Children++
+				}
 			}
 		default:
 			fmt.Println(vv, "is of an unknown type")
 		}
 	}
-//fmt.Printf("Node=%s, Children=%d\n", nodeData.Name, nodeData.Children)
 	if len(nodeName) > 0 {
 		ctx.Exporter(ctx, nodeData)
 	}
@@ -527,7 +538,7 @@ func setNodeData(nodeData *PropertyData, key string,value string) {
 		case "datatype":
 			nodeData.Datatype = value
 		case "allowed":
-			nodeData.Allowed[0] = value
+			nodeData.Allowed = append(nodeData.Allowed, value)
 		case "min":
 			nodeData.Min = value
 		case "max":
