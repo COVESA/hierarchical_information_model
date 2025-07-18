@@ -4,7 +4,7 @@ date: 2019-08-04T12:37:03+02:00
 weight: 30
 ---
 
-The node type `property` can either be used to represent members of a struct, or common allowed definitions.
+The node type `property` is used to represent members of a struct.
 
 Nodes of the type `property` must have the following mandatory metadata:
 - Name
@@ -20,8 +20,6 @@ Besides the mandatory metadata mentioned above, the following optional metadata 
 - Max
 - Allowed
 - Comment
-
-When used for allowed definition, the metadata types Unit, Min, Max must not be used.
 
 For more information, please see the [Common Rule Set: Optional Metadata](/hierarchical_information_model/common_rule_set/basics#optional-metadata).
 
@@ -39,17 +37,4 @@ Type.OpenHours.Open:
   type: property
   max: 24
   description: Time the address opens
-```
-
-## Propety node used for allowed definition
-In this usage the node type must have a node of type `branch` as parent, and must not have any children.
-
-An example of the specification of a `property` node for an allowed definition is given below.
-
-```YAML
-Type.Cabin.DriverPositionValues:
-  type: property
-  datatype: string
-  allowed: ['LEFT', 'MIDDLE', 'RIGHT']
-  description: DriverPosition allowed values.
 ```

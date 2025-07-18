@@ -46,6 +46,7 @@ type VspecContext struct {
 	ExporterFp *os.File
 	TmpStorage *[]PropertyData
 	FileWrite bool
+	Indent bool
 }
 
 
@@ -171,7 +172,10 @@ func extractValue(line string) string {
 }
 
 func exportYaml(ctx VspecContext, node PropertyData) {
-	indent := make([]byte, (ctx.Depth - 1)*2)
+	var indent []byte
+	if ctx.Indent {
+		indent = make([]byte, (ctx.Depth - 1)*2)
+	}
 	for i := 0; i < len(indent); i++ {
 		indent[i] = ' '
 	}
@@ -349,18 +353,27 @@ func createExporterFile(vspecDir string, exporter string, exportFileName string)
 			ctx.BasePath = ""
 			// always create a YAML exporter file first
 			ctx.Exporter = exportYaml
-			exporterFName = exportFileName + ".yaml"
+			exporterFName = "tmp.yaml"
 			exporterFp, err := os.Create(exporterFName)
 			if err != nil {
 				fmt.Printf("Could not create %s\n", exporterFName)
 				return
 			}
 			ctx.ExporterFp = exporterFp
+			if exporter != "binary" {
+				ctx.Indent = false
+			} else {
+				ctx.Indent = true //needed to count children
+			}
 
 			writeExporter(ctx)
 
 			exporterFp.Close()
-			fmt.Printf("Exporter file %s is created\n", exporterFName)
+			if exporter == "yaml" {
+				os.Rename("tmp.yaml", exportFileName + ".yaml")
+				fmt.Printf("Exporter file %s is created\n", exportFileName + ".yaml")
+				return
+			}
 			exporterMap := createExporterMap(exporterFName)
 			var binaryStorage []PropertyData
 			switch exporter {
@@ -404,6 +417,7 @@ func createExporterFile(vspecDir string, exporter string, exportFileName string)
 			}
 			ctx.ExporterFp.Close()
 			fmt.Printf("Exporter file %s is created\n", exporterFName)
+			os.Remove("tmp.yaml") // remove indented version
 		}
 	}
 }
@@ -432,7 +446,7 @@ func writeExporter(ctx VspecContext) {
 		getNodeName(text, &nodeName)
 		if len(nodeName) > 0 {
 			ctx.Depth = calculateDepth(nodeName, ctx.BasePath)
-//fmt.Printf("Node name:%s\n", nodeName)
+//fmt.Printf("writeExporter:Node name:%s\n", nodeName)
 //fmt.Printf("ctx.BasePath:%s\n", ctx.BasePath)
 //fmt.Printf("ctx.Depth:%d\n", ctx.Depth)
 			nextLine, thisNode, continueScan = getNode(scanner, nodeName)
@@ -447,6 +461,7 @@ func writeExporter(ctx VspecContext) {
 			}
 			includeCtx.Path = ctx.Path + dir
 			includeCtx.BasePath = ctx.BasePath
+			includeCtx.Indent = ctx.Indent
 			includeCtx.Exporter = ctx.Exporter
 			includeCtx.ExporterFp = ctx.ExporterFp
 			if len(incFields) > 2 {
@@ -501,7 +516,7 @@ func mapToExporter(ctx VspecContext, exporterMap interface{}) {
 
 func mapToExporterL1(ctx VspecContext, nodeName string, exporterMapL1 map[string]interface{}) {
 	var nodeData PropertyData
-	nodeData.Name = nodeName
+	nodeData.Name = extractNameSegment(nodeName)
 	for k, v := range exporterMapL1 {
 		switch vv := v.(type) {
 		case interface{}:
@@ -511,15 +526,17 @@ func mapToExporterL1(ctx VspecContext, nodeName string, exporterMapL1 map[string
 //				fmt.Println(k,": ", vvv)
 				setNodeData(&nodeData, k ,vvv)
 			case interface{}:
+//				fmt.Println(vv, "is interface{}-2")
 				switch vvvv := vvv.(type) {
 				case map[string]interface{}:
+//					fmt.Println(vv, "is map[string]interface{}")
 					mapToExporterL1(ctx, k, vvvv)
 					nodeData.Children++
 				case []interface{}:
+//					fmt.Println(vv, "is []interface{}")
 					for i := 0; i < len(vvvv); i++ {
 						setNodeData(&nodeData, k ,vvvv[i].(string))
 					}
-					nodeData.Children++
 				}
 			}
 		default:
@@ -529,6 +546,14 @@ func mapToExporterL1(ctx VspecContext, nodeName string, exporterMapL1 map[string
 	if len(nodeName) > 0 {
 		ctx.Exporter(ctx, nodeData)
 	}
+}
+
+func extractNameSegment(pathName string) string {
+	dotIndex := strings.LastIndex(pathName, ".")
+	if dotIndex == -1 {
+		return pathName
+	}
+	return pathName[dotIndex+1:]
 }
 
 func setNodeData(nodeData *PropertyData, key string,value string) {
@@ -556,12 +581,7 @@ func main() {
 	parser := argparse.NewParser("print", "HIM tools")
 	exporter := parser.Selector("e", "exporter", []string{"yaml", "json", "binary"}, &argparse.Options{Required: false,
 		Help: "Exporter parameter must be either: yaml, json, or binary", Default: "yaml"})
-//	confFName := parser.String("c", "configfile", &argparse.Options{Required: false, Help: "configuration file name", Default: "himConfig-truck.json"})
 	vspecDir := parser.String("r", "rootdir", &argparse.Options{Required: false, Help: "path to vspec root directory", Default: "VehicleServices/"})
-//	sConf := parser.Flag("s", "vspecsave", &argparse.Options{Required: false, Help: "Saves the configured .vspec2 files with extension .vspec"})
-//	preProcessOnly := parser.Flag("p", "preprocess", &argparse.Options{Required: false, Help: "Pre-process only, save configured vspec files. Do not run VSS-tools."})
-//	enumSubst := parser.Flag("n", "noEnumSubst", &argparse.Options{Required: false, Help: "No substitution of enum links to Datatype tree with actual datatypes"})
-//	ConfigValueFName := parser.String("v", "configvaluesfile", &argparse.Options{Required: false, Help: "Config values file name"})
 	err := parser.Parse(os.Args)
 	if err != nil {
 		fmt.Print(parser.Usage(err))
