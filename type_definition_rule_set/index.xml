@@ -14,8 +14,7 @@
       
       <guid>https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/basics/</guid>
       <description>A type_definition tree contains data type definitions. These can either be complex datatypes that are not part of the primitive datatypes defined by HIM, or it can be common allowed definitions.
-Root node name The name of the root node of the type definitions tree shall be &amp;ldquo;Types&amp;rdquo;.
-Node Types The currently supported node types can be used for either the definition of structs, or for the definition of allowed value restrictions.</description>
+If a tree with data or service information contains links to a typedefinition tree then this tree must be available to the server managing the data/service tree. The server shall use the type definition information to verify that client requests are valid in the case of links as mentioned.</description>
     </item>
     
     <item>
@@ -24,11 +23,12 @@ Node Types The currently supported node types can be used for either the definit
       <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
       
       <guid>https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/property/</guid>
-      <description>The node type property can either be used to represent members of a struct, or common allowed definitions.
+      <description>The node type property is used to represent members of a struct.
 Nodes of the type property must have the following mandatory metadata:
 Name Type Datatype Description For more information, see the Common Rule Set: Mandatory Metadata.
 Besides the mandatory metadata mentioned above, the following optional metadata may be used
-Unit Min Max Allowed Comment When used for allowed definition, the metadata types Unit, Min, Max must not be used.</description>
+Unit Min Max Allowed Comment For more information, please see the Common Rule Set: Optional Metadata.
+Property node used to define struct members Data represented by the node type property have a relationship to any other data having the same struct parent in that they are all sampled in an &amp;ldquo;atomic&amp;rdquo; operation, i.</description>
     </item>
     
     <item>

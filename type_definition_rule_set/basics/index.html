@@ -12,21 +12,21 @@
     <title>Type Definition Model :: Hierarchical Information Model</title>
 
     
-    <link href="/hierarchical_information_model/css/nucleus.css?1752762641" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1752762641" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hybrid.css?1752762641" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/featherlight.min.css?1752762641" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1752762641" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/auto-complete.css?1752762641" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1752762641" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/theme.css?1752762641" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hugo-theme.css?1752762641" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/nucleus.css?1752845846" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1752845846" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hybrid.css?1752845846" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/featherlight.min.css?1752845846" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1752845846" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/auto-complete.css?1752845846" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1752845846" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme.css?1752845846" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hugo-theme.css?1752845846" rel="stylesheet">
     
-    <link href="/hierarchical_information_model/css/theme-blue.css?1752762641" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme-blue.css?1752845846" rel="stylesheet">
     
     
 
-    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1752762641"></script>
+    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1752845846"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1752762641"></script>
-<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1752762641"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1752845846"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1752845846"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/covesa.github.io\/hierarchical_information_model\/";
     
 </script>
-<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1752762641"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1752845846"></script>
 
     
   </div>
@@ -988,6 +988,7 @@
   <ul>
     <li><a href="#root-node-name">Root node name</a></li>
     <li><a href="#node-types">Node Types</a></li>
+    <li><a href="#attribute-node-used-for-allowed-definition">Attribute node used for allowed definition</a></li>
   </ul>
 </nav>
     </div>
@@ -1016,6 +1017,8 @@
 These can either be complex datatypes that are not part of the
 <a href="/hierarchical_information_model/common_rule_set/data_entry/datatypes#primitive-datatypes">primitive datatypes</a> defined by HIM,
 or it can be common allowed definitions.</p>
+<p>If a tree with data or service information contains links to a typedefinition tree then this tree must be available to the server managing the data/service tree.
+The server shall use the type definition information to verify that client requests are valid in the case of links as mentioned.</p>
 <h2 id="root-node-name">Root node name</h2>
 <p>The name of the root node of the type definitions tree shall be &ldquo;Types&rdquo;.</p>
 <h2 id="node-types">Node Types</h2>
@@ -1026,9 +1029,19 @@ or for the definition of <a href="/hierarchical_information_model/common_rule_se
 <li>Branch</li>
 <li>Struct</li>
 <li>Property</li>
+<li>Attribute</li>
 </ul>
 <p>Please see more information about these node types <a href="/hierarchical_information_model/common_rule_set/node_types/">here</a>.</p>
-
+<h2 id="attribute-node-used-for-allowed-definition">Attribute node used for allowed definition</h2>
+<p>In this usage the attribute node type must have a node of type <code>branch</code> as parent, and must not have any children.
+When used for allowed definition, the metadata types Unit, Min, Max or Default must not be used.</p>
+<p>An example of the specification of a <code>attribute</code> node for an allowed definition is given below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-YAML" data-lang="YAML"><span style="display:flex;"><span><span style="color:#f92672">Types.Cabin.DriverPositionValues</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">attribute</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">datatype</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">allowed</span>: [<span style="color:#e6db74">&#39;LEFT&#39;</span>, <span style="color:#e6db74">&#39;MIDDLE&#39;</span>, <span style="color:#e6db74">&#39;RIGHT&#39;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">DriverPosition allowed values.</span>
+</span></span></code></pre></div>
 
 <footer class="footline">
 	
@@ -1624,19 +1637,19 @@ or for the definition of <a href="/hierarchical_information_model/common_rule_se
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/hierarchical_information_model/js/clipboard.min.js?1752762642"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1752762642"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1752762642"></script>
-    <script src="/hierarchical_information_model/js/jquery.sticky.js?1752762642"></script>
-    <script src="/hierarchical_information_model/js/featherlight.min.js?1752762642"></script>
-    <script src="/hierarchical_information_model/js/highlight.pack.js?1752762642"></script>
+    <script src="/hierarchical_information_model/js/clipboard.min.js?1752845846"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1752845846"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1752845846"></script>
+    <script src="/hierarchical_information_model/js/jquery.sticky.js?1752845846"></script>
+    <script src="/hierarchical_information_model/js/featherlight.min.js?1752845846"></script>
+    <script src="/hierarchical_information_model/js/highlight.pack.js?1752845846"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1752762642"></script>
-    <script src="/hierarchical_information_model/js/learn.js?1752762642"></script>
-    <script src="/hierarchical_information_model/js/hugo-learn.js?1752762642"></script>
+    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1752845846"></script>
+    <script src="/hierarchical_information_model/js/learn.js?1752845846"></script>
+    <script src="/hierarchical_information_model/js/hugo-learn.js?1752845846"></script>
     
         
-            <script src="/hierarchical_information_model/mermaid/mermaid.js?1752762642"></script>
+            <script src="/hierarchical_information_model/mermaid/mermaid.js?1752845846"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
