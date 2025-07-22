@@ -22,7 +22,7 @@ Seating.Properties:
   description: Seating properties branch.
 
 Seating.Properties.Support:
-  type: '[]struct'
+  type: struct[]
   datatype: Type.Seating.RowSupport
   description: Supported featurs per seat.
 

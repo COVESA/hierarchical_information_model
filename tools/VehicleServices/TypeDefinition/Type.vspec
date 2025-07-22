@@ -31,7 +31,7 @@ Type.Seating.RowSupport.RowName:
   description: The name of the seat row.
 
 Type.Seating.RowSupport.Column:
-  type: '[]struct'
+  type: struct[]
   datatype: Type.Seating.ColumnSupport
   description: Array of structs defining the support per column.
 
@@ -45,12 +45,12 @@ Type.Seating.ColumnSupport.ColumnName:
   description: The name of the seat column.
 
 Type.Seating.ColumnSupport.MovementSupport:
-  type: '[]struct'
+  type: struct[]
   datatype: Type.Seating.SupportData
   description: Array of structs defining the movement support of a seat.
 
 Type.Seating.ColumnSupport.MassageSupport:
-  type: '[]struct'
+  type: struct[]
   datatype: Type.Seating.SupportData
   description: Array of structs defining the massage support of a seat.
 

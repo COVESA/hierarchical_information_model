@@ -20,8 +20,8 @@ Types.Struct.FileDescriptor.Hash:
   type: property
   datatype: string
 
-Types.Struct.FileDescriptor.Uuid:
-  description: File descriptor uuid struct member.
+Types.Struct.FileDescriptor.Uid:
+  description: File descriptor uid struct member.
   type: property
   datatype: string
 
