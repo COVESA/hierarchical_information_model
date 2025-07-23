@@ -12,7 +12,10 @@ If a tree with data or service information contains links to a typedefinition tr
 The server shall use the type definition information to verify that client requests are valid in the case of links as mentioned.
 
 ## Root node name
-The name of the root node of the type definitions tree shall be "Types".
+The name of the root node of the type definitions tree shall be "TypesX" where X can be any sequence of readable characters, with a length from zero and up.
+With an empty X the name will be "Types" and thus conformant with the COVESA VSS rule set.
+If an implementation of a server ecosystem selects to use multiple type definition trees then X must be used to distinguish between the different trees.
+X can then be a number or more descriptive such as Car, Trailer, etc.
 
 ## Node Types
 The currently supported node types can be used for either the definition of [structs](https://en.wikipedia.org/wiki/Composite_data_type),
