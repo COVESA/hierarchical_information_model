@@ -19,11 +19,11 @@ A HIM taxonomy may contain subtrees that are identical copies of each other, for
     
     <item>
       <title>Data model</title>
-      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/basics/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/basics/</link>
       <pubDate>Sun, 04 Aug 2019 13:05:11 +0200</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/basics/</guid>
-      <description>The rule set for Data is inherited from the VSS rule set. It is the leaf nodes of a tree that represents and defines the actual data. The definition is expressed by metadata describing the data associated to the node.
+      <guid>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/basics/</guid>
+      <description>The rule set for vehicle data is inherited from the VSS rule set. It is the leaf nodes of a tree that represents and defines the actual vehicle data. The definition is expressed by metadata describing the data associated to the node.
 Node Types The node types for representing data entries are:
 Sensor Actuator Attribute Please see the respective chapters for more information about these node types.
 Vspec YAML extensions The vspec format is based on YAML that is extended with two features described in respective chapters shown below.</description>
@@ -61,19 +61,19 @@ If a tree with data or service information contains links to a typedefinition tr
     
     <item>
       <title>Instances</title>
-      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/instances/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/vspec_extensions/instances/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/instances/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/vspec_extensions/instances/</guid>
       <description>The data model resembles primarily the physical structure of the vehicle, so quite often there is a need to repeat branches and data entries (e.g. doors, axles, etc). To avoid hard-coded repetitions of branches and data entries in the specification an instance-concept is supported. Instances remove the need of repeating definitions, by defining at the node itself how often it occurs in the resulting tree. They are meant as a short-cut in the specification and interpreted by the tools.</description>
     </item>
     
     <item>
       <title>Include</title>
-      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/include/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/vspec_extensions/include/</link>
       <pubDate>Sun, 04 Aug 2019 12:59:44 +0200</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/include/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/vspec_extensions/include/</guid>
       <description>An include directive in a vspec file will read the file it refers to and the contents of that file will be inserted into the current buffer in place of the include directive. The included file will, in its turn, be scanned for include directives to be replaced, effectively forming a tree of included files.
 See Fig 6 for an example of such a tree.
 Fig 6. Include directives
@@ -115,10 +115,10 @@ Vehicle.Speed: datatype: float type: sensor unit: km/h description: Vehicle spee
     
     <item>
       <title>Actuator node</title>
-      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/actuator/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/actuator/</link>
       <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/actuator/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/actuator/</guid>
       <description>Actuators are used to control the desired value of a property. Some properties in a vehicle cannot change instantly. A typical example is position of a seat or a window. Reading a value of an actuator shall return the current actual value, e.g. the current position of the seat, rather than the wanted/desired position. A typical example could be if someone wants to change the position of a seat from 0 to 100.</description>
     </item>
     
@@ -175,10 +175,10 @@ Property node used to define struct members Data represented by the node type pr
     
     <item>
       <title>Sensor node</title>
-      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/sensor/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/sensor/</link>
       <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/sensor/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/sensor/</guid>
       <description>Sensors are signals to read values of properties in a vehicle. Values of sensors typically change over time. Reading a sensor shall return the current actual value of the related property, e.g. the current speed or the current position of the seat.
 Nodes of the type sensor must have the following mandatory metadata:
 Name Type Datatype Description For more information, see the Common Rule Set: Mandatory Metadata.
@@ -250,10 +250,10 @@ An Input parameter declared as a symlink will lead to that the provided input va
     
     <item>
       <title>Attribute node</title>
-      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/attribute/</link>
+      <link>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/attribute/</link>
       <pubDate>Sun, 04 Aug 2019 12:37:31 +0200</pubDate>
       
-      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/attribute/</guid>
+      <guid>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/attribute/</guid>
       <description>Nodes of the types attribute must have the following mandatory metadata:
 Name Type Datatype Default Description For more information, see the Common Rule Set: Mandatory Metadata.
 Besides the mandatory metadata mentioned above, the following optional metadata may be used
