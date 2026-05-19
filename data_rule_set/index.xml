@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HIM Data Rule Set on Hierarchical Information Model</title>
+    <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/</link>
+    <description>Recent content in HIM Data Rule Set on Hierarchical Information Model</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Aug 2019 12:59:44 +0200</lastBuildDate><atom:link href="https://covesa.github.io/hierarchical_information_model/data_rule_set/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data model</title>
+      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/basics/</guid>
+      <description>It is the leaf nodes of a tree that represents and defines the actual data. The definition is expressed by metadata describing the data samples associated to the node.
+Node Types The node types for representing data entries are:
+Ro: for data that is read-only. Rw: for data that is read-write. Please see the respective chapters for more information about these node types.
+Vspec YAML extensions The vspec format is based on YAML that is extended with two features described in respective chapters shown below.</description>
+    </item>
+    
+    <item>
+      <title>Read-only node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/readonly/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/readonly/</guid>
+      <description>This node type shall be used for data that can only be read and not written to. The HIM node type name is ro.
+Nodes of the type ro must have the following mandatory metadata:
+Name Type Datatype Description For more information, see the Common Rule Set: Mandatory Metadata.
+Besides the mandatory metadata mentioned above, the following optional metadata may be used
+Unit Min Max Allowed Comment For more information, please see the Common Rule Set: Optional Metadata.</description>
+    </item>
+    
+    <item>
+      <title>Read-write node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/readwrite/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/readwrite/</guid>
+      <description>This node type shall be used for data that may be read or written. The HIM node type name is rw.
+Nodes of the type rw must have the following mandatory metadata:
+Name Type Datatype Description For more information, see the Common Rule Set: Mandatory Metadata.
+Besides the mandatory metadata mentioned above, the following optional metadata may be used
+Unit Min Max Allowed Comment For more information, please see the Common Rule Set: Optional Metadata.</description>
+    </item>
+    
+  </channel>
+</rss>

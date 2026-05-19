@@ -18,18 +18,6 @@ A HIM taxonomy may contain subtrees that are identical copies of each other, for
     </item>
     
     <item>
-      <title>Data model</title>
-      <link>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/basics/</link>
-      <pubDate>Sun, 04 Aug 2019 13:05:11 +0200</pubDate>
-      
-      <guid>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/basics/</guid>
-      <description>The rule set for vehicle data is inherited from the VSS rule set. It is the leaf nodes of a tree that represents and defines the actual vehicle data. The definition is expressed by metadata describing the data associated to the node.
-Node Types The node types for representing data entries are:
-Sensor Actuator Attribute Please see the respective chapters for more information about these node types.
-Vspec YAML extensions The vspec format is based on YAML that is extended with two features described in respective chapters shown below.</description>
-    </item>
-    
-    <item>
       <title>Service Model</title>
       <link>https://covesa.github.io/hierarchical_information_model/service_rule_set/basics/</link>
       <pubDate>Sun, 04 Aug 2019 13:05:11 +0200</pubDate>
@@ -38,6 +26,29 @@ Vspec YAML extensions The vspec format is based on YAML that is extended with tw
       <description>HIM Service Tree A HIM service tree contains a taxonomy of microservice declarations. The tree structure is used to create a sets of microservices. Such as set is named Service, or Service Group for larger sets where a set of Service Groups would then form a Service, see the figure below, or the example service tree.
 *Figure x. HIM service tree structure
 HIM Microservice A microservice is in HIM defined by a procedure signature as shown below:</description>
+    </item>
+    
+    <item>
+      <title>Vehicle Data model</title>
+      <link>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/basics/</link>
+      <pubDate>Sun, 04 Aug 2019 13:05:11 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/basics/</guid>
+      <description>The rule set for vehicle data is inherited from the VSS rule set. It is the leaf nodes of a tree that represents and defines the actual vehicle data. The definition is expressed by metadata describing the data samples associated to the node.
+Node Types The node types for representing data entries are:
+Sensor: for data that is read-only and may have a dynamically changing value. Attribute: for data that is read-only and have a static value.</description>
+    </item>
+    
+    <item>
+      <title>Data model</title>
+      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/basics/</guid>
+      <description>It is the leaf nodes of a tree that represents and defines the actual data. The definition is expressed by metadata describing the data samples associated to the node.
+Node Types The node types for representing data entries are:
+Ro: for data that is read-only. Rw: for data that is read-write. Please see the respective chapters for more information about these node types.
+Vspec YAML extensions The vspec format is based on YAML that is extended with two features described in respective chapters shown below.</description>
     </item>
     
     <item>
@@ -61,11 +72,32 @@ If a tree with data or service information contains links to a typedefinition tr
     
     <item>
       <title>Instances</title>
+      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/instances/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/instances/</guid>
+      <description>The data model resembles primarily the physical structure of the vehicle, so quite often there is a need to repeat branches and data entries (e.g. doors, axles, etc). To avoid hard-coded repetitions of branches and data entries in the specification an instance-concept is supported. Instances remove the need of repeating definitions, by defining at the node itself how often it occurs in the resulting tree. They are meant as a short-cut in the specification and interpreted by the tools.</description>
+    </item>
+    
+    <item>
+      <title>Instances</title>
       <link>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/vspec_extensions/instances/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/vspec_extensions/instances/</guid>
       <description>The data model resembles primarily the physical structure of the vehicle, so quite often there is a need to repeat branches and data entries (e.g. doors, axles, etc). To avoid hard-coded repetitions of branches and data entries in the specification an instance-concept is supported. Instances remove the need of repeating definitions, by defining at the node itself how often it occurs in the resulting tree. They are meant as a short-cut in the specification and interpreted by the tools.</description>
+    </item>
+    
+    <item>
+      <title>Include</title>
+      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/include/</link>
+      <pubDate>Sun, 04 Aug 2019 12:59:44 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/vspec_extensions/include/</guid>
+      <description>An include directive in a vspec file will read the file it refers to and the contents of that file will be inserted into the current buffer in place of the include directive. The included file will, in its turn, be scanned for include directives to be replaced, effectively forming a tree of included files.
+See Fig 6 for an example of such a tree.
+Fig 6. Include directives
+The include directive has the following format:</description>
     </item>
     
     <item>
@@ -235,6 +267,32 @@ A parent must be of the node type branch. The procedure node must have a child o
       
       <guid>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/node_types/proxy/</guid>
       <description>A proxy node in a HIM configuration file defines a tree that the server managing this forest does not have a local copy of. It however knows how to forward requests to the server that managaes the tree and has a local copy of it. An example could be a home automation scenario, where a server deployed in a car knows the Local Area Network access point address bearer type, so that when in proximity of the LAN, and after the vehicle has connected to it, requests received by the HIM server in he vehicle can then be routed to the server deployed on the LAN.</description>
+    </item>
+    
+    <item>
+      <title>Read-only node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/readonly/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/readonly/</guid>
+      <description>This node type shall be used for data that can only be read and not written to. The HIM node type name is ro.
+Nodes of the type ro must have the following mandatory metadata:
+Name Type Datatype Description For more information, see the Common Rule Set: Mandatory Metadata.
+Besides the mandatory metadata mentioned above, the following optional metadata may be used
+Unit Min Max Allowed Comment For more information, please see the Common Rule Set: Optional Metadata.</description>
+    </item>
+    
+    <item>
+      <title>Read-write node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/data_rule_set/readwrite/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/data_rule_set/readwrite/</guid>
+      <description>This node type shall be used for data that may be read or written. The HIM node type name is rw.
+Nodes of the type rw must have the following mandatory metadata:
+Name Type Datatype Description For more information, see the Common Rule Set: Mandatory Metadata.
+Besides the mandatory metadata mentioned above, the following optional metadata may be used
+Unit Min Max Allowed Comment For more information, please see the Common Rule Set: Optional Metadata.</description>
     </item>
     
     <item>
