@@ -12,21 +12,21 @@
     <title>Service Model :: Hierarchical Information Model</title>
 
     
-    <link href="/hierarchical_information_model/css/nucleus.css?1779265488" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1779265488" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hybrid.css?1779265488" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/featherlight.min.css?1779265488" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1779265488" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/auto-complete.css?1779265488" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1779265488" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/theme.css?1779265488" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hugo-theme.css?1779265488" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/nucleus.css?1780400936" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1780400936" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hybrid.css?1780400936" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/featherlight.min.css?1780400936" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1780400936" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/auto-complete.css?1780400936" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1780400936" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme.css?1780400936" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hugo-theme.css?1780400936" rel="stylesheet">
     
-    <link href="/hierarchical_information_model/css/theme-blue.css?1779265488" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme-blue.css?1780400936" rel="stylesheet">
     
     
 
-    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1779265488"></script>
+    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1780400936"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1779265488"></script>
-<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1779265488"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1780400936"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1780400936"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/covesa.github.io\/hierarchical_information_model\/";
     
 </script>
-<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1779265488"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1780400936"></script>
 
     
   </div>
@@ -430,9 +430,9 @@
  
   
     
-      <li data-nav-id="/hierarchical_information_model/service_rule_set/procedure/" title="procedure node" class="dd-item ">
+      <li data-nav-id="/hierarchical_information_model/service_rule_set/procedure/" title="Procedure node" class="dd-item ">
         <a href="/hierarchical_information_model/service_rule_set/procedure/">
-        procedure node
+        Procedure node
         
         </a>
     </li>
@@ -1224,13 +1224,14 @@ This is expeted to be defined in an interface specification that uses HIM.</p>
 <p>A microservice may have a significant temporal duration from it is started and until it completes.
 It may therefore be desireable that the state of the microservice can be observed,
 as e. g. it may be the case that an ongoing microservice execution does not allow new microservice actuations to be started.</p>
-<p>Service response or event messages shall therefore contain a parameter called Status, an enum with the following definition:</p>
-<pre tabindex="0"><code>enum {
-	ONGOING = 1     // in execution of latest call
-	SUCCESSFUL = 0  // terminated successfully in latest call
-	FAILED = -1      // terminated due to failure in latest call
-}
-</code></pre><p>The rules for how a microservice shall update the state value follows below:</p>
+<p>Service response or event messages shall therefore contain a parameter called Status,
+which shall support at least the following states:</p>
+<ul>
+<li>ONGOING: in execution of latest call</li>
+<li>SUCCESSFUL: terminated successfully in latest call</li>
+<li>FAILED: terminated due to failure in latest call</li>
+</ul>
+<p>The rules for how a microservice shall update the state value follows below:</p>
 <ul>
 <li>A fully functioning microservice that is not ongoing shall have the value SUCCESSFUL.</li>
 <li>When a valid microservice request is received and the service execution is started the state shall be set to ONGOING.</li>
@@ -1964,19 +1965,19 @@ This node shall then have children nodes of <code>attribute</code> type with def
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/hierarchical_information_model/js/clipboard.min.js?1779265488"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1779265488"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1779265488"></script>
-    <script src="/hierarchical_information_model/js/jquery.sticky.js?1779265488"></script>
-    <script src="/hierarchical_information_model/js/featherlight.min.js?1779265488"></script>
-    <script src="/hierarchical_information_model/js/highlight.pack.js?1779265488"></script>
+    <script src="/hierarchical_information_model/js/clipboard.min.js?1780400936"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1780400936"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1780400936"></script>
+    <script src="/hierarchical_information_model/js/jquery.sticky.js?1780400936"></script>
+    <script src="/hierarchical_information_model/js/featherlight.min.js?1780400936"></script>
+    <script src="/hierarchical_information_model/js/highlight.pack.js?1780400936"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1779265488"></script>
-    <script src="/hierarchical_information_model/js/learn.js?1779265488"></script>
-    <script src="/hierarchical_information_model/js/hugo-learn.js?1779265488"></script>
+    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1780400936"></script>
+    <script src="/hierarchical_information_model/js/learn.js?1780400936"></script>
+    <script src="/hierarchical_information_model/js/hugo-learn.js?1780400936"></script>
     
         
-            <script src="/hierarchical_information_model/mermaid/mermaid.js?1779265488"></script>
+            <script src="/hierarchical_information_model/mermaid/mermaid.js?1780400936"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
