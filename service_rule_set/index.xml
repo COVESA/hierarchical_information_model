@@ -14,7 +14,7 @@
       
       <guid>https://covesa.github.io/hierarchical_information_model/service_rule_set/basics/</guid>
       <description>HIM Service Tree A HIM service tree contains a taxonomy of microservice declarations. The tree structure is used to create a sets of microservices. Such as set is named Service, or Service Group for larger sets where a set of Service Groups would then form a Service, see the figure below, or the example service tree.
-*Figure x. HIM service tree structure
+*Figure 1. HIM service tree structure
 HIM Microservice A microservice is in HIM defined by a procedure signature as shown below:</description>
     </item>
     
@@ -50,8 +50,7 @@ Besides the mandatory metadata mentioned above, the following optional metadata 
       <description>The procedure node type must have the following mandatory metadata:
 Name Type Description For more information, see the Common Rule Set: Mandatory Metadata.
 Besides the mandatory metadata mentioned above, the following optional metadata may be used
-Comment NativeRate TimeToLive The NativeRate shall be an integer that indicates the typical duration in milliseconds between two subsequent microservice event messages. If set to zero then the service terminates instantaneously.
-The TimeToLive indicates a maximum time in milliseconds that the server shall allow a service to execute.</description>
+Instances Comment NativeRate TimeToLive The Instances directive can be used when a service manages multiple resources, see Multplexed microservice tree structure. Its definition follows the same rules as for its usage in branch type nodes as described here with the extension that it can be used in procedure nodes.</description>
     </item>
     
     <item>

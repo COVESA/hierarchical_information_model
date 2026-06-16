@@ -12,21 +12,21 @@
     <title>Procedure node :: Hierarchical Information Model</title>
 
     
-    <link href="/hierarchical_information_model/css/nucleus.css?1780576946" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1780576946" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hybrid.css?1780576946" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/featherlight.min.css?1780576946" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1780576946" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/auto-complete.css?1780576946" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1780576946" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/theme.css?1780576946" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hugo-theme.css?1780576946" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/nucleus.css?1781610930" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1781610930" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hybrid.css?1781610930" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/featherlight.min.css?1781610930" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1781610930" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/auto-complete.css?1781610930" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1781610930" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme.css?1781610930" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hugo-theme.css?1781610930" rel="stylesheet">
     
-    <link href="/hierarchical_information_model/css/theme-blue.css?1780576946" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme-blue.css?1781610930" rel="stylesheet">
     
     
 
-    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1780576946"></script>
+    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1781610930"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1780576946"></script>
-<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1780576946"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1781610930"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1781610930"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/covesa.github.io\/hierarchical_information_model\/";
     
 </script>
-<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1780576946"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1781610930"></script>
 
     
   </div>
@@ -1197,10 +1197,15 @@
 <p>For more information, see the <a href="/hierarchical_information_model/common_rule_set/basics#mandatory-metadata">Common Rule Set: Mandatory Metadata</a>.</p>
 <p>Besides the mandatory metadata mentioned above, the following optional metadata may be used</p>
 <ul>
+<li>Instances</li>
 <li>Comment</li>
 <li>NativeRate</li>
 <li>TimeToLive</li>
 </ul>
+<p>The Instances directive can be used when a service manages multiple resources,
+see <a href="/hierarchical_information_model/service_rule_set/basics#multplexed-microservice-tree-structure">Multplexed microservice tree structure</a>.
+Its definition follows the same rules as for its usage in branch type nodes as described <a href="/hierarchical_information_model/data_rule_set/vspec_extensions/instances">here</a>
+with the extension that it can be used in procedure nodes.</p>
 <p>The NativeRate shall be an integer that indicates the typical duration in milliseconds between two subsequent microservice event messages.
 If set to zero then the service terminates instantaneously.</p>
 <p>The TimeToLive indicates a maximum time in milliseconds that the server shall allow a service to execute.
@@ -1214,7 +1219,8 @@ When it is exceeded the server may terminate the service and issue a final event
 <p>An example of the specification of a <code>procedure</code> node is given below.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-YAML" data-lang="YAML"><span style="display:flex;"><span><span style="color:#f92672">microserviceName</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">procedure</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">This is an example of a microservice procedure node containing its mandatory metadata.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">instances</span>: <span style="color:#ae81ff">Resource[1, 3]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">This is an example of a microservice procedure node that manages three resources.</span>
 </span></span></code></pre></div><h2 id="version-node">Version node</h2>
 <p>The version node contains the version of the procedure.
 The node type shall be <code>attribute</code>, and the datatype shall be <code>string</code>.
@@ -1938,19 +1944,19 @@ The default value shall follow the Semantic version format with Major, Minor, an
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/hierarchical_information_model/js/clipboard.min.js?1780576946"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1780576946"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1780576946"></script>
-    <script src="/hierarchical_information_model/js/jquery.sticky.js?1780576946"></script>
-    <script src="/hierarchical_information_model/js/featherlight.min.js?1780576946"></script>
-    <script src="/hierarchical_information_model/js/highlight.pack.js?1780576946"></script>
+    <script src="/hierarchical_information_model/js/clipboard.min.js?1781610930"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1781610930"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1781610930"></script>
+    <script src="/hierarchical_information_model/js/jquery.sticky.js?1781610930"></script>
+    <script src="/hierarchical_information_model/js/featherlight.min.js?1781610930"></script>
+    <script src="/hierarchical_information_model/js/highlight.pack.js?1781610930"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1780576946"></script>
-    <script src="/hierarchical_information_model/js/learn.js?1780576946"></script>
-    <script src="/hierarchical_information_model/js/hugo-learn.js?1780576946"></script>
+    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1781610930"></script>
+    <script src="/hierarchical_information_model/js/learn.js?1781610930"></script>
+    <script src="/hierarchical_information_model/js/hugo-learn.js?1781610930"></script>
     
         
-            <script src="/hierarchical_information_model/mermaid/mermaid.js?1780576946"></script>
+            <script src="/hierarchical_information_model/mermaid/mermaid.js?1781610930"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
