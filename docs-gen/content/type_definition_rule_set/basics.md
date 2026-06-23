@@ -26,5 +26,6 @@ The node types for representing type definitions are:
 - [Struct](/hierarchical_information_model/type_definition_rule_set/struct)
 - [Property](/hierarchical_information_model/type_definition_rule_set/property)
 - [Typedef](/hierarchical_information_model/type_definition_rule_set/typedef)
+- Attribute // must only be used in tree version nodes
 
 Please see more information about these node types [here](/hierarchical_information_model/common_rule_set/node_types/).

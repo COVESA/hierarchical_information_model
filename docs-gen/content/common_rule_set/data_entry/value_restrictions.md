@@ -38,7 +38,7 @@ The two models are referred to by the key values `enum` or `allowed`.
 If one is used in a node of a tree the other must not also be used in the same tree.
 
 ### Enum
-The `enum` restriction defines a array of accepted data values where each value is associated with a symbolic value as shown below.
+The `enum` restriction defines a array of accepted data values where each value is associated with a symbolic value in a key-value declaration as shown below.
 ```YAML
 Vehicle.Exterior.RoadSurfaceCondition:
   datatype: uint8

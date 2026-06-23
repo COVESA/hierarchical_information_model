@@ -56,31 +56,27 @@ Types.Struct.Service.Seating.SeatId.Column:
   datatype: string
   description: Column name.
 
-Types.Enum:
-  type: branch
-  description: Enum definitions.
-
-Types.Enum.Service:
-  type: branch
-  description: Service enum definitions.
-
-Types.Enum.Service.Status:
-  type: attribute
-  datatype: string
-  allowed:
-    - 'SUCCESSFUL'
-    - 'ONGOING'
-    - 'CANCELED'
-    - 'FAILED'
-  default: 'SUCCESSFUL'
-  description: The execution status of a service.
-
 Types.Common:
   type: branch
   description: Common definitions.
 
+Types.Common.Service:
+  type: branch
+  description: Service enum definitions.
+
+Types.Common.Service.Status:
+  type: typedef
+  datatype: int8
+  enum:
+    'SUCCESSFUL': 0
+    'ONGOING': 1
+    'CANCELED': 2
+    'FAILED': -1
+  default: 0
+  description: The execution status of a service.
+
 Types.Common.Percentage:
-  type: attribute
+  type: typedef
   datatype: float
   unit: percent
   min: 0
@@ -94,14 +90,17 @@ Types.Version:
 Types.Version.Major:
   datatype: uint32
   type: attribute
+  default: 1
   description: Major version number.
 
 Types.Version.Minor:
   datatype: uint32
   type: attribute
+  default: 0
   description: Minor version number.
 
 Types.Version.Patch:
   datatype: uint32
   type: attribute
+  default: 0
   description: Patch version number.

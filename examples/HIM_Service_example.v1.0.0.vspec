@@ -41,7 +41,7 @@ VehicleService.Seating.MoveSeat.Output:
 
 VehicleService.Seating.MoveSeat.Output.Status:
   type: property
-  datatype: Types.Enum.Service.Status
+  datatype: Types.Common.Service.Status
   description: Status of the MoveSeat service.
 
 VehicleService.Seating.MoveSeat.Output.Position:
@@ -70,7 +70,7 @@ VehicleService.Seating.GetCapabilities.Output:
 
 VehicleService.Seating.GetCapabilities.Output.Status:
   type: property
-  datatype: Types.Enum.Service.Status
+  datatype: Types.Common.Service.Status
   description: Status of the GetCapabilities service.
 
 VehicleService.Seating.GetCapabilities.Output.Capabilities:
