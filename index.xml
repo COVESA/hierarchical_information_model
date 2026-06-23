@@ -228,6 +228,18 @@ This node type is only allowed in trees of the information type typedefinition. 
     </item>
     
     <item>
+      <title>Typedef node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/typedef/</link>
+      <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/typedef/</guid>
+      <description>The node type typedef is used to define node metadata that can be referenced from nodes declared in trees of other information types. This enables one definition to be shared between multiple nodes in other trees.
+Nodes of the type typedef must have the following mandatory metadata:
+Name Type Datatype Description For more information, see the Common Rule Set: Mandatory Metadata.
+Besides the mandatory metadata mentioned above, the following optional metadata may be used:</description>
+    </item>
+    
+    <item>
       <title>Direct node</title>
       <link>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/node_types/direct/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

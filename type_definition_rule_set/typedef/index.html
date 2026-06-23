@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/hierarchical_information_model/images/fav.png" type="image/x-icon" />
 
-    <title>Struct node :: Hierarchical Information Model</title>
+    <title>Typedef node :: Hierarchical Information Model</title>
 
     
     <link href="/hierarchical_information_model/css/nucleus.css?1782221717" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/hierarchical_information_model/type_definition_rule_set/struct/">
+  <body class="" data-url="/hierarchical_information_model/type_definition_rule_set/typedef/">
     <nav id="sidebar" class="">
 
 
@@ -923,7 +923,7 @@
  
   
     
-      <li data-nav-id="/hierarchical_information_model/type_definition_rule_set/struct/" title="Struct node" class="dd-item active">
+      <li data-nav-id="/hierarchical_information_model/type_definition_rule_set/struct/" title="Struct node" class="dd-item ">
         <a href="/hierarchical_information_model/type_definition_rule_set/struct/">
         Struct node
         
@@ -944,7 +944,7 @@
  
   
     
-      <li data-nav-id="/hierarchical_information_model/type_definition_rule_set/typedef/" title="Typedef node" class="dd-item ">
+      <li data-nav-id="/hierarchical_information_model/type_definition_rule_set/typedef/" title="Typedef node" class="dd-item active">
         <a href="/hierarchical_information_model/type_definition_rule_set/typedef/">
         Typedef node
         
@@ -1138,7 +1138,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/covesa/hierarchical_information_model/edit/master/docs-gen/content/type_definition_rule_set/struct.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/covesa/hierarchical_information_model/edit/master/docs-gen/content/type_definition_rule_set/typedef.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -1169,7 +1169,7 @@
             
           
           
-            <a href='/hierarchical_information_model/'>Hierarchical Information Model</a> > <a href='/hierarchical_information_model/type_definition_rule_set/'>HIM Type Definition Rule Set</a> > Struct node
+            <a href='/hierarchical_information_model/'>Hierarchical Information Model</a> > <a href='/hierarchical_information_model/type_definition_rule_set/'>HIM Type Definition Rule Set</a> > Typedef node
           
         
           
@@ -1182,7 +1182,12 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#typedef-usage-rule-set">Typedef usage rule set</a></li>
+    <li><a href="#example-using-typedef">Example using typedef</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1198,41 +1203,75 @@
           
             <h1>
               
-              Struct node
+              Typedef node
             </h1>
           
 
         
 
 
-<p>A <code>struct</code> node type may be used to represent multiple data points that have the relationship that they are always sampled in an &ldquo;atomic&rdquo; operation,
-i. e. the set of samples have the same timestamp.
-An example of such a set of data points are the GPS dta points latitude, longitude, height.</p>
-<p>This node type is only allowed in trees of the information type <code>typedefinition</code>.
-For more information, please see respective parts of this document.</p>
-<p>Nodes of the type <code>struct</code> must have the following mandatory metadata:</p>
+<p>The node type <code>typedef</code> is used to define node metadata that can be referenced from nodes declared in trees of other information types.
+This enables one definition to be shared between multiple nodes in other trees.</p>
+<p>Nodes of the type <code>typedef</code> must have the following mandatory metadata:</p>
 <ul>
 <li>Name</li>
 <li>Type</li>
+<li>Datatype</li>
 <li>Description</li>
 </ul>
 <p>For more information, see the <a href="/hierarchical_information_model/common_rule_set/basics#mandatory-metadata">Common Rule Set: Mandatory Metadata</a>.</p>
-<p>Besides the mandatory metadata mentioned above, the following optional metadata may be used</p>
+<p>Besides the mandatory metadata mentioned above, the following optional metadata may be used:</p>
 <ul>
+<li>Unit</li>
+<li>Min</li>
+<li>Max</li>
+<li>Default</li>
+<li>Allowed/Enum</li>
 <li>Comment</li>
 </ul>
 <p>For more information, please see the <a href="/hierarchical_information_model/common_rule_set/basics#optional-metadata">Common Rule Set: Optional Metadata</a>.</p>
+<h2 id="typedef-usage-rule-set">Typedef usage rule set</h2>
+<p>The following rules define how typedef nodes shall be used.</p>
 <ul>
-<li>A leaf node cannot have the <code>struct</code> node type.</li>
-<li>A parent must be of the node type <code>branch</code>.</li>
-<li>Children must be of the node type <code>property</code>.</li>
-<li>It must have at least one child.</li>
+<li>The effective set of metadata of a node that refers to a typedef is:
+<ul>
+<li>Name: Referring node</li>
+<li>Type: Referring node</li>
+<li>Datatype: Referred node</li>
+<li>Description: Referring node</li>
+<li>Any other metadata: If exists in Referring node then Referring node else Referred node.</li>
 </ul>
-<p>An example of the specification of a <code>struct</code> node is given below.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-YAML" data-lang="YAML"><span style="display:flex;"><span><span style="color:#f92672">NodeName</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">struct</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">This is a struct node containing its mandatory metadata.</span>
-</span></span></code></pre></div>
+</li>
+<li>VSS-tools exporters shall in the exported format synthesize a node containing the effective set of metadata as defined in the typedef rule set.</li>
+</ul>
+<h2 id="example-using-typedef">Example using typedef</h2>
+<p>In the example a vspec file describing a tree of the VehicleData information type contains a node that refers to a typedef node containing an enum definition.
+The node in the referring tree:</p>
+<pre tabindex="0"><code>Vehicle.X.Y:
+  type: sensor
+  datatype: Types.Enum.Example
+  description: A sensor node in the Vehicle tree.
+</code></pre><p>The node in the reffered (ypedef) tree:</p>
+<pre tabindex="0"><code>Types.Enum.Example:
+  description: Enum example type definition.
+  type: typedef
+  datatype: uint8
+  enum:
+    A: 0
+    B: 1
+    C: 2
+    D: 3
+</code></pre><p>The resulting node after exporting the vspec declarations to YAML:</p>
+<pre tabindex="0"><code>Vehicle.X.Y:
+  type: sensor
+  datatype: uint8
+  enum:
+    A: 0
+    B: 1
+    C: 2
+    D: 3
+  description: A sensor node in the Vehicle tree.
+</code></pre>
 
 <footer class="footline">
 	
@@ -1823,7 +1862,6 @@ For more information, please see respective parts of this document.</p>
             
                 
                     
-                    
                 
                 
 
@@ -1840,8 +1878,6 @@ For more information, please see respective parts of this document.</p>
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -1861,6 +1897,9 @@ For more information, please see respective parts of this document.</p>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1948,10 +1987,10 @@ For more information, please see respective parts of this document.</p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/hierarchical_information_model/type_definition_rule_set/property/" title="Property node"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/hierarchical_information_model/type_definition_rule_set/struct/" title="Struct node"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/hierarchical_information_model/type_definition_rule_set/typedef/" title="Typedef node" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/hierarchical_information_model/configuration_rule_set/" title="HIM Configuration Rule Set" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
