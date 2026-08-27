@@ -51,7 +51,7 @@ HIM:
   description: Contains the set of trees that are managed as one virtual domain.
 
 
-VehicleData:
+HIM.Vehicle:
   type: direct
   domain: Vehicle.Car.VehicleData
   version: X.Y.Z
@@ -59,7 +59,7 @@ VehicleData:
   public: https://himrepo.oem.com?instance=Vehicle.Car.VehicleData.X.Y.Z
   description:  ….
 
-VehicleServices:
+HIM.VehicleServices:
   type: direct
   domain: Vehicle.Car.Service
   version: X.Y.Z
@@ -67,7 +67,7 @@ VehicleServices:
   public: https://himrepo.oem.com?instance=Vehicle.Car.Service.X.Y.Z
   description:  ….
 
-Types:
+HIM.Types:
   type: direct
   domain: Vehicle.Car.TypeDefinition
   version: X.Y.Z
