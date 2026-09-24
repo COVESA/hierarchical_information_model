@@ -12,21 +12,21 @@
     <title>Hierarchical Information Model :: Hierarchical Information Model</title>
 
     
-    <link href="/hierarchical_information_model/css/nucleus.css?1787819159" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1787819159" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hybrid.css?1787819159" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/featherlight.min.css?1787819159" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1787819159" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/auto-complete.css?1787819159" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1787819159" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/theme.css?1787819159" rel="stylesheet">
-    <link href="/hierarchical_information_model/css/hugo-theme.css?1787819159" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/nucleus.css?1790249367" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/fontawesome-all.min.css?1790249367" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hybrid.css?1790249367" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/featherlight.min.css?1790249367" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/perfect-scrollbar.min.css?1790249367" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/auto-complete.css?1790249367" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/atom-one-dark-reasonable.css?1790249367" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme.css?1790249367" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/hugo-theme.css?1790249367" rel="stylesheet">
     
-    <link href="/hierarchical_information_model/css/theme-blue.css?1787819159" rel="stylesheet">
+    <link href="/hierarchical_information_model/css/theme-blue.css?1790249367" rel="stylesheet">
     
     
 
-    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1787819159"></script>
+    <script src="/hierarchical_information_model/js/jquery-3.3.1.min.js?1790249367"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1787819159"></script>
-<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1787819159"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/lunr.min.js?1790249367"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/auto-complete.js?1790249367"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/covesa.github.io\/hierarchical_information_model\/";
     
 </script>
-<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1787819159"></script>
+<script type="text/javascript" src="/hierarchical_information_model/js/search.js?1790249367"></script>
 
     
   </div>
@@ -1192,28 +1192,34 @@ One example of such a project is the <a href="https://github.com/COVESA/vehicle_
 <h2 id="him-common-rule-set">HIM Common Rule Set</h2>
 <p><a href="/hierarchical_information_model/common_rule_set/">Rules</a> that are commonly used in the other rule sets.</p>
 <h2 id="him-profiles">HIM profiles</h2>
-<p>The abstraction level of a model describing &lsquo;data&rsquo; is different from the abstraction level of a model describing &lsquo;services&rsquo;.
+<p>The abstraction level of a model describing &lsquo;vehicledata&rsquo; (or &lsquo;data&rsquo;) is different from the abstraction level of a model describing &lsquo;services&rsquo;.
 This is reflected in the different HIM rule sets.
-The API exposed by a server supporting access to &lsquo;data&rsquo; or &lsquo;services&rsquo; will also differ due to the abstraction level differencies.
-To support use case scenarios where only one of these two models are used HIM defines two profiles:</p>
+The API exposed by a server supporting access to &lsquo;vehicledata&rsquo;/&lsquo;data&rsquo; or &lsquo;services&rsquo; will also differ due to the abstraction level differencies.
+To support use case scenarios for the different abstraction levels HIM defines the following profiles:</p>
 <ul>
+<li>HIM VehicleData Profile</li>
 <li>HIM Data Profile</li>
 <li>HIM Service Profile</li>
 </ul>
 <p>The profiles are described below.
-HIM does not restrict use case scenarios / server implementations to support only one of the profiles.
-supporting both in parallel is a valid option.</p>
+HIM does not restrict use case scenarios / server implementations to support only one of the profiles,
+supporting multiple profiles in parallel is a valid option.</p>
+<h3 id="him-vehicledata-profile">HIM VehicleData Profile</h3>
+<p>The HIM vehicle data profile excludes use of taxonomies that represent the Service information type.
+This profile is for example compatible with the <a href="https://github.com/COVESA/vehicle_signal_specification">VSS</a> taxonomy that represents vehicle data.</p>
 <h3 id="him-data-profile">HIM Data Profile</h3>
 <p>The HIM data profile excludes use of taxonomies that represent the Service information type.
-This profile is for example compatible with the <a href="https://github.com/COVESA/vehicle_signal_specification">VSS</a> taxonomy that represents vehicle data.
-A taxonomy representing &lsquo;user data&rsquo;, e. g. data of the driver of  vehicle, could use the HIM Data information type.</p>
+The difference to the vehicle data profile is that the node types &lsquo;attribute&rsquo; and &lsquo;sensor&rsquo; are renamed to &lsquo;ro&rsquo; read-only)
+and the &lsquo;actuator&rsquo; node type is renamed to &lsquo;rw&rsquo; (read-write).
+For domains that are not technically oriented the terminology read-only/read-write is more natural than the attribute/sensor/actuator names.
+A taxonomy representing &lsquo;user data&rsquo;, e. g. data of the driver of a vehicle, could use the HIM Data information type.</p>
 <h3 id="him-service-profile">HIM Service Profile</h3>
 <p>The HIM Service profile excludes use of trees that contain the Vehicle data or Data information types.
 This profile can for example be used in &ldquo;pure&rdquo; SOA architectures.</p>
 <h2 id="him-enablers">HIM enablers</h2>
-<p>The common syntax model that is used in both profiles makes it feasible to develop a server that can expose APIs
+<p>The common syntax model that is used in all profiles makes it feasible to develop a server that can expose APIs
 for access to both data and services.</p>
-<p>HIM makes it possible to abstract both &lsquo;data&rsquo; and &lsquo;service&rsquo; information as data in an API.
+<p>HIM makes it possible to abstract both &lsquo;vehicledata&rsquo;/&lsquo;data&rsquo; and &lsquo;service&rsquo; information as data in an API.
 This eliminates the need to update the API when updating the respective taxonomies as the information is carried in the API payloads
 and do not require any updates of the static parts of the API.</p>
 <p>This is also the case if entire new taxonomies (domains) is introduced as the HIM model supports scenarios with multiple taxonomies.
@@ -1939,19 +1945,19 @@ This may explain why examples in this documentation are often taken from that do
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/hierarchical_information_model/js/clipboard.min.js?1787819159"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1787819159"></script>
-    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1787819159"></script>
-    <script src="/hierarchical_information_model/js/jquery.sticky.js?1787819159"></script>
-    <script src="/hierarchical_information_model/js/featherlight.min.js?1787819159"></script>
-    <script src="/hierarchical_information_model/js/highlight.pack.js?1787819159"></script>
+    <script src="/hierarchical_information_model/js/clipboard.min.js?1790249367"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.min.js?1790249367"></script>
+    <script src="/hierarchical_information_model/js/perfect-scrollbar.jquery.min.js?1790249367"></script>
+    <script src="/hierarchical_information_model/js/jquery.sticky.js?1790249367"></script>
+    <script src="/hierarchical_information_model/js/featherlight.min.js?1790249367"></script>
+    <script src="/hierarchical_information_model/js/highlight.pack.js?1790249367"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1787819159"></script>
-    <script src="/hierarchical_information_model/js/learn.js?1787819159"></script>
-    <script src="/hierarchical_information_model/js/hugo-learn.js?1787819159"></script>
+    <script src="/hierarchical_information_model/js/modernizr.custom-3.6.0.js?1790249367"></script>
+    <script src="/hierarchical_information_model/js/learn.js?1790249367"></script>
+    <script src="/hierarchical_information_model/js/hugo-learn.js?1790249367"></script>
     
         
-            <script src="/hierarchical_information_model/mermaid/mermaid.js?1787819159"></script>
+            <script src="/hierarchical_information_model/mermaid/mermaid.js?1790249367"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
