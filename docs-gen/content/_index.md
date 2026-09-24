@@ -51,31 +51,38 @@ The documentation is structured in the different rule sets shortly described bel
 [Rules](/hierarchical_information_model/common_rule_set/) that are commonly used in the other rule sets.
 
 ## HIM profiles
-The abstraction level of a model describing 'data' is different from the abstraction level of a model describing 'services'.
+The abstraction level of a model describing 'vehicledata' (or 'data') is different from the abstraction level of a model describing 'services'.
 This is reflected in the different HIM rule sets.
-The API exposed by a server supporting access to 'data' or 'services' will also differ due to the abstraction level differencies.
-To support use case scenarios where only one of these two models are used HIM defines two profiles:
+The API exposed by a server supporting access to 'vehicledata'/'data' or 'services' will also differ due to the abstraction level differencies.
+To support use case scenarios for the different abstraction levels HIM defines the following profiles:
+* HIM VehicleData Profile
 * HIM Data Profile
 * HIM Service Profile
 
 The profiles are described below.
-HIM does not restrict use case scenarios / server implementations to support only one of the profiles.
-supporting both in parallel is a valid option.
+HIM does not restrict use case scenarios / server implementations to support only one of the profiles,
+supporting multiple profiles in parallel is a valid option.
+
+### HIM VehicleData Profile
+The HIM vehicle data profile excludes use of taxonomies that represent the Service information type.
+This profile is for example compatible with the [VSS](https://github.com/COVESA/vehicle_signal_specification) taxonomy that represents vehicle data.
 
 ### HIM Data Profile
 The HIM data profile excludes use of taxonomies that represent the Service information type.
-This profile is for example compatible with the [VSS](https://github.com/COVESA/vehicle_signal_specification) taxonomy that represents vehicle data.
-A taxonomy representing 'user data', e. g. data of the driver of  vehicle, could use the HIM Data information type.
+The difference to the vehicle data profile is that the node types 'attribute' and 'sensor' are renamed to 'ro' read-only)
+and the 'actuator' node type is renamed to 'rw' (read-write).
+For domains that are not technically oriented the terminology read-only/read-write is more natural than the attribute/sensor/actuator names.
+A taxonomy representing 'user data', e. g. data of the driver of a vehicle, could use the HIM Data information type.
 
 ### HIM Service Profile
 The HIM Service profile excludes use of trees that contain the Vehicle data or Data information types.
 This profile can for example be used in "pure" SOA architectures.
 
 ## HIM enablers
-The common syntax model that is used in both profiles makes it feasible to develop a server that can expose APIs
+The common syntax model that is used in all profiles makes it feasible to develop a server that can expose APIs
 for access to both data and services.
 
-HIM makes it possible to abstract both 'data' and 'service' information as data in an API.
+HIM makes it possible to abstract both 'vehicledata'/'data' and 'service' information as data in an API.
 This eliminates the need to update the API when updating the respective taxonomies as the information is carried in the API payloads
 and do not require any updates of the static parts of the API.
 
