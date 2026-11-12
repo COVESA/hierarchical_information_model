@@ -61,6 +61,16 @@ Vspec YAML extensions The vspec format is based on YAML that is extended with tw
     </item>
     
     <item>
+      <title>Tree Identification</title>
+      <link>https://covesa.github.io/hierarchical_information_model/common_rule_set/tree_identification/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/common_rule_set/tree_identification/</guid>
+      <description>Tree Identification As defined in Configuration Overview a HIM tree is identified by the ‘domain’ and ‘version’ properties. The tree that is identified by this shall contain the same information. This can be achieved in two ways.
+For legacy tree compatibility reasons the identity information may be present in a legacy format. It must be possible from the legacy identity information to derive both a unique domain specifier and version data.</description>
+    </item>
+    
+    <item>
       <title>Type Definition Model</title>
       <link>https://covesa.github.io/hierarchical_information_model/type_definition_rule_set/basics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

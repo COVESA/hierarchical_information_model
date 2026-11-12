@@ -17,5 +17,15 @@
 A HIM taxonomy may contain subtrees that are identical copies of each other, for example descriptions of doors in a vehicle. In order not to have to repeat the content of the subtree multiple times, the subtree can be defined in a separate file, which can then be included into the main tree by the directive</description>
     </item>
     
+    <item>
+      <title>Tree Identification</title>
+      <link>https://covesa.github.io/hierarchical_information_model/common_rule_set/tree_identification/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/common_rule_set/tree_identification/</guid>
+      <description>Tree Identification As defined in Configuration Overview a HIM tree is identified by the ‘domain’ and ‘version’ properties. The tree that is identified by this shall contain the same information. This can be achieved in two ways.
+For legacy tree compatibility reasons the identity information may be present in a legacy format. It must be possible from the legacy identity information to derive both a unique domain specifier and version data.</description>
+    </item>
+    
   </channel>
 </rss>
