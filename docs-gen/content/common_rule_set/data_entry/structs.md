@@ -57,7 +57,7 @@ It is however expected that they are read and written by atomic operations.
 This means that the data storage shall be "locked" while the items of the struct are read, preventing changes to happen while reading/writing the items.
 
 Structs shall be defined in a separate tree. This means that signal definitions and types cannot exist in the same files.
-IS THE ABOVE CORRECT? STRUCTS CANNOT ALTERNATVELY BE DEFINED AS A CHILD SUBTREE? 
+IS THE ABOVE CORRECT? STRUCTS CANNOT ALTERNATVELY BE DEFINED AS A CHILD SUBTREE?
 
 ## Naming Restrictions
 
@@ -236,4 +236,3 @@ Members of a struct may have a default value defined.
 ## Allowed Values
 
 A member of a struct may use the metadata `allowed` to restrict its allowed values (if `allowed` is supported for the used datatype).
-

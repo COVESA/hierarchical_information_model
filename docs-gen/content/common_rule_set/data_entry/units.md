@@ -14,7 +14,7 @@ Vehicle.Speed:
   unit: km/h
   description: Vehicle speed.
 ```
-Data that has an associated unit from the list shall declare it using the `unit` metadata. 
+Data that has an associated unit from the list shall declare it using the `unit` metadata.
 It is allowed for a domain to specify an additional list with domain specific units that complement the common units list.
 Units shall if possible be based on [SI-units](https://www.iso.org/standard/30669.html), but exceptions like the speed example above are acceptable.
 The list contains entries of a unit with a prefix, e. g. `mm` for millimeter, which are the only prefixes that are valid.

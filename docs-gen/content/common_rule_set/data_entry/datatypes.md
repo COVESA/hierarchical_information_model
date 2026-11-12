@@ -5,8 +5,8 @@ weight: 10
 ---
 
 HIM supports the datatype concepts:
-- primitive datatypes, 
-- composite datatypes, 
+- primitive datatypes,
+- composite datatypes,
 - arrays.
 
 This chapter also mentions the related concepts of [Timestamps](#timestamps), and [Data streams](#data-streams).
