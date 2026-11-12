@@ -44,7 +44,7 @@ Any Input/Output nodes, and their associated children, are only present if the p
 If a service manages multiple instances of a resource then each of these resource interfaces needs to be separately represented in the
 tree in order for input and output data to be concurrently available. This can be realized by applying the 'instances' directive in the
 procedure node vspec declaration. The Input and Output node declarations of the procedure will then become instantiated in the same
-manner as when the directive is used for the vehicledata information type, see the figure below where an instance
+manner as when the directive is used for the VehicleData information type, see the figure below where an instance
 directive 'instances: Resource[1, N]' is used as example.
 
 ![HIM microservice tree structure](/hierarchical_information_model/images/multiplexed_microservice_tree_structure.jpg?width=50pc)

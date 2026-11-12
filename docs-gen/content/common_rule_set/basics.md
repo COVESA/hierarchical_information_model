@@ -64,23 +64,15 @@ where a is the name of the root node, b is a child of a, and the node in focus i
 The node types described here are used by more than one information type,
 while the node types specific to a single information type are found in respective parts of this document.
 - [Branch](/hierarchical_information_model/common_rule_set/node_types/branch)
-- [Struct](#struct-node-type)
 - [Property](/hierarchical_information_model/common_rule_set/node_types/property)
 
-#### Struct node type
-
-The 'struct' node type is used to define a structure data type that groups a number of fields.
-An example is shown below.
-```YAML
-NodeName:
-  type: struct
-  description: This is a struct node containing its mandatory metadata.
-```
-This node type must have at least one child of node type property, and must not have children of any other node type.
+The 'struct' node type is used only in trees of the information type TypeDef,
+see [Struct](/hierarchical_information_model/type_definition_rule_set/struct).
 
 #### Property Node Type
 
-The 'property' node type is used to define the fields of a struct.
+The 'property' node type is used to define the fields of a struct in trees of the information type TypeDef,
+and the input and output parameters of a microservice in trees of the information type Service.
 An example is shown below.
 ```YAML
 NodeName:
@@ -90,7 +82,7 @@ NodeName:
 ```
 The 'datatype' metadata is mandatory for a property node. It may also have optional metadata such as unit, min, max, and allowed.
 
-A property node can only have a struct node as its parent, and must not have any children.
+A property node can only have a `struct` node (in TypeDef trees) or an `iostruct` node (in Service trees) as its parent, and must not have any children.
 
 ### Description
 
@@ -103,18 +95,24 @@ Different information types may then specify further optional metadata that may 
 2. Min
 3. Max
 4. Allowed
-5. Comment
-6. Instances
-7. Aggregate
-8. Deprecation
+5. Enum
+6. Comment
+7. Instances
+8. Aggregate
+9. Deprecation
+10. Arraysize
+11. Instantiate
 
 For more information on which information/node types this metadata can be used,
 please see the rule set documentation for these.
 
 For oversight a few general rules are shown here:
-- The entries 1 through 4 cannot be used in the `branch` node type.
-- The entries 6 and 7 can only be used in the `branch` node type.
-- None of the entries can be used in the `procedure` node type.
+- The entries 1 through 5 and 10 cannot be used in the `branch` node type.
+- The entries 7 and 8 can only be used in the `branch` node type, except that entry 7 (Instances) can also be used in the `procedure` node type.
+- Entry 11 (Instantiate) is used in child nodes of a node that has entry 7 (Instances) defined.
+- Entry 9 (Deprecation) can be used in all node types except the node types of the configuration file.
+- Of the entries, only 6, 7 and 9 can be used in the `procedure` node type,
+  together with its specific metadata NativeRate and TimeToLive, see [Procedure](/hierarchical_information_model/service_rule_set/procedure).
 
 ### Datatype
 See the [Datatypes chapter](/hierarchical_information_model/common_rule_set/data_entry/datatypes)
@@ -122,19 +120,26 @@ See the [Datatypes chapter](/hierarchical_information_model/common_rule_set/data
 ### Unit
 See the [Units chapter](/hierarchical_information_model/common_rule_set/data_entry/units)
 
-### Min/Max/Allowed
+### Min/Max/Allowed/Enum
 See the [Value restrictions chapter](/hierarchical_information_model/common_rule_set/data_entry/value_restrictions)
+
+### Arraysize
+See the [Arrays section](/hierarchical_information_model/common_rule_set/data_entry/datatypes#arrays).
 
 ### Comment
 
 A comment can be used to provide additional informal information on a branch. This could include background information on the rationale for the branch, references to related branches, standards and similar. Recommended to start with a capital letter and end with a dot (.).
 
 ### Instances
-See the [Instances chapter](/hierarchical_information_model/data_rule_set/vspec_extensions/instances).
-The `instances` metadata is only allowed in `branch` type nodes.
+See the [Instances chapter](/hierarchical_information_model/common_rule_set/vspec_extensions/instances).
+The `instances` metadata is only allowed in `branch` and `procedure` type nodes.
+
+### Instantiate
+See the [Instances chapter](/hierarchical_information_model/common_rule_set/vspec_extensions/instances).
+The `instantiate` metadata is used in child nodes of a node that has `instances` defined.
 
 ### Include
-See the [Include chapter](/hierarchical_information_model/data_rule_set/vspec_extensions/include).
+See the [Include chapter](/hierarchical_information_model/common_rule_set/vspec_extensions/include).
 The `include` metadata is only allowed in `branch` type nodes.
 
 ### Aggregate

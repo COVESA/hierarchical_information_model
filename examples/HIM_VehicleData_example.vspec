@@ -14,26 +14,31 @@ Vehicle.VehicleIdentification:
 Vehicle.VehicleIdentification.VIN:
   datatype: string
   type: attribute
+  default: WXYZ1234567890123
   description: 17-character Vehicle Identification Number (VIN) as defined by ISO 3779.
 
 Vehicle.VehicleIdentification.WMI:
   datatype: string
   type: attribute
+  default: WXY
   description: 3-character World Manufacturer Identification (WMI) as defined by ISO 3780.
 
 Vehicle.VehicleIdentification.Brand:
   datatype: string
   type: attribute
+  default: OEMX
   description: Vehicle brand or manufacturer.
 
 Vehicle.VehicleIdentification.Model:
   datatype: string
   type: attribute
+  default: ModelY
   description: Vehicle model.
 
 Vehicle.VehicleIdentification.Year:
   datatype: uint16
   type: attribute
+  default: 2026
   description: Model year of the vehicle.
 
 Vehicle.Identifier:

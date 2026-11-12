@@ -15,7 +15,12 @@ For more information, see the [Common Rule Set: Mandatory Metadata](/hierarchica
 
 Besides the mandatory metadata mentioned above, the following optional metadata may be used
 - Unit
+- Min
+- Max
+- Allowed
+- Enum
 - Comment
+- Deprecation
 
 For more information, please see the [Common Rule Set: Optional Metadata](/hierarchical_information_model/common_rule_set/basics#optional-metadata).
 
@@ -59,4 +64,5 @@ SeatPosCount:
   description: Number of seats across each row from the front to the rear
 ```
 
-Using default values for structs is not allowed!
+A default value cannot be specified for an attribute that has a struct as its datatype.
+Default values of the members of a struct are instead defined in the struct definition, see [Structs](/hierarchical_information_model/common_rule_set/data_entry/structs#default-values).

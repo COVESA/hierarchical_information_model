@@ -86,6 +86,7 @@ The `allowed` keyword can also be used for array datatypes. In that case, `allow
 DogBreeds:
   datatype: string[]
   type: attribute
+  default: ['AKITA', 'PUG']
   allowed: ['AKITA', 'BOXER', 'DACHSHUND', 'PAPILLON', 'PUG', 'VIZSLA']
   description: Brief list of dog breeds.
 ```

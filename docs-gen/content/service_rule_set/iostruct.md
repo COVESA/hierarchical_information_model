@@ -7,7 +7,7 @@ weight: 30
 An `iostruct` node type may be used to encapsulate multiple data points that have the relationship that they are all representing either
 Input parameters or Output parameters of the microservice that they are linked to.
 
-This node type is only allowed in trees of the information type `service`.
+This node type is only allowed in trees of the information type `Service`.
 For more information, please see respective parts of this document.
 
 An `iostruct` node must have one of the two names `Input` or `Output`.
@@ -21,6 +21,7 @@ For more information, see the [Common Rule Set: Mandatory Metadata](/hierarchica
 
 Besides the mandatory metadata mentioned above, the following optional metadata may be used
 - Comment
+- Deprecation
 
 For more information, please see the [Common Rule Set: Optional Metadata](/hierarchical_information_model/common_rule_set/basics#optional-metadata).
 

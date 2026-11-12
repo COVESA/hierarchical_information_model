@@ -5,12 +5,12 @@ weight: 15
 ---
 
 As mentioned in the chapter [Composite datatypes](/hierarchical_information_model/common_rule_set/data_entry/datatypes#composite-datatypes)
-a struct is defined using the node types 'struct' and 'property' in trees having the information type TypeDefinition, and it is referred to by using its path.
+a struct is defined using the node types 'struct' and 'property' in trees having the information type TypeDef, and it is referred to by using its path.
 
-The struct node type can also be used in trees having the information type Service, which is described in [HIM Services Rule Set](/hierarchical_information_model/service_rule_set/).
+The input and output parameters of a microservice in trees having the information type Service are grouped by the `iostruct` node type, which is described in the [HIM Service Rule Set](/hierarchical_information_model/service_rule_set/).
 
-A struct definition in a Typedefinition tree can contain a member that has a different struct as its datatype.
-This other struct must then be defined elsewhere in the Typedefinition tree and referred to by its path.
+A struct definition in a TypeDef tree can contain a member that has a different struct as its datatype.
+This other struct must then be defined elsewhere in the TypeDef tree and referred to by its path.
 
 ## Intended usage
 
@@ -223,11 +223,11 @@ OpenHours:
 ```
 
 
-## Inline Struct
+## Where Structs Can Be Defined
 
-The node type 'struct' must only be used in trees of the information types 'Typedefinition' and 'Service'.
+The node type 'struct' must only be used in trees of the information type 'TypeDef'.
 Trees of any other information type that contains nodes having a datatype that is a struct
-must refer to the struct definition in a 'Typedefinition' tree by use of the path to that struct.
+must refer to the struct definition in a 'TypeDef' tree by use of the path to that struct.
 
 ## Default Values
 

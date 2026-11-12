@@ -14,8 +14,10 @@ The server may also share this configuration file on request from clients, in or
 The HIM model is not restricted to client/server models.
 
 A file containing this configuration may have any name, but it is recommended that it contains version or date-time information.
-The file shall have the extension ".him", which indicates that it is a HIM configuration file.
+The file shall have the extension ".him" if it is in YAML format, which indicates that it is a HIM configuration file.
 Its format shall be YAML or any other text format that is compatible with YAML.
+If it is transformed to another format, a file extension of that format may be used,
+see [Specification format](/hierarchical_information_model/common_rule_set/basics#specification-format).
 
 The configuration tree root node shall have the name "HIM".
 

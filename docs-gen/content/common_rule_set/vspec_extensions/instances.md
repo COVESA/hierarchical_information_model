@@ -1,6 +1,9 @@
 ---
 title: "Instances"
 weight: 5
+aliases:
+  - /data_rule_set/vspec_extensions/instances/
+  - /vehicle_data_rule_set/vspec_extensions/instances/
 ---
 
 The data model resembles primarily the physical structure of the vehicle, so

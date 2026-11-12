@@ -20,8 +20,10 @@ Besides the mandatory metadata mentioned above, the following optional metadata 
 - Min
 - Max
 - Default
-- Allowed/Enum
+- Allowed
+- Enum
 - Comment
+- Deprecation
 
 For more information, please see the [Common Rule Set: Optional Metadata](/hierarchical_information_model/common_rule_set/basics#optional-metadata).
 

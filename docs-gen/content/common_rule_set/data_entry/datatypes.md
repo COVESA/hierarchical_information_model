@@ -35,8 +35,8 @@ string     | character string           | n/a  | n/a
 HIM also supports the 'struct' composite datatype that groups a list of data variables into one object.
 The data variables in the list may be of primitive or composite type.
 
-The recommended usage of structs is to have a separate tree with the information type 'TypeDefinition' in which the struct is defined.
-The node that wants to declare this struct as datatype then uses the path to a node of type struct (node z in the example below) in the TypeDefinition tree as reference.
+The recommended usage of structs is to have a separate tree with the information type 'TypeDef' in which the struct is defined.
+The node that wants to declare this struct as datatype then uses the path to a node of type struct (node z in the example below) in the TypeDef tree as reference.
 ```YAML
 datatype: Types.x.y.z
 ```

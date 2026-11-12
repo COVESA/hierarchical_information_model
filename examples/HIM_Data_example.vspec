@@ -67,18 +67,18 @@ Occupant.Identifier.Version:
 
 Occupant.Identifier.Version.Major:
   datatype: uint32
-  type: attribute
+  type: ro
   default: 4
   description: Major version.
 
 Occupant.Identifier.Version.Minor:
   datatype: uint32
-  type: attribute
+  type: ro
   default: 1
   description: Minor version.
 
 Occupant.Identifier.Version.Patch:
   datatype: uint32
-  type: attribute
+  type: ro
   default: 0
   description: Patch version.
