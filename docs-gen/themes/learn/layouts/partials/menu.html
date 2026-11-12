@@ -14,7 +14,7 @@
     <section id="homelinks">
       <ul>
         <li>
-            <a class="padding" href='{{ (cond (and (ne .Site.Params.landingPageURL nil) (hugo.IsMultilingual)) .Site.Params.landingPageURL "/") }}'>{{ safeHTML (cond (ne .Site.Params.landingPageName nil) .Site.Params.landingPageName "<i class='fas fa-home'></i> Home") }}</a>
+            <a class="padding" href='{{ (cond (and (ne .Site.Params.landingPageURL nil) (gt (len .Site.Languages) 1)) .Site.Params.landingPageURL "/") }}'>{{ safeHTML (cond (ne .Site.Params.landingPageName nil) .Site.Params.landingPageName "<i class='fas fa-home'></i> Home") }}</a>
         </li>
       </ul>
     </section>
@@ -48,11 +48,11 @@
       </section>
     {{end}}
 
-    {{ if or hugo.IsMultilingual $showvisitedlinks }}
+    {{ if or (gt (len .Site.Languages) 1) $showvisitedlinks }}
     <section id="prefooter">
       <hr/>
       <ul>
-      {{ if and hugo.IsMultilingual (not .Site.Params.DisableLanguageSwitchingButton)}}
+      {{ if and (gt (len .Site.Languages) 1) (not .Site.Params.DisableLanguageSwitchingButton)}}
         <li>
           <a class="padding">
             <i class="fas fa-language fa-fw"></i>
