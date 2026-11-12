@@ -1,6 +1,6 @@
 ---
 title: HIM Type Definition Rule Set
-weight: 40
+weight: 50
 chapter: true
 ---
 

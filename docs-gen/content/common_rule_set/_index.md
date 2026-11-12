@@ -1,6 +1,6 @@
 ---
 title: HIM Common Rule Set
-weight: 60
+weight: 10
 chapter: true
 ---
 

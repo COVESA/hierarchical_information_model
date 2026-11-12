@@ -1,6 +1,6 @@
 ---
 title: HIM Data Rule Set
-weight: 20
+weight: 30
 chapter: true
 ---
 

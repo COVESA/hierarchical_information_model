@@ -1,6 +1,6 @@
 ---
 title: HIM Configuration Rule Set
-weight: 50
+weight: 60
 chapter: true
 ---
 

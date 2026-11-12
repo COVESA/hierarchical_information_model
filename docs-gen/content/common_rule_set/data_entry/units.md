@@ -89,4 +89,3 @@ rpm           | Rotational Speed                | Rotational speed measured in r
 Hz            | Frequency                       | Frequency measured in hertz
 ratio         | Relation                        | Relation measured as ratio
 percent       | Relation                        | Relation measured in percent
-... | ... | ...
