@@ -73,25 +73,3 @@ then the value shall be set to CANCELED.
 
 If there is a need for microservice specific error codes then these should be defined as another output parameter.
 A microservice may include in other output parameters that carry information about its execution state.
-
-## Service group common properties
-A service group may have common configuration data, here referred to as properties.
-This could for example be the seating locations, i. e. the location names for the seats in the vehicle.
-Another example is the axle/wheel configuration of the vehicle, information about the number of axles and the number of wheels on each.
-If a service group shares common property data then the service group branch shall have a `branch` type child node with the name Properties.
-This node shall then have children nodes of `attribute` type with default values representing the configuration data.
-
-An example of a Properties node and its SeatingLayout child is given below.
-```YAML
-Properties:
-  type: branch
-  description: This is an example of a service group Properties node.
-```
-
-```YAML
-SeatingLayout:
-  type: attribute
-  datatype: string[]
-  default: [{'Row1': ['Left', 'Right']}, {'Row2': ['Left', 'Middle', 'Right']}]
-  description: This is an example of the configuration of a seating layout.
-```
