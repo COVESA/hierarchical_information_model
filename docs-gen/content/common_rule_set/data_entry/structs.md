@@ -56,8 +56,7 @@ HIM makes no assumption on how structs are transferred or stored by implementati
 It is however expected that they are read and written by atomic operations.
 This means that the data storage shall be "locked" while the items of the struct are read, preventing changes to happen while reading/writing the items.
 
-Structs shall be defined in a separate tree. This means that signal definitions and types cannot exist in the same files.
-IS THE ABOVE CORRECT? STRUCTS CANNOT ALTERNATVELY BE DEFINED AS A CHILD SUBTREE?
+Structs shall be defined in a separate tree. This means that signal definitions and type definitions cannot exist in the same tree.
 
 ## Naming Restrictions
 
