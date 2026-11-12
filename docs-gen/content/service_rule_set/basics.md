@@ -92,6 +92,6 @@ Properties:
 SeatingLayout:
   type: attribute
   datatype: string[]
-  default: [{'Row1': {'Left', 'Right'}}, {'Row2': {'Left', 'Middle', 'Right'}}]
+  default: [{'Row1': ['Left', 'Right']}, {'Row2': ['Left', 'Middle', 'Right']}]
   description: This is an example of the configuration of a seating layout.
 ```
