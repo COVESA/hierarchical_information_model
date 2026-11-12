@@ -20,7 +20,7 @@ Nodes of the type `symlink` must have the following mandatory metadata:
 
 The Path must be a valid path to a leaf node in the tree declared by the Domain and Version metadata.
 
-The Domain must declare an existing HIM tree of information type Data.
+The Domain must declare an existing HIM tree of information type Data or VehicleData.
 
 The Version must be a dot delimited triplet declaring a version of the tree declared by the Domain.
 The triplet may have a suffix of either "+" or "-", denoting that also any following or previous versions are also valid.
