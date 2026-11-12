@@ -1,6 +1,6 @@
 ---
 title: "Symlink node"
-weight: 30
+weight: 60
 ---
 
 Data represented by the node type `symlink` have a relationship to any other data having the same `iostruct` parent in that they are all representing either

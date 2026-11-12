@@ -1,7 +1,7 @@
 ---
 title: "Property node"
 date: 2019-08-04T12:37:03+02:00
-weight: 30
+weight: 40
 ---
 
 The node type `property` is used to represent members of a struct.

@@ -1,6 +1,6 @@
 ---
 title: vspec extensions
-weight: 20
+weight: 5
 chapter: true
 aliases:
   - /data_rule_set/vspec_extensions/

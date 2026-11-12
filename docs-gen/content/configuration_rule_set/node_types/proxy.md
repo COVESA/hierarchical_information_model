@@ -1,6 +1,6 @@
 ---
 title: "Proxy node"
-weight: 30
+weight: 40
 ---
 
 A `proxy` node in a HIM configuration file defines a tree that the server managing this forest does not have a local copy of.

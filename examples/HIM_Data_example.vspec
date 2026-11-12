@@ -19,13 +19,15 @@ Occupant.Identity.Name:
   description: First name, nick name, or whatever the Occupant wants to display.
 
 Occupant.Identity.Length:
-  datatype: string
+  datatype: float
   type: ro
+  unit: cm
   description: To enable approx. seating adjustment.
 
 Occupant.Identity.Weight:
-  datatype: string
+  datatype: float
   type: ro
+  unit: kg
   description: To enable safety belt adjustment.
 
 Occupant.Settings:

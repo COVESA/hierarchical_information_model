@@ -1,6 +1,6 @@
 ---
 title: HIM Vehicle Data Rule Set
-weight: 20
+weight: 10
 chapter: true
 ---
 

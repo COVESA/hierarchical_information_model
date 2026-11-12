@@ -1,6 +1,6 @@
 ---
 title: "Property node"
-weight: 30
+weight: 40
 ---
 
 The `property` node type is used in both the `Service` and `TypeDef` rule sets,

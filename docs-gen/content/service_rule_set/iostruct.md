@@ -1,7 +1,7 @@
 ---
 title: "IO-struct node"
 date: 2019-08-04T12:37:03+02:00
-weight: 30
+weight: 40
 ---
 
 An `iostruct` node type may be used to encapsulate multiple data points that have the relationship that they are all representing either

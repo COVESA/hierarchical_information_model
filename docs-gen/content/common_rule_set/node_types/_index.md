@@ -1,6 +1,6 @@
 ---
 title: Common Node types
-weight: 20
+weight: 3
 chapter: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Typedef node"
 date: 2019-08-04T12:37:03+02:00
-weight: 30
+weight: 50
 ---
 
 The node type `typedef` is used to define node metadata that can be referenced from nodes declared in trees of other information types.

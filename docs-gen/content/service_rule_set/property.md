@@ -1,7 +1,7 @@
 ---
 title: "Property node"
 date: 2019-08-04T12:37:03+02:00
-weight: 30
+weight: 50
 ---
 
 Data represented by the node type `property` have a relationship to any other data having the same `iostruct` parent in that they are all sampled in an "atomic" operation,

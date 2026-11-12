@@ -1,6 +1,6 @@
 ---
 title: HIM Service Rule Set
-weight: 20
+weight: 30
 chapter: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Read-write node"
-weight: 30
+weight: 40
 ---
 
 This node type shall be used for data that may be read or written. The HIM node type name is `rw`.
