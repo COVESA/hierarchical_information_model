@@ -83,23 +83,33 @@ Types.Common.Percentage:
   max: 100
   description: Percent definition.
 
-Types.Version:
+Types.Identifier:
+  type: branch
+  description: Typedef tree identification data.
+
+Types.Identifier.Domain:
+  datatype: string
+  type: ro
+  default: Vehicle.COVESA.TypeDef
+  description: Tree domain.
+
+Types.Identifier.Version:
   type: branch
   description: Supported Version.
 
-Types.Version.Major:
+Types.Identifier.Version.Major:
   datatype: uint32
   type: attribute
   default: 1
   description: Major version number.
 
-Types.Version.Minor:
+Types.Identifier.Version.Minor:
   datatype: uint32
   type: attribute
   default: 0
   description: Minor version number.
 
-Types.Version.Patch:
+Types.Identifier.Version.Patch:
   datatype: uint32
   type: attribute
   default: 0

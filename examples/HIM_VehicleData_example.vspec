@@ -3,29 +3,6 @@
 Vehicle:
   type: branch
   description: High-level vehicle data.
-
-Vehicle.Version:
-  type: branch
-  description: Supported Version.
-
-Vehicle.Version.Major:
-  datatype: uint32
-  type: attribute
-  default: 4
-  description: Supported Version - Major version.
-
-Vehicle.Version.Minor:
-  datatype: uint32
-  type: attribute
-  default: 1
-  description: Supported Version - Minor version.
-
-Vehicle.Version.Patch:
-  datatype: uint32
-  type: attribute
-  default: 0
-  description: Supported Version - Patch version.
-
 #
 # Vehicle identification attributes.
 #
@@ -58,3 +35,35 @@ Vehicle.VehicleIdentification.Year:
   datatype: uint16
   type: attribute
   description: Model year of the vehicle.
+
+Vehicle.Identifier:
+  type: branch
+  description: Occupant tree identification data.
+
+Vehicle.Identifier.Domain:
+  datatype: string
+  type: ro
+  default: Vehicle.COVESA.OEMX.ModelY.VehicleData
+  description: Tree domain.
+
+Vehicle.Identifier.Version:
+  type: branch
+  description: Supported Version.
+
+Vehicle.Identifier.Version.Major:
+  datatype: uint32
+  type: attribute
+  default: 4
+  description: Major version.
+
+Vehicle.Identifier.Version.Minor:
+  datatype: uint32
+  type: attribute
+  default: 1
+  description: Minor version.
+
+Vehicle.Identifier.Version.Patch:
+  datatype: uint32
+  type: attribute
+  default: 0
+  description: Patch version.

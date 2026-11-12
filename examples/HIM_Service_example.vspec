@@ -83,3 +83,35 @@ VehicleService.Seating.GetCapabilities.Version:
   datatype: string
   default: 1.0.0
   description: The GetCapabilities service version.
+
+VehicleService.Identifier:
+  type: branch
+  description: Service tree identification data.
+
+VehicleService.Identifier.Domain:
+  datatype: string
+  type: ro
+  default: Vehicle.COVESA.OEMX.ModelY.Service
+  description: Tree domain.
+
+VehicleService.Identifier.Version:
+  type: branch
+  description: Supported Version.
+
+VehicleService.Identifier.Version.Major:
+  datatype: uint32
+  type: attribute
+  default: 4
+  description: Major version.
+
+VehicleService.Identifier.Version.Minor:
+  datatype: uint32
+  type: attribute
+  default: 1
+  description: Minor version.
+
+VehicleService.Identifier.Version.Patch:
+  datatype: uint32
+  type: attribute
+  default: 0
+  description: Patch version.
