@@ -39,11 +39,11 @@ interpreted by the tools.
 ### How can I exclude child-nodes from instantiation?
 
 Often it makes sense to instantiate all child-nodes of a branch.
-But there are cases, when nodes are linked more the general concept of
+But there are cases, when nodes are linked more to the general concept of
 a branch, but not to the single instance. This could be the `DoorCount`,
 which would rather be `Door.Count`, `WheelDiameter`, which is rather linked
 to an axle rather than the wheel itself or `Brake.FluidLevel` which is not
-measured for a single break, but rather a system indication.
+measured for a single brake, but rather a system indication.
 
 To exclude a child-node from the instantiation of the *direct* parent node, set the
 keyword `instantiate` to `false` (`true` by default). Please check the following
@@ -139,7 +139,7 @@ It offers the possibility to control windshield heating separately for front and
 and it also gives the possibility to report washer fluid level separately for each windshield.
 This fits very well for a vehicle that has separate washer fluid containers for front and rear windshield
 and that offers heating for both windshields. But that is not the case for all vehicles,
-it is not even certain that all vehicles have two windshields. This sections gives recommendations on how
+it is not even certain that all vehicles have two windshields. This section gives recommendations on how
 to use it for a vehicle if the default specification does not offer an exact match of the capabilities of the vehicle.
 
 ```YAML

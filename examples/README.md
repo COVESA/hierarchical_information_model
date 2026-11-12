@@ -2,6 +2,7 @@
 
 This directory contains an example file of each of the information types that HIM currently defines:
 - Vehicle data: HIM_VehicleData_example.vspec
+- Data: HIM_Data_example.vspec
 - Service: HIM_Service_example.vspec
 - Type definition data: TypeDefinition_example.vspec
 

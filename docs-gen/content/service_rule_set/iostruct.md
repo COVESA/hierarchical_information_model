@@ -29,7 +29,7 @@ For more information, please see the [Common Rule Set: Optional Metadata](/hiera
 - Children must be of the node types `property` or `symlink`.
 - It must have at least one child.
 
-An example of the specification of a `struct` node is given below.
+An example of the specification of an `iostruct` node is given below.
 ```YAML
 Input:
   type: iostruct

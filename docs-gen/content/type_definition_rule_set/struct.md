@@ -6,7 +6,7 @@ weight: 30
 
 A `struct` node type may be used to represent multiple data points that have the relationship that they are always sampled in an "atomic" operation,
 i. e. the set of samples have the same timestamp.
-An example of such a set of data points are the GPS dta points latitude, longitude, height.
+An example of such a set of data points are the GPS data points latitude, longitude, height.
 
 This node type is only allowed in trees of the information type `typedefinition`.
 For more information, please see respective parts of this document.

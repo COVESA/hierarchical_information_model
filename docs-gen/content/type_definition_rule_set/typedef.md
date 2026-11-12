@@ -44,7 +44,7 @@ Vehicle.X.Y:
   datatype: Types.Enum.Example
   description: A sensor node in the Vehicle tree.
 ```
-The node in the reffered (ypedef) tree:
+The node in the referred (typedef) tree:
 ```
 Types.Enum.Example:
   description: Enum example type definition.

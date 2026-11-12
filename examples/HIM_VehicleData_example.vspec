@@ -38,11 +38,11 @@ Vehicle.VehicleIdentification.Year:
 
 Vehicle.Identifier:
   type: branch
-  description: Occupant tree identification data.
+  description: Vehicle tree identification data.
 
 Vehicle.Identifier.Domain:
   datatype: string
-  type: ro
+  type: attribute
   default: Vehicle.COVESA.OEMX.ModelY.VehicleData
   description: Tree domain.
 

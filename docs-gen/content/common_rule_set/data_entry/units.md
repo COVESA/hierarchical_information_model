@@ -43,7 +43,7 @@ cm            | Distance                        | Distance measured in centimete
 m             | Distance                        | Distance measured in meters
 km            | Distance                        | Distance measured in kilometers
 inch          | Distance                        | Distance measured in inches
-km/h          | Speed                           | Speed measured in kilometers per hours
+km/h          | Speed                           | Speed measured in kilometers per hour
 m/s           | Speed                           | Speed measured in meters per second
 m/s^2         | Acceleration                    | Acceleration measured in meters per second squared
 cm/s^2        | Acceleration                    | Acceleration measured in centimeters per second squared

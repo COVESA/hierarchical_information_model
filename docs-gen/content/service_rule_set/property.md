@@ -29,9 +29,11 @@ This node type must have a node of type `iostruct` as parent, and must not have 
 An example of the specification of a `property` node is given below.
 
 ```YAML
-Type.OpenHours.Open:
-  datatype: uint8
+VehicleService.Seating.MoveSeat.Input.Position:
+  datatype: float
   type: property
-  max: 24
-  description: Time the address opens
+  unit: percent
+  min: 0
+  max: 100
+  description: Final position of the movement, expressed as a percentage.
 ```

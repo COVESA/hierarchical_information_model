@@ -32,7 +32,7 @@ In this usage the node type must have a node of type `struct` as parent, and mus
 An example of the specification of a `property` node for a struct member is given below.
 
 ```YAML
-Type.OpenHours.Open:
+Types.OpenHours.Open:
   datatype: uint8
   type: property
   max: 24

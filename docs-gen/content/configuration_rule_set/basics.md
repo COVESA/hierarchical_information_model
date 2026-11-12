@@ -27,7 +27,7 @@ A HIM compliant server shall be able to read a HIM configuration file and from t
 A HIM compliant tree must follow the HIM rule set.
 The project specifying this tree must also define the `domain` metadata for this tree,
 and it may provide a `public` URL to a file containing the complete tree,
-possible also multiple `public` URLs to renditions of the tree in different formats such as YAML, JSON, etc.
+possibly also multiple `public` URLs to renditions of the tree in different formats such as YAML, JSON, etc.
 
 The creation of a HIM configuration file is the responsibility of the  "manager" of the HIM server.
 Usage of a HIM configuration file is optional, but it is recommended in scenarios where the server manages more than one tree.
@@ -43,7 +43,7 @@ The following node types can be used in a configuration tree:
 This example shows a forest consisting of three local trees:
 1. A local tree containing passenger car related signals, having the root node name VehicleData.
 2. A local tree containing passenger car related services, having the root node name VehicleServices.
-3. A local tree containing type passenger car related ype definitions, having the root node name Types.
+3. A local tree containing passenger car related type definitions, having the root node name Types.
 
 ```YAML
 HIM:
@@ -69,9 +69,9 @@ HIM.VehicleServices:
 
 HIM.Types:
   type: direct
-  domain: Vehicle.Car.TypeDefinition
+  domain: Vehicle.Car.TypeDef
   version: X.Y.Z
   local: file://<full-path-name>
-  public: https://himrepo.oem.com?instance=Vehicle.Car.TypeDefinition.X.Y.Z
+  public: https://himrepo.oem.com?instance=Vehicle.Car.TypeDef.X.Y.Z
   description:  ….
-  ```
+```

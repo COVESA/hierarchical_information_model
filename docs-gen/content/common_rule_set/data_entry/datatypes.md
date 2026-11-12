@@ -26,19 +26,19 @@ int32      | signed 32-bit integer      | -2147483648 | 2147483647
 uint64     | unsigned 64-bit integer    | 0    | 2^64 - 1
 int64      | signed 64-bit integer      | -2^63 | 2^63 - 1
 boolean    | boolean value              | 0/false | 1/true
-float      | floating point number      | -3.4e -38 | 3.4e 38
-double     | double precision floating point number | -1.7e -300 | 1.7e 300
+float      | floating point number      | -3.4e+38 | 3.4e+38
+double     | double precision floating point number | -1.7e+308 | 1.7e+308
 string     | character string           | n/a  | n/a
 
 ## Composite datatypes
 
 HIM also supports the 'struct' composite datatype that groups a list of data variables into one object.
-The data variables in the list may of be primitive or composite type.
+The data variables in the list may be of primitive or composite type.
 
 The recommended usage of structs is to have a separate tree with the information type 'TypeDefinition' in which the struct is defined.
-The node that want to declare this struct as datatype then use the path to a node of type struct (node z in the example below) in the TypeDefinition tree as reference.
+The node that wants to declare this struct as datatype then uses the path to a node of type struct (node z in the example below) in the TypeDefinition tree as reference.
 ```YAML
-datatype: TypeDefinition.x.y.z
+datatype: Types.x.y.z
 ```
 This pattern enables efficient reuse of the struct definition by multiple nodes.
 

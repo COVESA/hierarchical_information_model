@@ -34,13 +34,13 @@ The trailers can then be distinguished by having different root node names.
 
 ## Domain
 The `domain` metadata is what defines the domain and information type that the tree represents.
-A domain name dot delimited segment names:
+A domain name is made up of dot delimited segment names:
 - The first segment (the left-most) represents a "top domain".
   - Examples of top domains can be Automotive, RoadInfrastructure, Aviation.
 - Following segments, except the last, are sub domains.
   - Examples of sub domains can be Car, Truck, Trailer, ChargingStation.
-  - The number of sub domains is not fixed, but it is recomended to stay below five.
-  - Each additional sub domain should be a subset of the previos domain.
+  - The number of sub domains is not fixed, but it is recommended to stay below five.
+  - Each additional sub domain should be a subset of the previous domain.
 - The last segment (the right-most) represents the [information type](/hierarchical_information_model/).
 
 ## Version

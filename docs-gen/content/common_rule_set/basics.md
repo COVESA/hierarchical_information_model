@@ -17,12 +17,12 @@ The optional [prefix] specifies a branch name to be prepended to all node names 
 The include directive may be used in files that are themselves included.
 Please note that, from a YAML perspective, the include directive is just another comment.
 
-A tool is neeed to generate the expanded version of the tree that contains instances of the included subtree,
+A tool is needed to generate the expanded version of the tree that contains instances of the included subtree,
 such as the tools developed by the VSS community - [COVESA/VSS-Tools](https://github.com/COVESA/vss-tools).
 
 The files defining a HIM taxonomy may have the file extension '.him', but the project defining the domain taxonomy may define and use a file extension of their own choice.
 The format of the files may be transformed from YAML to another format like JSON, in which case it may use a file extension of that format.
-This also pplies to the file extension of the HIM configuration file.
+This also applies to the file extension of the HIM configuration file.
 
 HIM is in itself case sensitive.
 This means that keywords, signal names, types and values normally shall be given with the case specified.
@@ -49,7 +49,7 @@ NodeName:
   description: abc
 ```
 
-A node name is recommeded to be unique with the scope of the tree it is used in. The name shall follow the [Naming Conventions](#naming-conventions)
+A node name is recommended to be unique within the scope of the tree it is used in. The name shall follow the [Naming Conventions](#naming-conventions)
 
 The qualified node name, which must be unique within the scope of the tree, are defined left-to-right of the concatenation of the node names,
 starting from the root node of the tree and traversing the tree nodes to the node in focus, with a period (.) as delimiter between node names.
@@ -62,9 +62,9 @@ where a is the name of the root node, b is a child of a, and the node in focus i
 ### Node types
 
 The node types described here are used by more than one information type,
-while the node types specifi to a single information type are found in respective parts of this document.
+while the node types specific to a single information type are found in respective parts of this document.
 - [Branch](/hierarchical_information_model/common_rule_set/node_types/branch)
-- [Struct](/hierarchical_information_model/common_rule_set/node_types/struct)
+- [Struct](#struct-node-type)
 - [Property](/hierarchical_information_model/common_rule_set/node_types/property)
 
 #### Struct node type
@@ -143,8 +143,8 @@ If not defined, this defaults to ```false```.
 An aggregate is a collection of data nodes that make sense to handle together in a system.
 A typical example could be GNSS location, where latitude and longitude make sense to read
 and write together. This is supposed to be deployment specific,
-and for that reason it is recommendedd not to be defined in a standard HIM tree,
-but rather be added in a deployment preparation of he tree.
+and for that reason it is recommended not to be defined in a standard HIM tree,
+but rather be added in a deployment preparation of the tree.
 For branches that both have `instances` defined and `aggregate: true`, then aggregate refers to the signals for
 individual instances, i.e. signals for different instances can be handled separately.
 The `aggregate` metadata is only allowed in `branch` type nodes.

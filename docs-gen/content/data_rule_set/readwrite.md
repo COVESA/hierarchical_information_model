@@ -30,6 +30,6 @@ An example of the specification of a `rw` node is given below.
 LocalTemperature:
   type: rw
   datatype: float
-  unit: Celsius
+  unit: celsius
   description: The vehicle occupant-local temperature setting.
 ```

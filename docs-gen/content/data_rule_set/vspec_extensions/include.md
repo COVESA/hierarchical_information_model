@@ -29,7 +29,7 @@ own branch to attach the included file to.
 
 An example of an include directive is:
 
-    #include doors.vpsec chassis.doors
+    #include door.vspec chassis.doors
 
 The ```door.vspec``` section specifies the file to include.
 

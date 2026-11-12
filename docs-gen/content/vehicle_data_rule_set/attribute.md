@@ -4,7 +4,7 @@ date: 2019-08-04T12:37:31+02:00
 weight: 40
 ---
 
-Nodes of the types `attribute` must have the following mandatory metadata:
+Nodes of the type `attribute` must have the following mandatory metadata:
 - Name
 - Type
 - Datatype
@@ -49,7 +49,7 @@ Example 2: Array with 3 elements, first element has value 1, second element valu
   default: [1, 2, 0]
 ```
 
-Full example, array with two elements, first with value2, second with value 3:
+Full example, array with two elements, first with value 2, second with value 3:
 
 ```YAML
 SeatPosCount:

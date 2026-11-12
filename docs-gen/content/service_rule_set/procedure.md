@@ -17,7 +17,7 @@ Besides the mandatory metadata mentioned above, the following optional metadata 
 - TimeToLive
 
 The Instances directive can be used when a service manages multiple resources,
-see [Multplexed microservice tree structure](/hierarchical_information_model/service_rule_set/basics#multplexed-microservice-tree-structure).
+see [Multiplexed microservice tree structure](/hierarchical_information_model/service_rule_set/basics#multiplexed-microservice-tree-structure).
 Its definition follows the same rules as for its usage in branch type nodes as described [here](/hierarchical_information_model/data_rule_set/vspec_extensions/instances)
 with the extension that it can be used in procedure nodes.
 
