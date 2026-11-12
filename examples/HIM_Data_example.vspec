@@ -1,0 +1,84 @@
+# Example of a Occupant data tree.
+#
+Occupant:
+  type: branch
+  description: Root node for Occupant data.
+
+Occupant.Identity:
+  type: branch
+  description: Attributes that identify a Occupant.
+
+Occupant.Identity.OccupantId:
+  datatype: string
+  type: ro
+  description: Hash of PII data uniquely identifying Occupant.
+
+Occupant.Identity.Name:
+  datatype: string
+  type: ro
+  description: First name, nick name, or whatever the Occupant wants to display.
+
+Occupant.Identity.Length:
+  datatype: string
+  type: ro
+  description: To enable approx. seating adjustment.
+
+Occupant.Identity.Weight:
+  datatype: string
+  type: ro
+  description: To enable safety belt adjustment.
+
+Occupant.Settings:
+  type: branch
+  description: Current settings related to the Occupant.
+
+Occupant.Settings.SeatedAt:
+  datatype: string
+  type: rw
+  description: Seat position is represented by “x.y “where x and y are integers starting at “1.1” representing “front row.leftmost seat”.
+
+Occupant.Settings.LocalTemperature:
+  datatype: float
+  type: rw
+  description: Local temperature for the SeatedAt seat position.
+
+Occupant.Settings.Media:
+  type: branch
+  description: Current media settings related to the Occupant.
+
+Occupant.Settings.Media.RadioStation:
+  datatype: string
+  type: rw
+  description: Favorite radio station identity.
+
+Occupant.Identifier:
+  type: branch
+  description: Occupant tree identification data.
+
+Occupant.Identifier.Domain:
+  datatype: string
+  type: ro
+  default: Occupant.COVESA.OEMX.ModelY.VehicleData
+  description: Tree domain.
+
+Occupant.Identifier.Version:
+  type: branch
+  description: Supported Version.
+
+Occupant.Identifier.Version.Major:
+  datatype: uint32
+  type: attribute
+  default: 4
+  description: Major version.
+
+Occupant.Identifier.Version.Minor:
+  datatype: uint32
+  type: attribute
+  default: 1
+  description: Minor version.
+
+Occupant.Identifier.Version.Patch:
+  datatype: uint32
+  type: attribute
+  default: 0
+  description: Patch version.

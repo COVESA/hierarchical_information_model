@@ -21,8 +21,8 @@ HIM.VehicleServices:
 
 HIM.Types:
   type: direct
-  domain: Vehicle.Car.TypeDefinition
+  domain: Vehicle.Car.TypeDef
   version: X.Y.Z
   local: file://<full-path-name>
-  public: https://himrepo.oem.com?instance=Vehicle.Car.TypeDefinition.X.Y.Z
+  public: https://himrepo.oem.com?instance=Vehicle.Car.TypeDef.X.Y.Z
   description:  Type definition tree.

@@ -18,10 +18,10 @@ A domain can in the HIM context be defined with the help of two dimensions:
   - Examples are a car, a truck, a trailer, an airplane, etc.,
 - an 'information type' dimension that is used in the description of a coherent dimension using a specific information type.
   - The currently defined information types are listed below.
-    - Vehicle data
+    - VehicleData
     - Data
     - Service
-    - Type definitions
+    - TypeDef
 
 HIM specifies rule sets for the different information types that can then be used to define taxonomies for different coherent domains.
 A HIM taxonomy must conform to the rule set of one information type.
@@ -75,7 +75,7 @@ For domains that are not technically oriented the terminology read-only/read-wri
 A taxonomy representing 'user data', e. g. data of the driver of a vehicle, could use the HIM Data information type.
 
 ### HIM Service Profile
-The HIM Service profile excludes use of trees that contain the Vehicle data or Data information types.
+The HIM Service profile excludes use of trees that contain the VehicleData or Data information types.
 This profile can for example be used in "pure" SOA architectures.
 
 ## HIM enablers
