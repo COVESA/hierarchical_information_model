@@ -5,24 +5,24 @@ HIM:
 
 HIM.Vehicle:
   type: direct
-  domain: Vehicle.Car.VehicleData
+  domain: Vehicle.COVESA.OEMX.ModelY.VehicleData
   version: X.Y.Z
   local: file://<full-path-name>
-  public: https://himrepo.oem.com?instance=Vehicle.Car.VehicleData.X.Y.Z
+  public: https://himrepo.oem.com?instance=Vehicle.COVESA.OEMX.ModelY.VehicleData.X.Y.Z
   description:  Vehicle signal tree.
 
 HIM.VehicleServices:
   type: direct
-  domain: Vehicle.Car.Service
+  domain: Vehicle.COVESA.OEMX.ModelY.Service
   version: X.Y.Z
   local: file://<full-path-name>
-  public: https://himrepo.oem.com?instance=Vehicle.Car.Service.X.Y.Z
+  public: https://himrepo.oem.com?instance=Vehicle.COVESA.OEMX.ModelY.Service.X.Y.Z
   description:  Vehicle service tree.
 
 HIM.Types:
   type: direct
-  domain: Vehicle.Car.TypeDef
+  domain: Vehicle.COVESA.TypeDef
   version: X.Y.Z
   local: file://<full-path-name>
-  public: https://himrepo.oem.com?instance=Vehicle.Car.TypeDef.X.Y.Z
+  public: https://himrepo.oem.com?instance=Vehicle.COVESA.TypeDef.X.Y.Z
   description:  Type definition tree.
