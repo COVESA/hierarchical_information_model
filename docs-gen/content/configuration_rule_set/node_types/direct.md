@@ -25,12 +25,14 @@ For more information, please see the [Common Rule Set: Optional Metadata](/hiera
 This node type must have a node of type `branch` as parent, and must not have any children.
 
 ## Name
-The name of this node must be the same as that of the root node of the tree it is representing,
-and it must be unique in the forest described in this file.
-This makes it possible to change the root node name of a "standard" tree,
+The name of this node is the root node name that a client shall use when addressing the tree, i. e. the first segment of the paths of its nodes.
+It must be unique in the forest described in this file.
+It does not have to be the same as the name of the root node of the tree file that it represents.
+The server shall map the name of this node to the tree that it manages, and translate paths accordingly.
+This makes it possible to use a different root node name than the one in a "standard" tree,
 which then enables that multiple instances of the same standard tree can be present in the same forest.
-A scenario  where this may happen is when a truck has more than one trailer that each is represented by the same standard tree.
-The trailers can then be distinguished by having different root node names.
+A scenario where this may happen is when a truck has more than one trailer that each is represented by the same standard tree.
+The trailers can then be distinguished by having different root node names in the configuration file.
 
 ## Domain
 The `domain` metadata is what defines the domain and information type that the tree represents.

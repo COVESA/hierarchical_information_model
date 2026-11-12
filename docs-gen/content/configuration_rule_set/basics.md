@@ -40,8 +40,8 @@ The following node types can be used in a configuration tree:
 3. [Proxy](/hierarchical_information_model/configuration_rule_set/node_types/proxy/)
 
 ## Configuration Tree Example
-This example shows a forest consisting of three local trees:
-1. A local tree containing passenger car related signals, having the root node name VehicleData.
+This example shows a forest consisting of three local trees, addressed by clients using the root node names given by the configuration nodes:
+1. A local tree containing passenger car related signals, having the root node name Vehicle.
 2. A local tree containing passenger car related services, having the root node name VehicleServices.
 3. A local tree containing passenger car related type definitions, having the root node name Types.
 
