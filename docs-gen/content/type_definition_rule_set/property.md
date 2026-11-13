@@ -1,7 +1,7 @@
 ---
 title: "Property node"
 date: 2019-08-04T12:37:03+02:00
-weight: 30
+weight: 40
 ---
 
 The node type `property` is used to represent members of a struct.
@@ -19,7 +19,10 @@ Besides the mandatory metadata mentioned above, the following optional metadata 
 - Min
 - Max
 - Allowed
+- Enum
+- Default
 - Comment
+- Deprecation
 
 For more information, please see the [Common Rule Set: Optional Metadata](/hierarchical_information_model/common_rule_set/basics#optional-metadata).
 
@@ -32,7 +35,7 @@ In this usage the node type must have a node of type `struct` as parent, and mus
 An example of the specification of a `property` node for a struct member is given below.
 
 ```YAML
-Type.OpenHours.Open:
+Types.OpenHours.Open:
   datatype: uint8
   type: property
   max: 24

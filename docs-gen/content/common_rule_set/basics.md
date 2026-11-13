@@ -17,12 +17,12 @@ The optional [prefix] specifies a branch name to be prepended to all node names 
 The include directive may be used in files that are themselves included.
 Please note that, from a YAML perspective, the include directive is just another comment.
 
-A tool is neeed to generate the expanded version of the tree that contains instances of the included subtree,
+A tool is needed to generate the expanded version of the tree that contains instances of the included subtree,
 such as the tools developed by the VSS community - [COVESA/VSS-Tools](https://github.com/COVESA/vss-tools).
 
 The files defining a HIM taxonomy may have the file extension '.him', but the project defining the domain taxonomy may define and use a file extension of their own choice.
 The format of the files may be transformed from YAML to another format like JSON, in which case it may use a file extension of that format.
-This also pplies to the file extension of the HIM configuration file.
+This also applies to the file extension of the HIM configuration file.
 
 HIM is in itself case sensitive.
 This means that keywords, signal names, types and values normally shall be given with the case specified.
@@ -49,7 +49,7 @@ NodeName:
   description: abc
 ```
 
-A node name is recommeded to be unique with the scope of the tree it is used in. The name shall follow the [Naming Conventions](#naming-conventions)
+A node name is recommended to be unique within the scope of the tree it is used in. The name shall follow the [Naming Conventions](#naming-conventions)
 
 The qualified node name, which must be unique within the scope of the tree, are defined left-to-right of the concatenation of the node names,
 starting from the root node of the tree and traversing the tree nodes to the node in focus, with a period (.) as delimiter between node names.
@@ -62,25 +62,17 @@ where a is the name of the root node, b is a child of a, and the node in focus i
 ### Node types
 
 The node types described here are used by more than one information type,
-while the node types specifi to a single information type are found in respective parts of this document.
+while the node types specific to a single information type are found in respective parts of this document.
 - [Branch](/hierarchical_information_model/common_rule_set/node_types/branch)
-- [Struct](/hierarchical_information_model/common_rule_set/node_types/struct)
 - [Property](/hierarchical_information_model/common_rule_set/node_types/property)
 
-#### Struct node type
-
-The 'struct' node type is used to define a structure data type that groups a number of fields.
-An example is shown below.
-```YAML
-NodeName:
-  type: struct
-  description: This is a struct node containing its mandatory metadata.
-```
-This node type must have at least one child of node type property, and must not have children of any other node type.
+The 'struct' node type is used only in trees of the information type TypeDef,
+see [Struct](/hierarchical_information_model/type_definition_rule_set/struct).
 
 #### Property Node Type
 
-The 'property' node type is used to define the fields of a struct.
+The 'property' node type is used to define the fields of a struct in trees of the information type TypeDef,
+and the input and output parameters of a microservice in trees of the information type Service.
 An example is shown below.
 ```YAML
 NodeName:
@@ -90,7 +82,7 @@ NodeName:
 ```
 The 'datatype' metadata is mandatory for a property node. It may also have optional metadata such as unit, min, max, and allowed.
 
-A property node can only have a struct node as its parent, and must not have any children.
+A property node can only have a `struct` node (in TypeDef trees) or an `iostruct` node (in Service trees) as its parent, and must not have any children.
 
 ### Description
 
@@ -103,18 +95,24 @@ Different information types may then specify further optional metadata that may 
 2. Min
 3. Max
 4. Allowed
-5. Comment
-6. Instances
-7. Aggregate
-8. Deprecation
+5. Enum
+6. Comment
+7. Instances
+8. Aggregate
+9. Deprecation
+10. Arraysize
+11. Instantiate
 
 For more information on which information/node types this metadata can be used,
 please see the rule set documentation for these.
 
 For oversight a few general rules are shown here:
-- The entries 1 through 4 cannot be used in the `branch` node type.
-- The entries 6 and 7 can only be used in the `branch` node type.
-- None of the entries can be used in the `procedure` node type.
+- The entries 1 through 5 and 10 cannot be used in the `branch` node type.
+- The entries 7 and 8 can only be used in the `branch` node type, except that entry 7 (Instances) can also be used in the `procedure` node type.
+- Entry 11 (Instantiate) is used in child nodes of a node that has entry 7 (Instances) defined.
+- Entry 9 (Deprecation) can be used in all node types except the node types of the configuration file.
+- Of the entries, only 6, 7 and 9 can be used in the `procedure` node type,
+  together with its specific metadata NativeRate and TimeToLive, see [Procedure](/hierarchical_information_model/service_rule_set/procedure).
 
 ### Datatype
 See the [Datatypes chapter](/hierarchical_information_model/common_rule_set/data_entry/datatypes)
@@ -122,19 +120,26 @@ See the [Datatypes chapter](/hierarchical_information_model/common_rule_set/data
 ### Unit
 See the [Units chapter](/hierarchical_information_model/common_rule_set/data_entry/units)
 
-### Min/Max/Allowed
+### Min/Max/Allowed/Enum
 See the [Value restrictions chapter](/hierarchical_information_model/common_rule_set/data_entry/value_restrictions)
+
+### Arraysize
+See the [Arrays section](/hierarchical_information_model/common_rule_set/data_entry/datatypes#arrays).
 
 ### Comment
 
 A comment can be used to provide additional informal information on a branch. This could include background information on the rationale for the branch, references to related branches, standards and similar. Recommended to start with a capital letter and end with a dot (.).
 
 ### Instances
-See the [Instances chapter](/hierarchical_information_model/data_rule_set/vspec_extensions/instances).
-The `instances` metadata is only allowed in `branch` type nodes.
+See the [Instances chapter](/hierarchical_information_model/common_rule_set/vspec_extensions/instances).
+The `instances` metadata is only allowed in `branch` and `procedure` type nodes.
+
+### Instantiate
+See the [Instances chapter](/hierarchical_information_model/common_rule_set/vspec_extensions/instances).
+The `instantiate` metadata is used in child nodes of a node that has `instances` defined.
 
 ### Include
-See the [Include chapter](/hierarchical_information_model/data_rule_set/vspec_extensions/include).
+See the [Include chapter](/hierarchical_information_model/common_rule_set/vspec_extensions/include).
 The `include` metadata is only allowed in `branch` type nodes.
 
 ### Aggregate
@@ -143,8 +148,8 @@ If not defined, this defaults to ```false```.
 An aggregate is a collection of data nodes that make sense to handle together in a system.
 A typical example could be GNSS location, where latitude and longitude make sense to read
 and write together. This is supposed to be deployment specific,
-and for that reason it is recommendedd not to be defined in a standard HIM tree,
-but rather be added in a deployment preparation of he tree.
+and for that reason it is recommended not to be defined in a standard HIM tree,
+but rather be added in a deployment preparation of the tree.
 For branches that both have `instances` defined and `aggregate: true`, then aggregate refers to the signals for
 individual instances, i.e. signals for different instances can be handled separately.
 The `aggregate` metadata is only allowed in `branch` type nodes.

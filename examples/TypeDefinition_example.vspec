@@ -22,7 +22,7 @@ Types.Struct.Service.Capability.Name:
 Types.Struct.Service.Capability.Data:
   type: property
   datatype: Types.Struct.Service.CapabilityData[]
-  description: Capability name.
+  description: Capability support data.
 
 Types.Struct.Service.CapabilityData:
   type: struct
@@ -89,7 +89,7 @@ Types.Identifier:
 
 Types.Identifier.Domain:
   datatype: string
-  type: ro
+  type: attribute
   default: Vehicle.COVESA.TypeDef
   description: Tree domain.
 

@@ -1,6 +1,6 @@
 ---
 title: "Read-write node"
-weight: 30
+weight: 40
 ---
 
 This node type shall be used for data that may be read or written. The HIM node type name is `rw`.
@@ -18,7 +18,9 @@ Besides the mandatory metadata mentioned above, the following optional metadata 
 - Min
 - Max
 - Allowed
+- Enum
 - Comment
+- Deprecation
 
 For more information, please see the [Common Rule Set: Optional Metadata](/hierarchical_information_model/common_rule_set/basics#optional-metadata).
 
@@ -30,6 +32,6 @@ An example of the specification of a `rw` node is given below.
 LocalTemperature:
   type: rw
   datatype: float
-  unit: Celsius
+  unit: celsius
   description: The vehicle occupant-local temperature setting.
 ```

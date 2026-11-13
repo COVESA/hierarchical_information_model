@@ -14,8 +14,10 @@ The server may also share this configuration file on request from clients, in or
 The HIM model is not restricted to client/server models.
 
 A file containing this configuration may have any name, but it is recommended that it contains version or date-time information.
-The file shall have the extension ".him", which indicates that it is a HIM configuration file.
+The file shall have the extension ".him" if it is in YAML format, which indicates that it is a HIM configuration file.
 Its format shall be YAML or any other text format that is compatible with YAML.
+If it is transformed to another format, a file extension of that format may be used,
+see [Specification format](/hierarchical_information_model/common_rule_set/basics#specification-format).
 
 The configuration tree root node shall have the name "HIM".
 
@@ -27,7 +29,7 @@ A HIM compliant server shall be able to read a HIM configuration file and from t
 A HIM compliant tree must follow the HIM rule set.
 The project specifying this tree must also define the `domain` metadata for this tree,
 and it may provide a `public` URL to a file containing the complete tree,
-possible also multiple `public` URLs to renditions of the tree in different formats such as YAML, JSON, etc.
+possibly also multiple `public` URLs to renditions of the tree in different formats such as YAML, JSON, etc.
 
 The creation of a HIM configuration file is the responsibility of the  "manager" of the HIM server.
 Usage of a HIM configuration file is optional, but it is recommended in scenarios where the server manages more than one tree.
@@ -40,10 +42,10 @@ The following node types can be used in a configuration tree:
 3. [Proxy](/hierarchical_information_model/configuration_rule_set/node_types/proxy/)
 
 ## Configuration Tree Example
-This example shows a forest consisting of three local trees:
-1. A local tree containing passenger car related signals, having the root node name VehicleData.
+This example shows a forest consisting of three local trees, addressed by clients using the root node names given by the configuration nodes:
+1. A local tree containing passenger car related signals, having the root node name Vehicle.
 2. A local tree containing passenger car related services, having the root node name VehicleServices.
-3. A local tree containing type passenger car related ype definitions, having the root node name Types.
+3. A local tree containing passenger car related type definitions, having the root node name Types.
 
 ```YAML
 HIM:
@@ -69,9 +71,9 @@ HIM.VehicleServices:
 
 HIM.Types:
   type: direct
-  domain: Vehicle.Car.TypeDefinition
+  domain: Vehicle.Car.TypeDef
   version: X.Y.Z
   local: file://<full-path-name>
-  public: https://himrepo.oem.com?instance=Vehicle.Car.TypeDefinition.X.Y.Z
+  public: https://himrepo.oem.com?instance=Vehicle.Car.TypeDef.X.Y.Z
   description:  ….
-  ```
+```

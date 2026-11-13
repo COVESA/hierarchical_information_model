@@ -17,10 +17,11 @@ Besides the mandatory metadata mentioned above, the following optional metadata 
 - Comment
 - Instances
 - Aggregate
+- Deprecation
 
 For more information, please see the [Common Rule Set: Optional Metadata](/hierarchical_information_model/common_rule_set/basics#optional-metadata).
 
-- The root node of a HIM tre must be of the node type `branch`.
+- The root node of a HIM tree must be of the node type `branch`.
 
 - A leaf node cannot have the `branch` node type.
 

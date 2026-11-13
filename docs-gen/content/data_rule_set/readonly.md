@@ -18,7 +18,10 @@ Besides the mandatory metadata mentioned above, the following optional metadata 
 - Min
 - Max
 - Allowed
+- Enum
+- Default
 - Comment
+- Deprecation
 
 For more information, please see the [Common Rule Set: Optional Metadata](/hierarchical_information_model/common_rule_set/basics#optional-metadata).
 
@@ -32,3 +35,8 @@ Name:
   datatype: string
   description: The name of a vehicle occupant.
 ```
+
+## Default
+A `ro` node may define a `default` value in the same way as an `attribute` node in the
+[Vehicle Data Rule Set](/hierarchical_information_model/vehicle_data_rule_set/attribute#default).
+It is used in the nodes that hold the [tree identification](/hierarchical_information_model/common_rule_set/tree_identification) data.

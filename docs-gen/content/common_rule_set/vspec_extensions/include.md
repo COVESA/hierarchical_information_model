@@ -2,6 +2,9 @@
 title: "Include"
 date: 2019-08-04T12:59:44+02:00
 weight: 6
+aliases:
+  - /data_rule_set/vspec_extensions/include/
+  - /vehicle_data_rule_set/vspec_extensions/include/
 ---
 
 An include directive in a vspec file will read the file it refers to and the
@@ -29,7 +32,7 @@ own branch to attach the included file to.
 
 An example of an include directive is:
 
-    #include doors.vpsec chassis.doors
+    #include door.vspec chassis.doors
 
 The ```door.vspec``` section specifies the file to include.
 

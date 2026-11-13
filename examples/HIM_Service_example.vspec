@@ -23,7 +23,7 @@ VehicleService.Seating.MoveSeat.Input:
 VehicleService.Seating.MoveSeat.Input.MovementType:
   type: property
   datatype: string
-  description: Type of movement. Supported types are retrieved via GetPropertiesSeating().
+  description: Type of movement. Supported types are retrieved via GetCapabilities().
 
 VehicleService.Seating.MoveSeat.Input.Position:
   type: property
@@ -90,7 +90,7 @@ VehicleService.Identifier:
 
 VehicleService.Identifier.Domain:
   datatype: string
-  type: ro
+  type: attribute
   default: Vehicle.COVESA.OEMX.ModelY.Service
   description: Tree domain.
 

@@ -2,7 +2,7 @@
 title: "Data Entry"
 date: 2019-08-04T11:11:30+02:00
 chapter: true
-weight: 2
+weight: 4
 ---
 
 # Data Entry

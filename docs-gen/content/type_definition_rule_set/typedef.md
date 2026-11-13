@@ -1,7 +1,7 @@
 ---
 title: "Typedef node"
 date: 2019-08-04T12:37:03+02:00
-weight: 30
+weight: 50
 ---
 
 The node type `typedef` is used to define node metadata that can be referenced from nodes declared in trees of other information types.
@@ -20,8 +20,10 @@ Besides the mandatory metadata mentioned above, the following optional metadata 
 - Min
 - Max
 - Default
-- Allowed/Enum
+- Allowed
+- Enum
 - Comment
+- Deprecation
 
 For more information, please see the [Common Rule Set: Optional Metadata](/hierarchical_information_model/common_rule_set/basics#optional-metadata).
 
@@ -44,7 +46,7 @@ Vehicle.X.Y:
   datatype: Types.Enum.Example
   description: A sensor node in the Vehicle tree.
 ```
-The node in the reffered (ypedef) tree:
+The node in the referred (typedef) tree:
 ```
 Types.Enum.Example:
   description: Enum example type definition.

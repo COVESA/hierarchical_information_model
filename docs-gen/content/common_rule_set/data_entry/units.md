@@ -14,7 +14,7 @@ Vehicle.Speed:
   unit: km/h
   description: Vehicle speed.
 ```
-Data that has an associated unit from the list shall declare it using the `unit` metadata. 
+Data that has an associated unit from the list shall declare it using the `unit` metadata.
 It is allowed for a domain to specify an additional list with domain specific units that complement the common units list.
 Units shall if possible be based on [SI-units](https://www.iso.org/standard/30669.html), but exceptions like the speed example above are acceptable.
 The list contains entries of a unit with a prefix, e. g. `mm` for millimeter, which are the only prefixes that are valid.
@@ -43,7 +43,7 @@ cm            | Distance                        | Distance measured in centimete
 m             | Distance                        | Distance measured in meters
 km            | Distance                        | Distance measured in kilometers
 inch          | Distance                        | Distance measured in inches
-km/h          | Speed                           | Speed measured in kilometers per hours
+km/h          | Speed                           | Speed measured in kilometers per hour
 m/s           | Speed                           | Speed measured in meters per second
 m/s^2         | Acceleration                    | Acceleration measured in meters per second squared
 cm/s^2        | Acceleration                    | Acceleration measured in centimeters per second squared
@@ -89,4 +89,3 @@ rpm           | Rotational Speed                | Rotational speed measured in r
 Hz            | Frequency                       | Frequency measured in hertz
 ratio         | Relation                        | Relation measured as ratio
 percent       | Relation                        | Relation measured in percent
-... | ... | ...

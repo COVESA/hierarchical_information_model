@@ -5,12 +5,12 @@ weight: 15
 ---
 
 As mentioned in the chapter [Composite datatypes](/hierarchical_information_model/common_rule_set/data_entry/datatypes#composite-datatypes)
-a struct is defined using the node types 'struct' and 'property' in trees having the information type TypeDefinition, and it is referred to by using its path.
+a struct is defined using the node types 'struct' and 'property' in trees having the information type TypeDef, and it is referred to by using its path.
 
-The struct node type can also be used in trees having the information type Service, which is described in [HIM Services Rule Set](/hierarchical_information_model/services_rule_set/).
+The input and output parameters of a microservice in trees having the information type Service are grouped by the `iostruct` node type, which is described in the [HIM Service Rule Set](/hierarchical_information_model/service_rule_set/).
 
-A struct definition in a Typedefinition tree can contain a member that has a different struct as its datatype.
-This other struct must then be defined elsewhere in the Typedefinition tree and referred to by its path.
+A struct definition in a TypeDef tree can contain a member that has a different struct as its datatype.
+This other struct must then be defined elsewhere in the TypeDef tree and referred to by its path.
 
 ## Intended usage
 
@@ -26,7 +26,7 @@ Structs shall be used in a HIM based catalog only when considered to give a sign
 
 ## Structs vs. Aggregate
 
-HIM supports the keyword `aggregate` that can be used on [branches](/hierarchical_information_model/common_rule_set/basics#branch-node-type)
+HIM supports the keyword `aggregate` that can be used on [branches](/hierarchical_information_model/common_rule_set/node_types/branch)
 to indicate that the branch preferably shall be read and written in atomic operations.
 
 There have been criticism that `aggregate` changes the semantic meaning of branches and signals, i.e. that a data variable is no longer handed as an independent object.
@@ -56,8 +56,7 @@ HIM makes no assumption on how structs are transferred or stored by implementati
 It is however expected that they are read and written by atomic operations.
 This means that the data storage shall be "locked" while the items of the struct are read, preventing changes to happen while reading/writing the items.
 
-Structs shall be defined in a separate tree. This means that signal definitions and types cannot exist in the same files.
-IS THE ABOVE CORRECT? STRUCTS CANNOT ALTERNATVELY BE DEFINED AS A CHILD SUBTREE? 
+Structs shall be defined in a separate tree. This means that signal definitions and type definitions cannot exist in the same tree.
 
 ## Naming Restrictions
 
@@ -71,20 +70,20 @@ This is not a problem as it always from context is clear whether a name refers t
 This could be a hypothetical content of a HIM datatype definition file
 
 ```
-Type:
+Types:
   type: branch
   description: Root node for the datatype definition tree
 
-Type.DeliveryInfo:
+Types.DeliveryInfo:
   type: struct
   description: A struct type containing info for each delivery
 
-Type.DeliveryInfo.Address:
+Types.DeliveryInfo.Address:
   datatype: string
   type: property
   description: Destination address
 
-Type.DeliveryInfo.Receiver:
+Types.DeliveryInfo.Receiver:
   datatype: string
   type: property
   description: Name of receiver
@@ -93,17 +92,18 @@ Type.DeliveryInfo.Receiver:
 This struct definition could then be referenced from a HIM data tree.
 ```
 Delivery:
-  datatype: Type.DeliveryInfo
+  datatype: Types.DeliveryInfo
   type: sensor
+  description: Information about a delivery.
 ```
 The datatype definition file may contain sub-branches and `#include`-statements just like regular HIM files.
 
 ```
-Type:
+Types:
   type: branch
   description: Root node for the datatype definition tree
 
-Type.Powertrain:
+Types.Powertrain:
   type: branch
   description: Powertrain types.
 #include Powertrain/Powertrain.him Types.Powertrain
@@ -152,42 +152,42 @@ DeliveryList:
 It is allowed to refer to a structure type from within a structure as shown in the example below.
 
 ```
-Type:
+Types:
   type: branch
   description: Root node for the datatype definition tree
 
-Type.OpenHours:
+Types.OpenHours:
   type: struct
   description: A struct type containing information on open hours
 
-Type.OpenHours.Open:
+Types.OpenHours.Open:
   datatype: uint8
   type: property
   max: 24
   description: Time the address opens
 
-Type.OpenHours.Close:
+Types.OpenHours.Close:
   datatype: uint8
   type: property
   max: 24
   description: Time the address close
 
-Type.DeliveryInfo:
+Types.DeliveryInfo:
   type: struct
   description: A struct type containing info for each delivery
 
-Type.DeliveryInfo.Address:
+Types.DeliveryInfo.Address:
   datatype: string
   type: property
   description: Destination address
 
-Type.DeliveryInfo.Receiver:
+Types.DeliveryInfo.Receiver:
   datatype: string
   type: property
   description: Name of receiver
 
-Type.DeliveryInfo.Open:
-  datatype: Type.OpenHours
+Types.DeliveryInfo.Open:
+  datatype: Types.OpenHours
   type: property
   description: When is receiver available
 
@@ -222,11 +222,11 @@ OpenHours:
 ```
 
 
-## Inline Struct
+## Where Structs Can Be Defined
 
-The node type 'struct' must only be used in trees of the information types 'Typedefinition' and 'Service'.
+The node type 'struct' must only be used in trees of the information type 'TypeDef'.
 Trees of any other information type that contains nodes having a datatype that is a struct
-must refer to the struct definition in a 'Typedefinition' tree by use of the path to that struct.
+must refer to the struct definition in a 'TypeDef' tree by use of the path to that struct.
 
 ## Default Values
 
@@ -235,4 +235,3 @@ Members of a struct may have a default value defined.
 ## Allowed Values
 
 A member of a struct may use the metadata `allowed` to restrict its allowed values (if `allowed` is supported for the used datatype).
-

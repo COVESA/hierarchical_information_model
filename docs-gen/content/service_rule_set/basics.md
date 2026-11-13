@@ -7,11 +7,11 @@ weight: 1
 ## HIM Service Tree
 A HIM service tree contains a taxonomy of microservice declarations.
 The tree structure is used to create a sets of microservices.
-Such as set is named `Service`, or `Service Group` for larger sets where a set of Service Groups would then form a Service,
-see the figure below, or the [example service tree](https://github.com/COVESA/hierarchical_information_model/blob/master/examples/HIM_Service_example.v1.0.0.yaml).
+Such a set is named `Service`, or `Service Group` for larger sets where a set of Service Groups would then form a Service,
+see the figure below, or the [example service tree](https://github.com/COVESA/hierarchical_information_model/blob/master/examples/HIM_Service_example.vspec).
 
 ![HIM service tree structure](/hierarchical_information_model/images/service_tree_structure.png?width=50pc)
-*Figure 1. HIM service tree structure
+*Figure 1. HIM service tree structure*
 
 ## HIM Microservice
 A microservice is in HIM defined by a procedure signature as shown below:
@@ -24,14 +24,14 @@ where
 - output1,..,outputN denotes the output parameters of the procedure, which may be zero or more.
 
 HIM only specifies the data defining the above procedure signature, it does not specify details of how a call is made, such as how it is serialized, etc.
-This is expeted to be defined in an interface specification that uses HIM.
+This is expected to be defined in an interface specification that uses HIM.
 
 ## Microservice tree structure
 
 The general structure of how a microservice is represented in a HIM tree is shown in the figure below.
 
 ![HIM microservice tree structure](/hierarchical_information_model/images/microservice_tree_structure.png?width=50pc)
-*Figure 2. HIM microservice tree structure
+*Figure 2. HIM microservice tree structure*
 
 - The name of the procedure is the name of the node of the type `procedure`.
 - The input and output parameters are respectively represented by a  node of type `iostruct` that must have the names 'Input' and 'Output', respectively.
@@ -44,16 +44,16 @@ Any Input/Output nodes, and their associated children, are only present if the p
 If a service manages multiple instances of a resource then each of these resource interfaces needs to be separately represented in the
 tree in order for input and output data to be concurrently available. This can be realized by applying the 'instances' directive in the
 procedure node vspec declaration. The Input and Output node declarations of the procedure will then become instantiated in the same
-manner as when the directive is used for the vehicledata information type, see the figure below where an instance
+manner as when the directive is used for the VehicleData information type, see the figure below where an instance
 directive 'instances: Resource[1, N]' is used as example.
 
 ![HIM microservice tree structure](/hierarchical_information_model/images/multiplexed_microservice_tree_structure.jpg?width=50pc)
-*Figure 3. HIM multiplexed microservice tree structure
+*Figure 3. HIM multiplexed microservice tree structure*
 
 ## Microservice completion state
 
 A microservice may have a significant temporal duration from it is started and until it completes.
-It may therefore be desireable that the state of the microservice can be observed,
+It may therefore be desirable that the state of the microservice can be observed,
 as e. g. it may be the case that an ongoing microservice execution does not allow new microservice actuations to be started.
 
 Service response or event messages shall therefore contain a parameter called Status,
@@ -73,25 +73,3 @@ then the value shall be set to CANCELED.
 
 If there is a need for microservice specific error codes then these should be defined as another output parameter.
 A microservice may include in other output parameters that carry information about its execution state.
-
-## Service group common properties
-A service group may have common configuration data, here referred to as properties.
-This could for example be the seating locations, i. e. the location names for the seats in the vehicle.
-Another example is the axle/wheel configuration of the vehicle, information about the number of axles and the number of wheels on each.
-If a service group shares common property data then the service group branch shall have a `branch` type child node with the name Properties.
-This node shall then have children nodes of `attribute` type with default values representing the configuration data.
-
-An example of a Properties node and its SeatingLayout child is given below.
-```YAML
-Properties:
-  type: branch
-  description: This is an example of a service group Properties node.
-```
-
-```YAML
-SeatingLayout:
-  type: attribute
-  datatype: string
-  default: [{"Row1": {"Left", "Right"}}, {"Row2": {""Left", "Middle", "Right""}}]
-  description: This is an example of the configuration of a seating layout.
-```

@@ -1,13 +1,13 @@
 ---
 title: "IO-struct node"
 date: 2019-08-04T12:37:03+02:00
-weight: 30
+weight: 40
 ---
 
 An `iostruct` node type may be used to encapsulate multiple data points that have the relationship that they are all representing either
 Input parameters or Output parameters of the microservice that they are linked to.
 
-This node type is only allowed in trees of the information type `service`.
+This node type is only allowed in trees of the information type `Service`.
 For more information, please see respective parts of this document.
 
 An `iostruct` node must have one of the two names `Input` or `Output`.
@@ -21,6 +21,7 @@ For more information, see the [Common Rule Set: Mandatory Metadata](/hierarchica
 
 Besides the mandatory metadata mentioned above, the following optional metadata may be used
 - Comment
+- Deprecation
 
 For more information, please see the [Common Rule Set: Optional Metadata](/hierarchical_information_model/common_rule_set/basics#optional-metadata).
 
@@ -29,7 +30,7 @@ For more information, please see the [Common Rule Set: Optional Metadata](/hiera
 - Children must be of the node types `property` or `symlink`.
 - It must have at least one child.
 
-An example of the specification of a `struct` node is given below.
+An example of the specification of an `iostruct` node is given below.
 ```YAML
 Input:
   type: iostruct

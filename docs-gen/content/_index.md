@@ -9,7 +9,7 @@ The documentation, source code and releases can be found in the [HIM github repo
 The information of a domain that is described using HIM is represented in a graph made up of a tree structure with parent-child relationships,
 as shown in Figure 1.
 ![HIM graph structure](/hierarchical_information_model/images/him_graph_structure.png?width=25pc)
-*Figure 1. HIM graph structure
+*Figure 1. HIM graph structure*
 
 The model provides a structured solution to a scenario where an entity, e. g. a server, manages multiple domain taxonomies.
 
@@ -53,7 +53,7 @@ The documentation is structured in the different rule sets shortly described bel
 ## HIM profiles
 The abstraction level of a model describing 'vehicledata' (or 'data') is different from the abstraction level of a model describing 'services'.
 This is reflected in the different HIM rule sets.
-The API exposed by a server supporting access to 'vehicledata'/'data' or 'services' will also differ due to the abstraction level differencies.
+The API exposed by a server supporting access to 'vehicledata'/'data' or 'services' will also differ due to the abstraction level differences.
 To support use case scenarios for the different abstraction levels HIM defines the following profiles:
 * HIM VehicleData Profile
 * HIM Data Profile
@@ -69,7 +69,7 @@ This profile is for example compatible with the [VSS](https://github.com/COVESA/
 
 ### HIM Data Profile
 The HIM data profile excludes use of taxonomies that represent the Service information type.
-The difference to the vehicle data profile is that the node types 'attribute' and 'sensor' are renamed to 'ro' read-only)
+The difference to the vehicle data profile is that the node types 'attribute' and 'sensor' are renamed to 'ro' (read-only)
 and the 'actuator' node type is renamed to 'rw' (read-write).
 For domains that are not technically oriented the terminology read-only/read-write is more natural than the attribute/sensor/actuator names.
 A taxonomy representing 'user data', e. g. data of the driver of a vehicle, could use the HIM Data information type.
@@ -88,10 +88,10 @@ and do not require any updates of the static parts of the API.
 
 This is also the case if entire new taxonomies (domains) is introduced as the HIM model supports scenarios with multiple taxonomies.
 The [HIM configuration](/hierarchical_information_model/configuration_rule_set/)
-file enables these updates to be implemented without requiring server restart if that is desireable.
+file enables these updates to be implemented without requiring server restart if that is desirable.
 
 ## Heritage
 The ideas behind HIM originated in the [COVESA VSS](https://github.com/COVESA/vehicle_signal_specification) project,
-when interest started to be raised for using it for of not only Data but also service data,
+when interest started to be raised for using it for not only Data but also service data,
 and for different domains than the legacy VSS passenger car domain.
 This may explain why examples in this documentation are often taken from that domain.

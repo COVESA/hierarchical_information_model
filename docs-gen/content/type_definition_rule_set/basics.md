@@ -3,12 +3,12 @@ title: "Type Definition Model"
 weight: 1
 ---
 
-A `type_definition` tree contains data type definitions.
+A `TypeDef` tree contains data type definitions.
 These can either be complex datatypes that are not part of the
 [primitive datatypes](/hierarchical_information_model/common_rule_set/data_entry/datatypes#primitive-datatypes) defined by HIM,
 or it can be common allowed definitions.
 
-If a tree with data or service information contains links to a typedefinition tree then this tree must be available to the server managing the data/service tree.
+If a tree with data or service information contains links to a TypeDef tree then this tree must be available to the server managing the data/service tree.
 The server shall use the type definition information to verify that client requests are valid in the case of links as mentioned.
 
 ## Root node name
@@ -26,6 +26,6 @@ The node types for representing type definitions are:
 - [Struct](/hierarchical_information_model/type_definition_rule_set/struct)
 - [Property](/hierarchical_information_model/type_definition_rule_set/property)
 - [Typedef](/hierarchical_information_model/type_definition_rule_set/typedef)
-- Attribute // must only be used in tree version nodes
+- Attribute: only used in the [tree identification](/hierarchical_information_model/common_rule_set/tree_identification) nodes
 
 Please see more information about these node types [here](/hierarchical_information_model/common_rule_set/node_types/).

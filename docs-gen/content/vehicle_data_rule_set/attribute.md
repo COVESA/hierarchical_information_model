@@ -4,7 +4,7 @@ date: 2019-08-04T12:37:31+02:00
 weight: 40
 ---
 
-Nodes of the types `attribute` must have the following mandatory metadata:
+Nodes of the type `attribute` must have the following mandatory metadata:
 - Name
 - Type
 - Datatype
@@ -15,7 +15,12 @@ For more information, see the [Common Rule Set: Mandatory Metadata](/hierarchica
 
 Besides the mandatory metadata mentioned above, the following optional metadata may be used
 - Unit
+- Min
+- Max
+- Allowed
+- Enum
 - Comment
+- Deprecation
 
 For more information, please see the [Common Rule Set: Optional Metadata](/hierarchical_information_model/common_rule_set/basics#optional-metadata).
 
@@ -49,7 +54,7 @@ Example 2: Array with 3 elements, first element has value 1, second element valu
   default: [1, 2, 0]
 ```
 
-Full example, array with two elements, first with value2, second with value 3:
+Full example, array with two elements, first with value 2, second with value 3:
 
 ```YAML
 SeatPosCount:
@@ -59,4 +64,5 @@ SeatPosCount:
   description: Number of seats across each row from the front to the rear
 ```
 
-Using default values for structs is not allowed!
+A default value cannot be specified for an attribute that has a struct as its datatype.
+Default values of the members of a struct are instead defined in the struct definition, see [Structs](/hierarchical_information_model/common_rule_set/data_entry/structs#default-values).

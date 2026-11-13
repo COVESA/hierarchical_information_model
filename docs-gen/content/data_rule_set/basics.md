@@ -18,5 +18,5 @@ Please see the respective chapters for more information about these node types.
 
 The vspec format is based on YAML that is extended with two features described in respective chapters shown below.
 
-* [Instances](/hierarchical_information_model/data_rule_set/vspec_extensions/instances)
-* [Include](/hierarchical_information_model/data_rule_set/vspec_extensions/include)
+* [Instances](/hierarchical_information_model/common_rule_set/vspec_extensions/instances)
+* [Include](/hierarchical_information_model/common_rule_set/vspec_extensions/include)
