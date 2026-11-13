@@ -13,7 +13,7 @@ The server shall use the type definition information to verify that client reque
 
 ## Root node name
 The name of the root node of the type definitions tree shall be "Types".\
-If an implementation of a server ecosystem selects to include multiple type definition trees in the defined forest then 
+If an implementation of a server ecosystem selects to include multiple type definition trees in the defined forest then
 [the root node name that the HIM configuration file](/hierarchical_information_model/configuration_rule_set/node_types/direct/#name) maps to these trees shall be "TypesX"
 where X can be any sequence of readable characters, with a length from one and up.
 X can be a number or more descriptive such as Car, Trailer, etc.\
