@@ -20,6 +20,7 @@ Nodes of the type `proxy` must have the following mandatory metadata:
 For more information, see the [Common Rule Set: Mandatory Metadata](/hierarchical_information_model/common_rule_set/basics#mandatory-metadata).
 
 Besides the mandatory metadata mentioned above, the following optional metadata may be used
+- TypesTree
 - Public
 - Comment
 
@@ -56,6 +57,17 @@ Versioning shall be based on the [Semantic versioning](https://semver.org/spec/v
 The `local` metadata shall be a URL, including schema (schema://url), that points either directly to the server that contains the tree, or to a proxy for it.
 The schema selection is implementation specific, examples are “uds” if a Unix Domain socket is used, or “wss” if a secure WebSocket is used.
 The `local` metadata shall not be supplied to a client requesting the configuration file.
+
+## TypesTree
+The `typestree` metadata must be included when the tree that this metdata defines contains references to a type definition tree.
+The metadata shall then be set to:
+```YAML
+typestree: 'domain'+'version'
+```
+where domain shall be the 'domain' value of a typedef tree that must be part of the defined forest.
+and 'version' shall be the 'major.minor.patch' values of the typdef tree.
+The delimiter between the two parameters shall be a plus sign.\
+Multiple trees may reference to the same typedef tree.
 
 ## Public
 The `public` metadata shall, if available, be a URL to a public copy of the tree managed by the server at the end-point.

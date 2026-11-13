@@ -7,9 +7,10 @@ HIM.Vehicle:
   type: direct
   domain: Vehicle.COVESA.OEMX.ModelY.VehicleData
   version: X.Y.Z
+  typesdef: Vehicle.COVESA.TypeDef+X.Y.Z
   local: file://<full-path-name>
   public: https://himrepo.oem.com?instance=Vehicle.COVESA.OEMX.ModelY.VehicleData.X.Y.Z
-  description:  Vehicle signal tree.
+  description:  Vehicle signal tree that contains references to a type definition tree.
 
 HIM.VehicleServices:
   type: direct
