@@ -19,15 +19,6 @@ Sensor: for data that is read-only and may have a dynamically changing value. At
     </item>
     
     <item>
-      <title>Actuator node</title>
-      <link>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/actuator/</link>
-      <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
-      
-      <guid>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/actuator/</guid>
-      <description>Actuators are used to control the desired value of a property. Some properties in a vehicle cannot change instantly. A typical example is position of a seat or a window. Reading a value of an actuator shall return the current actual value, e.g. the current position of the seat, rather than the wanted/desired position. A typical example could be if someone wants to change the position of a seat from 0 to 100.</description>
-    </item>
-    
-    <item>
       <title>Sensor node</title>
       <link>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/sensor/</link>
       <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
@@ -45,11 +36,20 @@ Besides the mandatory metadata mentioned above, the following optional metadata 
       <pubDate>Sun, 04 Aug 2019 12:37:31 +0200</pubDate>
       
       <guid>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/attribute/</guid>
-      <description>Nodes of the types attribute must have the following mandatory metadata:
+      <description>Nodes of the type attribute must have the following mandatory metadata:
 Name Type Datatype Default Description For more information, see the Common Rule Set: Mandatory Metadata.
 Besides the mandatory metadata mentioned above, the following optional metadata may be used
-Unit Comment For more information, please see the Common Rule Set: Optional Metadata.
+Unit Min Max Allowed Enum Comment Deprecation For more information, please see the Common Rule Set: Optional Metadata.
 This node type must have a node of type branch as parent, and must not have any children.</description>
+    </item>
+    
+    <item>
+      <title>Actuator node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/actuator/</link>
+      <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/vehicle_data_rule_set/actuator/</guid>
+      <description>Actuators are used to control the desired value of a property. Some properties in a vehicle cannot change instantly. A typical example is position of a seat or a window. Reading a value of an actuator shall return the current actual value, e.g. the current position of the seat, rather than the wanted/desired position. A typical example could be if someone wants to change the position of a seat from 0 to 100.</description>
     </item>
     
   </channel>

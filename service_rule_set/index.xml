@@ -13,9 +13,21 @@
       <pubDate>Sun, 04 Aug 2019 13:05:11 +0200</pubDate>
       
       <guid>https://covesa.github.io/hierarchical_information_model/service_rule_set/basics/</guid>
-      <description>HIM Service Tree A HIM service tree contains a taxonomy of microservice declarations. The tree structure is used to create a sets of microservices. Such as set is named Service, or Service Group for larger sets where a set of Service Groups would then form a Service, see the figure below, or the example service tree.
-*Figure 1. HIM service tree structure
+      <description>HIM Service Tree A HIM service tree contains a taxonomy of microservice declarations. The tree structure is used to create a sets of microservices. Such a set is named Service, or Service Group for larger sets where a set of Service Groups would then form a Service, see the figure below, or the example service tree.
+Figure 1. HIM service tree structure
 HIM Microservice A microservice is in HIM defined by a procedure signature as shown below:</description>
+    </item>
+    
+    <item>
+      <title>Procedure node</title>
+      <link>https://covesa.github.io/hierarchical_information_model/service_rule_set/procedure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://covesa.github.io/hierarchical_information_model/service_rule_set/procedure/</guid>
+      <description>The procedure node type must have the following mandatory metadata:
+Name Type Description For more information, see the Common Rule Set: Mandatory Metadata.
+Besides the mandatory metadata mentioned above, the following optional metadata may be used
+Instances Comment NativeRate TimeToLive Deprecation The Instances directive can be used when a service manages multiple resources, see Multiplexed microservice tree structure. Its definition follows the same rules as for its usage in branch type nodes as described here with the extension that it can be used in procedure nodes.</description>
     </item>
     
     <item>
@@ -25,7 +37,7 @@ HIM Microservice A microservice is in HIM defined by a procedure signature as sh
       
       <guid>https://covesa.github.io/hierarchical_information_model/service_rule_set/iostruct/</guid>
       <description>An iostruct node type may be used to encapsulate multiple data points that have the relationship that they are all representing either Input parameters or Output parameters of the microservice that they are linked to.
-This node type is only allowed in trees of the information type service. For more information, please see respective parts of this document.
+This node type is only allowed in trees of the information type Service. For more information, please see respective parts of this document.
 An iostruct node must have one of the two names Input or Output.</description>
     </item>
     
@@ -42,25 +54,13 @@ Besides the mandatory metadata mentioned above, the following optional metadata 
     </item>
     
     <item>
-      <title>Procedure node</title>
-      <link>https://covesa.github.io/hierarchical_information_model/service_rule_set/procedure/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://covesa.github.io/hierarchical_information_model/service_rule_set/procedure/</guid>
-      <description>The procedure node type must have the following mandatory metadata:
-Name Type Description For more information, see the Common Rule Set: Mandatory Metadata.
-Besides the mandatory metadata mentioned above, the following optional metadata may be used
-Instances Comment NativeRate TimeToLive The Instances directive can be used when a service manages multiple resources, see Multplexed microservice tree structure. Its definition follows the same rules as for its usage in branch type nodes as described here with the extension that it can be used in procedure nodes.</description>
-    </item>
-    
-    <item>
       <title>Symlink node</title>
       <link>https://covesa.github.io/hierarchical_information_model/service_rule_set/symlink/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://covesa.github.io/hierarchical_information_model/service_rule_set/symlink/</guid>
       <description>Data represented by the node type symlink have a relationship to any other data having the same iostruct parent in that they are all representing either Input parameters or Output parameters of the service that they are linked to.
-An Otput parameter declared as a symlink will lead to that the returned value is read from that data point.
+An Output parameter declared as a symlink will lead to that the returned value is read from that data point.
 An Input parameter declared as a symlink will lead to that the provided input value is written to that data point.</description>
     </item>
     

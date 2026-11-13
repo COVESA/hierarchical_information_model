@@ -25,9 +25,9 @@ Name Description Min Max uint8 unsigned 8-bit integer 0 255 int8 signed 8-bit in
       <pubDate>Sun, 04 Aug 2019 11:11:48 +0200</pubDate>
       
       <guid>https://covesa.github.io/hierarchical_information_model/common_rule_set/data_entry/structs/</guid>
-      <description>As mentioned in the chapter Composite datatypes a struct is defined using the node types &amp;lsquo;struct&amp;rsquo; and &amp;lsquo;property&amp;rsquo; in trees having the information type TypeDefinition, and it is referred to by using its path.
-The struct node type can also be used in trees having the information type Service, which is described in HIM Services Rule Set.
-A struct definition in a Typedefinition tree can contain a member that has a different struct as its datatype.</description>
+      <description>As mentioned in the chapter Composite datatypes a struct is defined using the node types &amp;lsquo;struct&amp;rsquo; and &amp;lsquo;property&amp;rsquo; in trees having the information type TypeDef, and it is referred to by using its path.
+The input and output parameters of a microservice in trees having the information type Service are grouped by the iostruct node type, which is described in the HIM Service Rule Set.
+A struct definition in a TypeDef tree can contain a member that has a different struct as its datatype.</description>
     </item>
     
     <item>
@@ -47,7 +47,7 @@ Vehicle.Speed: datatype: float type: sensor unit: km/h description: Vehicle spee
       
       <guid>https://covesa.github.io/hierarchical_information_model/common_rule_set/data_entry/value_restrictions/</guid>
       <description>HIM supports the following metadata for restricting the valid values of data.
-min max allowed Min The minimum value, within the interval of the given datatype, that the data entry can be assigned. If omitted, the minimum value will be the “Min” value for the given datatype. The min restrictions can only be used data having a &amp;ldquo;number&amp;quot;datatype (intx, uintx, float, double). Must not be specified if allowed is defined in the same node.</description>
+min max allowed Min The minimum value, within the interval of the given datatype, that the data entry can be assigned. If omitted, the minimum value will be the “Min” value for the given datatype. The min restrictions can only be used for data having a &amp;ldquo;number&amp;rdquo; datatype (intx, uintx, float, double). Must not be specified if allowed is defined in the same node.</description>
     </item>
     
   </channel>

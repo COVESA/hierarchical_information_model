@@ -23,7 +23,7 @@ Name Type Domain Version Local Description For more information, see the Common 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://covesa.github.io/hierarchical_information_model/configuration_rule_set/node_types/proxy/</guid>
-      <description>A proxy node in a HIM configuration file defines a tree that the server managing this forest does not have a local copy of. It however knows how to forward requests to the server that managaes the tree and has a local copy of it. An example could be a home automation scenario, where a server deployed in a car knows the Local Area Network access point address bearer type, so that when in proximity of the LAN, and after the vehicle has connected to it, requests received by the HIM server in he vehicle can then be routed to the server deployed on the LAN.</description>
+      <description>A proxy node in a HIM configuration file defines a tree that the server managing this forest does not have a local copy of. It however knows how to forward requests to the server that manages the tree and has a local copy of it. An example could be a home automation scenario, where a server deployed in a car knows the Local Area Network access point address bearer type, so that when in proximity of the LAN, and after the vehicle has connected to it, requests received by the HIM server in the vehicle can then be routed to the server deployed on the LAN.</description>
     </item>
     
   </channel>
