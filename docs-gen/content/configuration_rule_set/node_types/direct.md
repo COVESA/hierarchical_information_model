@@ -55,15 +55,17 @@ The `local` metadata shall be a file URL or similar that points to a local file 
 The `local` metadata shall not be supplied to a client requesting the configuration file.
 
 ## TypesTree
-The `typestree` metadata must be included when the tree that this metdata defines contains references to a type definition tree.
+The `typestree` metadata must be included when the tree that this metadata defines contains references to a type definition tree.
 The metadata shall then be set to:
 ```YAML
 typestree: 'domain'+'version'
 ```
-where domain shall be the 'domain' value of a typedef tree that must be part of the defined forest.
-and 'version' shall be the 'major.minor.patch' values of the typdef tree.
+where 'domain' shall be the `domain` value of a type definition tree that must be part of the defined forest,
+and 'version' shall be the 'major.minor.patch' value of that type definition tree.
 The delimiter between the two parameters shall be a plus sign.\
-Multiple trees may reference to the same typedef tree.
+Multiple trees may reference the same type definition tree.
+The datatypes in the tree that has a `typestree` metadata shall refer to the type definition tree by the root node name "Types", e. g. `datatype: Types.Struct.X`,
+independently of the root node name that the type definition tree is mapped to in the forest. The server shall resolve this reference to the type definition tree that `typestree` identifies.
 
 ## Public
 The `public` metadata shall, if available, be a URL to a public copy of the tree.

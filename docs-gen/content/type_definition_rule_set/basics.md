@@ -18,6 +18,7 @@ If an implementation of a server ecosystem selects to include multiple type defi
 where X can be any sequence of readable characters, with a length from one and up.
 X can be a number or more descriptive such as Car, Trailer, etc.\
 If the HIM configuration file only contains one type definition tree then the mapped name shall be "Types".
+The mapping does not change how a tree refers to its types: a datatype in a tree with a [`typestree`](/hierarchical_information_model/configuration_rule_set/node_types/direct/#typestree) metadata always starts with "Types", and the `typestree` metadata decides which type definition tree it refers to.
 
 ## Node Types
 The currently supported node types can be used for either the definition of [structs](https://en.wikipedia.org/wiki/Composite_data_type),

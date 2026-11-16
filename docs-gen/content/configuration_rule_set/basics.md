@@ -57,6 +57,7 @@ HIM.Vehicle:
   type: direct
   domain: Vehicle.Car.VehicleData
   version: X.Y.Z
+  typestree: Vehicle.Car.TypeDef+X.Y.Z
   local: file://<full-path-name>
   public: https://himrepo.oem.com?instance=Vehicle.Car.VehicleData.X.Y.Z
   description:  ….
