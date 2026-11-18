@@ -36,6 +36,7 @@ The following rules define how typedef nodes shall be used.
   * Description: Referring node
   * Any other metadata: If exists in Referring node then Referring node else Referred node.
 * VSS-tools exporters (the [extended VSS-tools](https://github.com/COVESA/hierarchical_information_model/tree/master/tools) is needed for typedef support) shall in the exported format synthesize a node containing the effective set of metadata as defined in the typedef rule set.
+* The extended VSS-tools does not support chained typedefs, i.e. a typedef node whose datatype is another typedef node.
 
 ## Example using typedef
 In the example a vspec file describing a tree of the VehicleData information type contains a node that refers to a typedef node containing an enum definition.

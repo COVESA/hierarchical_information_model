@@ -73,3 +73,10 @@ then the value shall be set to CANCELED.
 
 If there is a need for microservice specific error codes then these should be defined as another output parameter.
 A microservice may include in other output parameters that carry information about its execution state.
+
+## Tool support
+
+The [extended VSS-tools](https://github.com/COVESA/hierarchical_information_model/tree/master/tools) can be used to validate and export HIM service trees.
+The following rules of the Service rule set are currently not verified by the tool:
+- The target of a symlink node, as defined by its Path, Domain and Version metadata, is not resolved or verified, as it is located in another tree.
+- That a procedure node has a child node of type ttribute with the name Version is not verified.

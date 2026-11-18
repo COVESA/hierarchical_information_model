@@ -25,6 +25,7 @@ A server may share the information of this file with a client that wants to disc
 It shall however not share the "local" metadata that is private to the server.
 
 A HIM compliant server shall be able to read a HIM configuration file and from that access the forest of trees it defines.
+The configuration file is read by the server as it is, and it is not intended to be translated to any other format by tools such as the VSS-tools exporters.
 
 A HIM compliant tree must follow the HIM rule set.
 The project specifying this tree must also define the `domain` metadata for this tree,
