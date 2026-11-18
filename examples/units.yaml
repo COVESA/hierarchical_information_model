@@ -1,0 +1,31 @@
+# Units used by the HIM example files.
+# This is a subset of the units defined by the VSS standard catalog:
+# https://github.com/COVESA/vehicle_signal_specification/blob/master/spec/units.yaml
+# Add the corresponding entry from the VSS catalog if a unit is added to an example file.
+
+cm:
+  definition: Length measured in centimeters
+  unit: centimeter
+  quantity: length
+  allowed-datatypes: ["numeric"]
+  qudt:
+    unit: http://qudt.org/vocab/unit/CentiM
+    quantity-kind: https://qudt.org/vocab/quantitykind/Length
+
+kg:
+  definition: Mass measured in kilograms
+  unit: kilogram
+  quantity: mass
+  allowed-datatypes: ["numeric"]
+  qudt:
+    unit: http://qudt.org/vocab/unit/KiloGM
+    quantity-kind: https://qudt.org/vocab/quantitykind/Mass
+
+percent:
+  definition: Relation measured in percent
+  unit: percent
+  quantity: relation
+  allowed-datatypes: ["numeric"]
+  qudt:
+    unit: http://qudt.org/vocab/unit/PERCENT
+    quantity-kind: https://qudt.org/vocab/quantitykind/DimensionlessRatio

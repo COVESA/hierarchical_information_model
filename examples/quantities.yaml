@@ -1,0 +1,17 @@
+# Quantities used by the units in units.yaml.
+# This is a subset of the quantities defined by the VSS standard catalog:
+# https://github.com/COVESA/vehicle_signal_specification/blob/master/spec/quantities.yaml
+
+length:
+  definition: Linear extent in space between any two points (ISO 80000-3:2019)
+  remark: Length does not need to be measured along a straight line.
+    Length is one of the seven base quantities in the International System of Units (ISO 80000-1).
+
+mass:
+  definition: Property of a body which expresses itself in terms of inertia
+    related to changes in its state of motion as well as
+    its gravitational attraction to other bodies (ISO 80000-4:2019)
+
+relation:
+  definition: Dimensionsless quantity for relation between two values of the same quantity.
+  remark: This quantity is not described in ISO 80000.
