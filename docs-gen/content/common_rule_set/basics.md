@@ -19,6 +19,9 @@ Please note that, from a YAML perspective, the include directive is just another
 
 A tool is needed to generate the expanded version of the tree that contains instances of the included subtree,
 such as the tools developed by the VSS community - [COVESA/VSS-Tools](https://github.com/COVESA/vss-tools).
+Please note that the standard VSS-Tools only supports the Vehicle data profile.
+To process trees of the other HIM profiles an [extended version of VSS-Tools](https://github.com/UlfBj/vss-tools/tree/him-support) is needed,
+see the [HIM tools](https://github.com/COVESA/hierarchical_information_model/tree/master/tools) description.
 
 The files defining a HIM taxonomy may have the file extension '.him', but the project defining the domain taxonomy may define and use a file extension of their own choice.
 The format of the files may be transformed from YAML to another format like JSON, in which case it may use a file extension of that format.

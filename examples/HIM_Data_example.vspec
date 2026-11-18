@@ -37,7 +37,7 @@ Occupant.Settings:
 Occupant.Settings.SeatedAt:
   datatype: string
   type: rw
-  description: Seat position is represented by “x.y” where x and y are integers starting at “1.1” representing “front row.leftmost seat”.
+  description: Seat position is represented by "x.y" where x and y are integers starting at "1.1" representing "front row.leftmost seat".
 
 Occupant.Settings.LocalTemperature:
   datatype: float
